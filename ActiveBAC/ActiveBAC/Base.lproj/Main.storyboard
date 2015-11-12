@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -111,7 +111,7 @@
                                     <rect key="frame" x="155" y="403" width="77" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="DrinkAdded:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TqQ-z8-cai"/>
+                                    <action selector="addDrinkButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RPy-EJ-Td4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZc-2b-nPi">
@@ -122,6 +122,7 @@
                                     <rect key="frame" x="7" y="5" width="32" height="32"/>
                                 </variation>
                                 <connections>
+                                    <action selector="menuButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bYG-4k-dW4"/>
                                     <segue destination="1yB-7y-cc6" kind="show" id="xmP-uF-L1I"/>
                                 </connections>
                             </button>
@@ -165,6 +166,11 @@
                         <outlet property="BACLevel" destination="bo8-Qx-Alv" id="hwg-T0-MZ5"/>
                         <outlet property="LapsedTime" destination="QVD-v7-2wI" id="Su3-Ct-4TG"/>
                         <outlet property="WarningMessage" destination="mba-WB-ocr" id="GnX-Eg-l38"/>
+                        <outlet property="bacLabel" destination="bo8-Qx-Alv" id="OeB-Om-o63"/>
+                        <outlet property="ellapsedTimeLabel" destination="QVD-v7-2wI" id="UJL-ml-jpd"/>
+                        <outlet property="limitProgressBar" destination="nJq-Th-SpY" id="OOR-lK-8Y8"/>
+                        <outlet property="limitProgressLabel" destination="CHX-bS-4B0" id="NJ7-01-FfD"/>
+                        <outlet property="messageLabel" destination="mba-WB-ocr" id="rR7-u8-Vc1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -180,6 +186,7 @@
                         <viewControllerLayoutGuide type="bottom" id="QT8-1v-USI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bbI-ZT-Lmz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

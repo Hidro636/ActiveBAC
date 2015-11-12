@@ -11,16 +11,25 @@ import UIKit
 class ViewController: UIViewController {
 
     var time: NSTimer!
-    @IBOutlet var LapsedTime: UILabel!
-    @IBOutlet var BACLevel: UILabel!
-    @IBOutlet var WarningMessage: UILabel!
     var totalDrinks = 0
     
-    @IBAction func DrinkAdded(sender: AnyObject) {
+    @IBOutlet weak var ellapsedTimeLabel: UILabel!
+    @IBOutlet weak var bacLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var limitProgressBar: UIProgressView!
+    @IBOutlet weak var limitProgressLabel: UILabel!
+    
+    
+    
+    
+    @IBAction func addDrinkButtonClicked(sender: UIButton) {
         if (totalDrinks == 0){
             time = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "calculateBAC", userInfo: nil, repeats: true)
         }
         totalDrinks = totalDrinks+1
+    }
+    @IBAction func menuButtonClicked(sender: UIButton) {
+        //Unimplemented
     }
     
     override func viewDidLoad() {
@@ -29,7 +38,7 @@ class ViewController: UIViewController {
     }
     
     func calculateBAC(){
-        var BAC = (((totalDrinks * 0.60) * 5.14) / (usersWeight * usersGender )) - (0.015 * (LapsedTime/3600))
+        //var BAC = (((totalDrinks * 0.60) * 5.14) / (usersWeight * usersGender )) - (0.015 * (LapsedTime/3600))
     }
 
     override func didReceiveMemoryWarning() {
