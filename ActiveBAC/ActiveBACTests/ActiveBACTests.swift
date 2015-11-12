@@ -2,12 +2,12 @@
 //  ActiveBACTests.swift
 //  ActiveBACTests
 //
-//  Created by Student 1 on 10/27/15.
-//  Copyright © 2015 LucasRobertson. All rights reserved.
+//  Created by liblabs-mac on 10/14/15.
+//  Copyright (c) 2015 team[0]. All rights reserved.
 //
 
+import UIKit
 import XCTest
-@testable import ActiveBAC
 
 class ActiveBACTests: XCTestCase {
     
@@ -23,12 +23,12 @@ class ActiveBACTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(true, "Pass")
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measureBlock() {
             // Put the code you want to measure the time of here.
         }
     }

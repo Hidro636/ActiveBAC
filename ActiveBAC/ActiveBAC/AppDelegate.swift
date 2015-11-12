@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  ActiveBAC
 //
-//  Created by Student 1 on 10/27/15.
-//  Copyright © 2015 LucasRobertson. All rights reserved.
+//  Created by liblabs-mac on 10/14/15.
+//  Copyright (c) 2015 team[0]. All rights reserved.
 //
 
 import UIKit
