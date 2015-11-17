@@ -103,17 +103,6 @@
                                     <rect key="frame" x="148" y="123" width="155" height="122"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dL-fT-NHj">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Drink +1"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="155" y="403" width="77" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="DrinkAdded:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TqQ-z8-cai"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZc-2b-nPi">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
@@ -123,6 +112,17 @@
                                 </variation>
                                 <connections>
                                     <segue destination="1yB-7y-cc6" kind="show" id="xmP-uF-L1I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dL-fT-NHj">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" image="drink2.png"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="94" y="277" width="212" height="199"/>
+                                </variation>
+                                <connections>
+                                    <action selector="DrinkAdded:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TqQ-z8-cai"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -140,8 +140,8 @@
                                 <exclude reference="nJq-Th-SpY"/>
                                 <exclude reference="TLm-6A-OKj"/>
                                 <exclude reference="bo8-Qx-Alv"/>
-                                <exclude reference="4dL-fT-NHj"/>
                                 <exclude reference="GZc-2b-nPi"/>
+                                <exclude reference="4dL-fT-NHj"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -155,8 +155,8 @@
                                 <include reference="nJq-Th-SpY"/>
                                 <include reference="TLm-6A-OKj"/>
                                 <include reference="bo8-Qx-Alv"/>
-                                <include reference="4dL-fT-NHj"/>
                                 <include reference="GZc-2b-nPi"/>
+                                <include reference="4dL-fT-NHj"/>
                             </mask>
                         </variation>
                     </view>
@@ -192,6 +192,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="drink2.png" width="200" height="196"/>
         <image name="menuButton.png" width="512" height="512"/>
     </resources>
 </document>

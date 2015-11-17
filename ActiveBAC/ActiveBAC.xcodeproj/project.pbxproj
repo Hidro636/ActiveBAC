@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0F3A3731BFBCB090094249A /* drink.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F3A3721BFBCB090094249A /* drink.png */; settings = {ASSET_TAGS = (); }; };
+		B0F3A3751BFBCC870094249A /* drink1.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F3A3741BFBCC870094249A /* drink1.png */; settings = {ASSET_TAGS = (); }; };
+		B0F3A3771BFBCD110094249A /* drink2.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F3A3761BFBCD110094249A /* drink2.png */; settings = {ASSET_TAGS = (); }; };
 		F12D6CB01BCF65AF00F9D664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */; };
 		F12D6CB21BCF65AF00F9D664 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CB11BCF65AF00F9D664 /* ViewController.swift */; };
 		F12D6CB51BCF65AF00F9D664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CB31BCF65AF00F9D664 /* Main.storyboard */; };
@@ -32,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0F3A3721BFBCB090094249A /* drink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drink.png; sourceTree = "<group>"; };
+		B0F3A3741BFBCC870094249A /* drink1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drink1.png; sourceTree = "<group>"; };
+		B0F3A3761BFBCD110094249A /* drink2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drink2.png; sourceTree = "<group>"; };
 		F12D6CAA1BCF65AF00F9D664 /* ActiveBAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActiveBAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12D6CAE1BCF65AF00F9D664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +134,9 @@
 		F12D6CD11BCF699E00F9D664 /* media */ = {
 			isa = PBXGroup;
 			children = (
+				B0F3A3741BFBCC870094249A /* drink1.png */,
+				B0F3A3761BFBCD110094249A /* drink2.png */,
+				B0F3A3721BFBCB090094249A /* drink.png */,
 				F12D6CDC1BCF705700F9D664 /* settingsButton.png */,
 				F12D6CD81BCF6FE100F9D664 /* mixed.png */,
 				F12D6CD61BCF6F5E00F9D664 /* wine.png */,
@@ -222,11 +231,14 @@
 				F12D6CB51BCF65AF00F9D664 /* Main.storyboard in Resources */,
 				F12D6CDD1BCF705700F9D664 /* settingsButton.png in Resources */,
 				F12D6CDB1BCF703800F9D664 /* shot.png in Resources */,
+				B0F3A3771BFBCD110094249A /* drink2.png in Resources */,
+				B0F3A3751BFBCC870094249A /* drink1.png in Resources */,
 				F12D6CD51BCF6ED100F9D664 /* beer.png in Resources */,
 				F12D6CD71BCF6F5E00F9D664 /* wine.png in Resources */,
 				F12D6CBA1BCF65B000F9D664 /* LaunchScreen.xib in Resources */,
 				F12D6CB71BCF65B000F9D664 /* Images.xcassets in Resources */,
 				F12D6CD31BCF69F900F9D664 /* menuButton.png in Resources */,
+				B0F3A3731BFBCB090094249A /* drink.png in Resources */,
 				F12D6CD91BCF6FE100F9D664 /* mixed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
