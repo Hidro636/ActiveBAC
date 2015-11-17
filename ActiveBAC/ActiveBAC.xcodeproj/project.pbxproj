@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65AE70131BFBA9EE0000BD26 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AE70121BFBA9EE0000BD26 /* SettingsView.swift */; };
+		65AE70151BFBC12D0000BD26 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65AE70141BFBC12D0000BD26 /* Property List.plist */; };
 		F12D6CB01BCF65AF00F9D664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */; };
 		F12D6CB21BCF65AF00F9D664 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CB11BCF65AF00F9D664 /* ViewController.swift */; };
 		F12D6CB51BCF65AF00F9D664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CB31BCF65AF00F9D664 /* Main.storyboard */; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		65AE70121BFBA9EE0000BD26 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		65AE70141BFBC12D0000BD26 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		F12D6CAA1BCF65AF00F9D664 /* ActiveBAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActiveBAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12D6CAE1BCF65AF00F9D664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				F12D6CD11BCF699E00F9D664 /* media */,
 				F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */,
 				F12D6CB11BCF65AF00F9D664 /* ViewController.swift */,
+				65AE70121BFBA9EE0000BD26 /* SettingsView.swift */,
+				65AE70141BFBC12D0000BD26 /* Property List.plist */,
 				F12D6CB31BCF65AF00F9D664 /* Main.storyboard */,
 				F12D6CB61BCF65B000F9D664 /* Images.xcassets */,
 				F12D6CB81BCF65B000F9D664 /* LaunchScreen.xib */,
@@ -227,6 +233,7 @@
 				F12D6CBA1BCF65B000F9D664 /* LaunchScreen.xib in Resources */,
 				F12D6CB71BCF65B000F9D664 /* Images.xcassets in Resources */,
 				F12D6CD31BCF69F900F9D664 /* menuButton.png in Resources */,
+				65AE70151BFBC12D0000BD26 /* Property List.plist in Resources */,
 				F12D6CD91BCF6FE100F9D664 /* mixed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65AE70131BFBA9EE0000BD26 /* SettingsView.swift in Sources */,
 				F12D6CB21BCF65AF00F9D664 /* ViewController.swift in Sources */,
 				F12D6CB01BCF65AF00F9D664 /* AppDelegate.swift in Sources */,
 			);
