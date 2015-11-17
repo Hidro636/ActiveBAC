@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var BACLevel: UILabel!
     @IBOutlet var WarningMessage: UILabel!
     var totalDrinks = 0
+    var counter = 0
     
     @IBAction func DrinkAdded(sender: AnyObject) {
         if (totalDrinks == 0){
@@ -30,6 +31,12 @@ class ViewController: UIViewController {
     
     func calculateBAC(){
         var BAC = (((totalDrinks * 0.60) * 5.14) / (usersWeight * usersGender )) - (0.015 * (LapsedTime/3600))
+        counter++
+        var hours = (counter/3600)
+        var minutes = (counter/60) % 60
+        var seconds = counter % 60
+        BACLevel.text = String (BAC)
+        LapsedTime.text = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
 
     override func didReceiveMemoryWarning() {
