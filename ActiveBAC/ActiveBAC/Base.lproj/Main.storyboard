@@ -252,6 +252,20 @@
                                     <rect key="frame" x="225" y="103" width="122" height="30"/>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5J0-sY-tAO">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save Changes">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="114" y="278" width="159" height="29"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="HzJ-Li-KHQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -264,6 +278,7 @@
                                 <exclude reference="Zux-H9-vHh"/>
                                 <exclude reference="qUA-cZ-U48"/>
                                 <exclude reference="Gvu-40-DxM"/>
+                                <exclude reference="5J0-sY-tAO"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -275,6 +290,7 @@
                                 <include reference="Zux-H9-vHh"/>
                                 <include reference="qUA-cZ-U48"/>
                                 <include reference="Gvu-40-DxM"/>
+                                <include reference="5J0-sY-tAO"/>
                             </mask>
                         </variation>
                     </view>
