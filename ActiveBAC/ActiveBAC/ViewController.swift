@@ -11,52 +11,65 @@ import UIKit
 class ViewController: UIViewController {
 
     var time: NSTimer!
-    var totalDrinks = 0
-    var counter = 0
+    var time1: NSTimer!
+    @IBOutlet var LapsedTime: UILabel!
+    @IBOutlet var BACLevel: UILabel!
+    @IBOutlet var WarningMessage: UILabel!
+    var totalDrinks: Double! = 0
+    var counter: Double! = 0
+    var counter1 = 0
+    var usersWeight: Double! = 150
+    var gender: Double!
+    var usersGender: String!
     
-    @IBOutlet weak var ellapsedTimeLabel: UILabel!
-    @IBOutlet weak var bacLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var limitProgressBar: UIProgressView!
-    @IBOutlet weak var limitProgressLabel: UILabel!
     
-    
-    
-    
-    @IBAction func addDrinkButtonClicked(sender: UIButton) {
-        if (totalDrinks == 0){
+    @IBAction func DrinkAdded(sender: AnyObject) {
+        totalDrinks = totalDrinks + 1.0
+        
+        if (totalDrinks == 1){
             time = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "calculateBAC", userInfo: nil, repeats: true)
+            time1 = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "clockTimer", userInfo: nil, repeats: true)
         }
-        totalDrinks = totalDrinks+1
-    }
-    @IBAction func menuButtonClicked(sender: UIButton) {
-        //Unimplemented
+        
+    
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     func calculateBAC(){
-<<<<<<< HEAD
-        //var BAC = (((totalDrinks * 0.60) * 5.14) / (usersWeight * usersGender )) - (0.015 * (LapsedTime/3600))
-=======
-        var BAC = (((totalDrinks * 0.60) * 5.14) / (usersWeight * usersGender )) - (0.015 * (LapsedTime/3600))
-        counter++
-        var hours = (counter/3600)
-        var minutes = (counter/60) % 60
-        var seconds = counter % 60
-        BACLevel.text = String (BAC)
-        LapsedTime.text = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
->>>>>>> ffcfc0f59f724fd65032684b689dc6f6e88a3bb4
+        let usersGender = "Male"
+        
+        if (usersGender == "Male"){
+            var gender = 0.73
+        }else {
+            var gender = 0.66
+        }
+        
+        counter = counter + 1.0
+        var firstPart: Double! = (totalDrinks * 3084/1000)
+        var secondPart: Double! = (usersWeight * 0.73)
+        var thirdPart: Double! = (15/1000 * counter / 3600)
+        var BAC: Double! = firstPart / secondPart - thirdPart
+        BACLevel.text = String(format: "%.2f", BAC)
     }
+    
+    func clockTimer() {
+        
+        counter1++
+        var hours = counter1/3600
+        var minutes = counter1/60 % 60
+        var seconds = counter1 % 60
+        LapsedTime.text = String(format: "%.02d:%.02d:%.02d", hours, minutes, seconds)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
