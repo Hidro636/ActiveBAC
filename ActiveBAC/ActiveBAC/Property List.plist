@@ -7,7 +7,7 @@
 		<key>SavedUsersGender</key>
 		<true/>
 		<key>SavedUsersWeight</key>
-		<string>0</string>
+		<integer>0</integer>
 	</dict>
 </dict>
 </plist>

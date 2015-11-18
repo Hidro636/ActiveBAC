@@ -19,9 +19,9 @@ outlet GenderLabel
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        var myDict: NSDictionary?
+        var UsersData: NSDictionary?
         if let path = NSBundle.mainBundle().pathForResource("Property List", ofType: "plist") {
-            myDict = NSDictionary(contentsOfFile: path)
+            UsersData = NSDictionary(contentsOfFile: path)
         }
 
         
