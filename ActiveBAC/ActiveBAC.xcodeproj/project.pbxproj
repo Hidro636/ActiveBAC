@@ -15,7 +15,6 @@
 		F12D6CB71BCF65B000F9D664 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CB61BCF65B000F9D664 /* Images.xcassets */; };
 		F12D6CBA1BCF65B000F9D664 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CB81BCF65B000F9D664 /* LaunchScreen.xib */; };
 		F12D6CC61BCF65B000F9D664 /* ActiveBACTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CC51BCF65B000F9D664 /* ActiveBACTests.swift */; };
-		F12D6CD31BCF69F900F9D664 /* menuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CD21BCF69F900F9D664 /* menuButton.png */; };
 		F12D6CDD1BCF705700F9D664 /* settingsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CDC1BCF705700F9D664 /* settingsButton.png */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +41,6 @@
 		F12D6CBF1BCF65B000F9D664 /* ActiveBACTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActiveBACTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12D6CC41BCF65B000F9D664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12D6CC51BCF65B000F9D664 /* ActiveBACTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveBACTests.swift; sourceTree = "<group>"; };
-		F12D6CD21BCF69F900F9D664 /* menuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuButton.png; sourceTree = "<group>"; };
 		F12D6CDC1BCF705700F9D664 /* settingsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,7 +125,6 @@
 			children = (
 				A33024F81BFD1DB400EDFCE8 /* drink2.png */,
 				F12D6CDC1BCF705700F9D664 /* settingsButton.png */,
-				F12D6CD21BCF69F900F9D664 /* menuButton.png */,
 			);
 			name = media;
 			sourceTree = "<group>";
@@ -218,7 +215,6 @@
 				F12D6CBA1BCF65B000F9D664 /* LaunchScreen.xib in Resources */,
 				A33024F91BFD1DB400EDFCE8 /* drink2.png in Resources */,
 				F12D6CB71BCF65B000F9D664 /* Images.xcassets in Resources */,
-				F12D6CD31BCF69F900F9D664 /* menuButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

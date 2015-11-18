@@ -57,35 +57,6 @@
                                     <rect key="frame" x="37" y="212" width="326" height="49"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My limit:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOl-ag-RmJ">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="37" y="520" width="80" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHX-bS-4B0">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.81163983829999997" blue="0.14547972980000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="292" y="520" width="32" height="21"/>
-                                </variation>
-                            </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="nJq-Th-SpY">
-                                <rect key="frame" x="0.0" y="-2" width="150" height="2"/>
-                                <animations/>
-                                <color key="progressTintColor" red="1" green="0.81163983829999997" blue="0.14547972980000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="117" y="530" width="167" height="2.5"/>
-                                </variation>
-                            </progressView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TLm-6A-OKj">
                                 <rect key="frame" x="0.0" y="-2" width="150" height="2"/>
                                 <animations/>
@@ -106,7 +77,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZc-2b-nPi">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
-                                <state key="normal" title="test" image="menuButton.png"/>
+                                <state key="normal" title="test" image="settingsButton.png"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="7" y="5" width="32" height="32"/>
                                 </variation>
@@ -135,9 +106,6 @@
                                 <exclude reference="CyM-kw-DBJ"/>
                                 <exclude reference="QVD-v7-2wI"/>
                                 <exclude reference="mba-WB-ocr"/>
-                                <exclude reference="MOl-ag-RmJ"/>
-                                <exclude reference="CHX-bS-4B0"/>
-                                <exclude reference="nJq-Th-SpY"/>
                                 <exclude reference="TLm-6A-OKj"/>
                                 <exclude reference="bo8-Qx-Alv"/>
                                 <exclude reference="GZc-2b-nPi"/>
@@ -150,9 +118,6 @@
                                 <include reference="CyM-kw-DBJ"/>
                                 <include reference="QVD-v7-2wI"/>
                                 <include reference="mba-WB-ocr"/>
-                                <include reference="MOl-ag-RmJ"/>
-                                <include reference="CHX-bS-4B0"/>
-                                <include reference="nJq-Th-SpY"/>
                                 <include reference="TLm-6A-OKj"/>
                                 <include reference="bo8-Qx-Alv"/>
                                 <include reference="GZc-2b-nPi"/>
@@ -306,6 +271,6 @@
     </scenes>
     <resources>
         <image name="drink2.png" width="200" height="196"/>
-        <image name="menuButton.png" width="512" height="512"/>
+        <image name="settingsButton.png" width="128" height="128"/>
     </resources>
 </document>
