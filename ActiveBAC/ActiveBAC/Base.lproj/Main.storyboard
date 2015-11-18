@@ -111,7 +111,6 @@
                                     <rect key="frame" x="7" y="5" width="32" height="32"/>
                                 </variation>
                                 <connections>
-                                    <action selector="menuButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bYG-4k-dW4"/>
                                     <segue destination="1yB-7y-cc6" kind="show" identifier="Settings" id="xmP-uF-L1I"/>
                                 </connections>
                             </button>
@@ -123,7 +122,7 @@
                                     <rect key="frame" x="67" y="292" width="267" height="196"/>
                                 </variation>
                                 <connections>
-                                    <action selector="addDrinkButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RPy-EJ-Td4"/>
+                                    <action selector="DrinkAdded:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pFa-B4-K7l"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -166,21 +165,16 @@
                         <outlet property="BACLevel" destination="bo8-Qx-Alv" id="hwg-T0-MZ5"/>
                         <outlet property="LapsedTime" destination="QVD-v7-2wI" id="Su3-Ct-4TG"/>
                         <outlet property="WarningMessage" destination="mba-WB-ocr" id="GnX-Eg-l38"/>
-                        <outlet property="bacLabel" destination="bo8-Qx-Alv" id="OeB-Om-o63"/>
-                        <outlet property="ellapsedTimeLabel" destination="QVD-v7-2wI" id="UJL-ml-jpd"/>
-                        <outlet property="limitProgressBar" destination="nJq-Th-SpY" id="OOR-lK-8Y8"/>
-                        <outlet property="limitProgressLabel" destination="CHX-bS-4B0" id="NJ7-01-FfD"/>
-                        <outlet property="messageLabel" destination="mba-WB-ocr" id="rR7-u8-Vc1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="595.5" y="700"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="v3y-kn-NC9">
             <objects>
-                <viewController id="1yB-7y-cc6" sceneMemberID="viewController">
+                <viewController id="1yB-7y-cc6" customClass="SettingsViewController" customModule="ActiveBAC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4gQ-Rz-3gp"/>
                         <viewControllerLayoutGuide type="bottom" id="QT8-1v-USI"/>
@@ -225,6 +219,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="272" y="189" width="51" height="31"/>
                                 </variation>
+                                <connections>
+                                    <action selector="genderSwitch:" destination="1yB-7y-cc6" eventType="valueChanged" id="m8h-h6-kad"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zux-H9-vHh">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -281,6 +278,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="gender" destination="rVh-EO-oug" id="Ict-4E-7iC"/>
+                        <outlet property="weight" destination="Gvu-40-DxM" id="9aV-8v-btx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jes-1B-tbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
