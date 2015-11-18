@@ -111,7 +111,7 @@
                                     <rect key="frame" x="155" y="403" width="77" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="addDrinkButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RPy-EJ-Td4"/>
+                                    <action selector="addDrinkButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GfT-Kv-3l1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZc-2b-nPi">
@@ -166,11 +166,6 @@
                         <outlet property="BACLevel" destination="bo8-Qx-Alv" id="hwg-T0-MZ5"/>
                         <outlet property="LapsedTime" destination="QVD-v7-2wI" id="Su3-Ct-4TG"/>
                         <outlet property="WarningMessage" destination="mba-WB-ocr" id="GnX-Eg-l38"/>
-                        <outlet property="bacLabel" destination="bo8-Qx-Alv" id="OeB-Om-o63"/>
-                        <outlet property="ellapsedTimeLabel" destination="QVD-v7-2wI" id="UJL-ml-jpd"/>
-                        <outlet property="limitProgressBar" destination="nJq-Th-SpY" id="OOR-lK-8Y8"/>
-                        <outlet property="limitProgressLabel" destination="CHX-bS-4B0" id="NJ7-01-FfD"/>
-                        <outlet property="messageLabel" destination="mba-WB-ocr" id="rR7-u8-Vc1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

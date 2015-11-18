@@ -23,20 +23,24 @@ class ViewController: UIViewController {
     var usersGender: String!
     
     
-    @IBAction func DrinkAdded(sender: AnyObject) {
+    
+    @IBAction func addDrinkButtonClick(sender: UIButton) {
         totalDrinks = totalDrinks + 1.0
         
         if (totalDrinks == 1){
             time = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "calculateBAC", userInfo: nil, repeats: true)
             time1 = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "clockTimer", userInfo: nil, repeats: true)
-        }
-        
-    
-    }
+        }    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        getSettings()
+        print(usersGender)
+        
+        writeSettings(300.0, gender: "unkown")
+        print(usersGender)
         
     }
     
@@ -44,9 +48,9 @@ class ViewController: UIViewController {
         let usersGender = "Male"
         
         if (usersGender == "Male"){
-            var gender = 0.73
+            let gender = 0.73
         }else {
-            var gender = 0.66
+            let gender = 0.66
         }
         
         counter = counter + 1.0
@@ -64,6 +68,33 @@ class ViewController: UIViewController {
         var minutes = counter1/60 % 60
         var seconds = counter1 % 60
         LapsedTime.text = String(format: "%.02d:%.02d:%.02d", hours, minutes, seconds)
+    }
+    
+    func getSettings() {
+        let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
+        let dict = NSDictionary(contentsOfFile: path!)
+        
+        let userProfile = dict!.objectForKey("UserProfile") as! NSMutableDictionary!
+        
+        self.usersWeight = userProfile["weight"]!.doubleValue
+        self.usersGender = userProfile["gender"]! as! String
+    }
+    
+    func writeSettings(weight: Double?, gender: NSString?) {
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        let documentsDirectory = paths.objectAtIndex(0) as! NSString
+        let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
+        let dict: NSMutableDictionary = ["XInitializerItem": "DoNotEverChangeMe"]
+        //saving values
+        dict.setObject(weight!, forKey: "weight")
+        dict.setObject(gender!, forKey: "gender")
+        //...
+        //writing to UserData.plist
+        dict.writeToFile(path!, atomically: false)
+        let resultDictionary = NSMutableDictionary(contentsOfFile: path!)
+        print(resultDictionary!["gender"]?.stringValue)
+        
     }
     
 
