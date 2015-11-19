@@ -88,6 +88,7 @@ class ViewController: UIViewController {
         let resultDictionary = NSMutableDictionary(contentsOfFile: path!)
         print(resultDictionary!["gender"]?.stringValue)
         
+        
     }
     
 
