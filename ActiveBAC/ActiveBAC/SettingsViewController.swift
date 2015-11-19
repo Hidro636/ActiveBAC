@@ -7,13 +7,11 @@ class SettingsViewController: UIViewController {
     @IBOutlet var gender: UISwitch!
     @IBAction func genderSwitch(sender: AnyObject) {
         if gender.on{
-            //change property list value
             print("on->off")
             userGender = "female"
             
         }
         else{
-            //change property list value
             print("off->on")
             userGender = "male"
             
@@ -41,18 +39,13 @@ class SettingsViewController: UIViewController {
     
     func writeSettings(weight: Double?, gender: NSString?) {
         let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
-        
         let dict = NSMutableDictionary(contentsOfFile: path!)
-        
         //saving values
         dict!.objectForKey("UserProfile")!.setObject(weight!, forKey: "weight")
         dict!.objectForKey("UserProfile")!.setObject(gender!, forKey: "gender")
-        //print(dict)
-        //...
         //writing to GameData.plist
         dict!.writeToFile(path!, atomically: false)
         //let resultDictionary = NSMutableDictionary(contentsOfFile: path!)
-        
     }
     
     override func didReceiveMemoryWarning() {
