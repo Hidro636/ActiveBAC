@@ -36,11 +36,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        getSettings()
-        print(usersGender)
+        //getSettings()
+        //print(usersGender)
         
-        writeSettings(300.0, gender: "unkown")
-        print(usersGender)
+        //writeSettings(300.0, gender: "unkown")
+        //print(usersGender)
         
     }
     

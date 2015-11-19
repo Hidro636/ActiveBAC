@@ -93,7 +93,7 @@
                                     <rect key="frame" x="67" y="292" width="267" height="196"/>
                                 </variation>
                                 <connections>
-                                    <action selector="DrinkAdded:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pFa-B4-K7l"/>
+                                    <action selector="addDrinkButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wyj-GX-ngV"/>
                                 </connections>
                             </button>
                         </subviews>
