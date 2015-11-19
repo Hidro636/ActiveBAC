@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     var totalDrinks: Double! = 0
     var counter: Double! = 0
     var counter1 = 0
-    var usersWeight: Double! = 150
+    var usersWeight: Double!
     var gender: Double!
     var usersGender: String!
     
@@ -43,21 +43,42 @@ class ViewController: UIViewController {
     func calculateBAC(){
         
         counter = counter + 1.0
+        
+        if usersGender == "male"{
         var firstPart: Double! = (totalDrinks * 3084/1000)
         var secondPart: Double! = (usersWeight * 0.73)
         var thirdPart: Double! = (15/1000 * counter / 3600)
         var BAC: Double! = firstPart / secondPart - thirdPart
         BACLevel.text = String(format: "%.2f", BAC)
-        
-        if BAC == 0 {
-            WarningMessage.text = "You are not impaired, have a good night!"
-            WarningMessage.textColor = UIColor.greenColor()
-        } else if BAC < 0.08 {
-            WarningMessage.text = "You may be impaired, please avoid driving!"
-            WarningMessage.textColor = UIColor.yellowColor()
-        } else if BAC < 0.1 {
-            WarningMessage.text = "Do not drive!"
-            WarningMessage.textColor = UIColor.orangeColor()
+
+            if BAC == 0 {
+                WarningMessage.text = "You are not impaired, have a good night!"
+                WarningMessage.textColor = UIColor.greenColor()
+            } else if BAC < 0.08 {
+                WarningMessage.text = "You may be impaired, please avoid driving!"
+                WarningMessage.textColor = UIColor.yellowColor()
+            } else if BAC < 0.1 {
+                WarningMessage.text = "Do not drive!"
+                WarningMessage.textColor = UIColor.orangeColor()
+            }
+            
+        }else if usersGender == "female"{
+            var firstPart: Double! = (totalDrinks * 3084/1000)
+            var secondPart: Double! = (usersWeight * 0.66)
+            var thirdPart: Double! = (15/1000 * counter / 3600)
+            var BAC: Double! = firstPart / secondPart - thirdPart
+            BACLevel.text = String(format: "%.2f", BAC)
+            
+            if BAC == 0 {
+                WarningMessage.text = "You are not impaired, have a good night!"
+                WarningMessage.textColor = UIColor.greenColor()
+            } else if BAC < 0.08 {
+                WarningMessage.text = "You may be impaired, please avoid driving!"
+                WarningMessage.textColor = UIColor.yellowColor()
+            } else if BAC < 0.1 {
+                WarningMessage.text = "Do not drive!"
+                WarningMessage.textColor = UIColor.orangeColor()
+            }
         }
         
     }
