@@ -82,7 +82,44 @@ class ViewController: UIViewController {
             WarningMessage.text = "Onset of come, possible death"
             WarningMessage.textColor = UIColor.redColor()
         }
-    }
+    }else if usersGender == "female"{
+        var firstPart: Double! = (totalDrinks * 3084/1000)
+        var secondPart: Double! = (usersWeight * 0.73)
+        var thirdPart: Double! = (15/1000 * counter / 3600)
+        var BAC: Double! = firstPart / secondPart - thirdPart
+        BACLevel.text = String(format: "%.2f", BAC)
+        
+        if BAC == 0 {
+            WarningMessage.text = "You are not impaired, have a good night!"
+            WarningMessage.textColor = UIColor.greenColor()
+        } else if BAC < 0.03 {
+            WarningMessage.text = "Slight euphoria, mild relaxation."
+            WarningMessage.textColor = UIColor.greenColor()
+        } else if BAC < 0.06 {
+            WarningMessage.text = "Feeling of wellbeing, lower inhibitions."
+            WarningMessage.textColor = UIColor.yellowColor()
+        } else if BAC < 0.09 {
+            WarningMessage.text = "Some imparement, reduced judgement."
+            WarningMessage.textColor = UIColor.yellowColor()
+        } else if BAC < 0.12 {
+            WarningMessage.text = "Loss of judgement, significant imparement!"
+            WarningMessage.textColor = UIColor.orangeColor()
+        } else if BAC < 0.19 {
+            WarningMessage.text = "Dysphoria, confusion, possible nauseau."
+            WarningMessage.textColor = UIColor.orangeColor()
+        } else if BAC < 0.20 {
+            WarningMessage.text = "May need help standing, possible loss of memory, nauseau."
+            WarningMessage.textColor = UIColor.redColor()
+        } else if BAC < 0.25 {
+            WarningMessage.text = "Severe imparement!"
+            WarningMessage.textColor = UIColor.redColor()
+        } else if BAC < 0.3 {
+            WarningMessage.text = "Loss of conciousness!"
+            WarningMessage.textColor = UIColor.redColor()
+        } else if BAC < 0.4 {
+            WarningMessage.text = "Onset of come, possible death"
+            WarningMessage.textColor = UIColor.redColor()
+        }
     
     func clockTimer() {
         
