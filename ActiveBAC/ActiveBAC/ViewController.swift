@@ -21,16 +21,22 @@ class ViewController: UIViewController {
     var usersWeight: Double!
     var gender: Double!
     var usersGender: String!
+    var totalDrinks1 = 0
     
+    
+    @IBOutlet var allDrinks: UILabel!
     
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
         totalDrinks = totalDrinks + 1.0
+        totalDrinks1 = totalDrinks1 + 1
         
         if (totalDrinks == 1){
             time = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "calculateBAC", userInfo: nil, repeats: true)
             time1 = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "clockTimer", userInfo: nil, repeats: true)
-        }    }
+        }
+        allDrinks.text = String(format:"%d", totalDrinks1)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
