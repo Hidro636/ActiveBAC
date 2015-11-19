@@ -83,8 +83,10 @@ class ViewController: UIViewController {
             WarningMessage.textColor = UIColor.redColor()
         }
     }else if usersGender == "female"{
+            
+            
         var firstPart: Double! = (totalDrinks * 3084/1000)
-        var secondPart: Double! = (usersWeight * 0.73)
+        var secondPart: Double! = (usersWeight * 0.66)
         var thirdPart: Double! = (15/1000 * counter / 3600)
         var BAC: Double! = firstPart / secondPart - thirdPart
         BACLevel.text = String(format: "%.2f", BAC)
@@ -120,6 +122,9 @@ class ViewController: UIViewController {
             WarningMessage.text = "Onset of come, possible death"
             WarningMessage.textColor = UIColor.redColor()
         }
+        }
+    }
+    
     
     func clockTimer() {
         
@@ -152,4 +157,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
+
+
+
 
