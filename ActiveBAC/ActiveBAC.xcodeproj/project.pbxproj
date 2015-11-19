@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A33024F91BFD1DB400EDFCE8 /* drink2.png in Resources */ = {isa = PBXBuildFile; fileRef = A33024F81BFD1DB400EDFCE8 /* drink2.png */; settings = {ASSET_TAGS = (); }; };
 		A33024FB1BFD22FE00EDFCE8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33024FA1BFD22FE00EDFCE8 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A371C2771BFE463F002EA8A5 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A371C2761BFE463F002EA8A5 /* UserData.plist */; settings = {ASSET_TAGS = (); }; };
+		A371C2791BFE5304002EA8A5 /* SettingsIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371C2781BFE5304002EA8A5 /* SettingsIO.swift */; settings = {ASSET_TAGS = (); }; };
 		F12D6CB01BCF65AF00F9D664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */; };
 		F12D6CB21BCF65AF00F9D664 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CB11BCF65AF00F9D664 /* ViewController.swift */; };
 		F12D6CB51BCF65AF00F9D664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CB31BCF65AF00F9D664 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		A33024F81BFD1DB400EDFCE8 /* drink2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drink2.png; sourceTree = "<group>"; };
 		A33024FA1BFD22FE00EDFCE8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A371C2761BFE463F002EA8A5 /* UserData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
+		A371C2781BFE5304002EA8A5 /* SettingsIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsIO.swift; path = ../SettingsIO.swift; sourceTree = "<group>"; };
 		F12D6CAA1BCF65AF00F9D664 /* ActiveBAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActiveBAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12D6CAE1BCF65AF00F9D664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,13 +89,14 @@
 			children = (
 				F12D6CD11BCF699E00F9D664 /* media */,
 				F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */,
+				A371C2781BFE5304002EA8A5 /* SettingsIO.swift */,
 				F12D6CB11BCF65AF00F9D664 /* ViewController.swift */,
 				A33024FA1BFD22FE00EDFCE8 /* SettingsViewController.swift */,
+				F12D6CB81BCF65B000F9D664 /* LaunchScreen.xib */,
 				F12D6CB31BCF65AF00F9D664 /* Main.storyboard */,
 				F12D6CB61BCF65B000F9D664 /* Images.xcassets */,
-				F12D6CB81BCF65B000F9D664 /* LaunchScreen.xib */,
+				A371C2761BFE463F002EA8A5 /* UserData.plist */,
 				F12D6CAD1BCF65AF00F9D664 /* Supporting Files */,
-				E74D54A31BFD224F00A51929 /* UserData.plist */,
 			);
 			path = ActiveBAC;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				F12D6CBA1BCF65B000F9D664 /* LaunchScreen.xib in Resources */,
 				A33024F91BFD1DB400EDFCE8 /* drink2.png in Resources */,
 				F12D6CB71BCF65B000F9D664 /* Images.xcassets in Resources */,
+				A371C2771BFE463F002EA8A5 /* UserData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A371C2791BFE5304002EA8A5 /* SettingsIO.swift in Sources */,
 				F12D6CB21BCF65AF00F9D664 /* ViewController.swift in Sources */,
 				F12D6CB01BCF65AF00F9D664 /* AppDelegate.swift in Sources */,
 				A33024FB1BFD22FE00EDFCE8 /* SettingsViewController.swift in Sources */,

@@ -36,12 +36,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //getSettings()
+        getSettings()
         //print(usersGender)
-        
-        //writeSettings(300.0, gender: "unkown")
-        //print(usersGender)
-        
     }
     
     func calculateBAC(){
@@ -52,6 +48,18 @@ class ViewController: UIViewController {
         var thirdPart: Double! = (15/1000 * counter / 3600)
         var BAC: Double! = firstPart / secondPart - thirdPart
         BACLevel.text = String(format: "%.2f", BAC)
+        
+        if BAC == 0 {
+            WarningMessage.text = "You are not impaired, have a good night!"
+            WarningMessage.textColor = UIColor.greenColor()
+        } else if BAC < 0.08 {
+            WarningMessage.text = "You may be impaired, please avoid driving!"
+            WarningMessage.textColor = UIColor.yellowColor()
+        } else if BAC < 0.1 {
+            WarningMessage.text = "Do not drive!"
+            WarningMessage.textColor = UIColor.orangeColor()
+        }
+        
     }
     
     func clockTimer() {
@@ -64,32 +72,20 @@ class ViewController: UIViewController {
     }
     
     func getSettings() {
+      
         let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
         let dict = NSDictionary(contentsOfFile: path!)
         
-        let userProfile = dict!.objectForKey("UserProfile") as! NSMutableDictionary!
+        let userProfile = dict!.objectForKey("UserProfile") as! NSDictionary
         
-        self.usersWeight = userProfile["weight"]!.doubleValue
-        self.usersGender = userProfile["gender"]! as! String
+        
+        self.usersWeight = (userProfile.objectForKey("weight")?.doubleValue)!
+        self.usersGender = (userProfile.objectForKey("gender") as! String?)!
+        print(self.usersWeight)
+        print(self.usersGender)
     }
     
-    func writeSettings(weight: Double?, gender: NSString?) {
-        
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
-        let documentsDirectory = paths.objectAtIndex(0) as! NSString
-        let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
-        let dict: NSMutableDictionary = ["XInitializerItem": "DoNotEverChangeMe"]
-        //saving values
-        dict.setObject(weight!, forKey: "weight")
-        dict.setObject(gender!, forKey: "gender")
-        //...
-        //writing to UserData.plist
-        dict.writeToFile(path!, atomically: false)
-        let resultDictionary = NSMutableDictionary(contentsOfFile: path!)
-        print(resultDictionary!["gender"]?.stringValue)
-        
-        
-    }
+    
     
 
     override func didReceiveMemoryWarning() {

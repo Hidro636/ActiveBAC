@@ -5,7 +5,7 @@
 	<key>UserProfile</key>
 	<dict>
 		<key>weight</key>
-		<string>175</string>
+		<integer>175</integer>
 		<key>gender</key>
 		<string>male</string>
 	</dict>
