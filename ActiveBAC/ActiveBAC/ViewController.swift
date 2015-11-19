@@ -52,14 +52,34 @@ class ViewController: UIViewController {
         if BAC == 0 {
             WarningMessage.text = "You are not impaired, have a good night!"
             WarningMessage.textColor = UIColor.greenColor()
-        } else if BAC < 0.08 {
-            WarningMessage.text = "You may be impaired, please avoid driving!"
+        } else if BAC < 0.03 {
+            WarningMessage.text = "Slight euphoria, mild relaxation."
+            WarningMessage.textColor = UIColor.greenColor()
+        } else if BAC < 0.06 {
+            WarningMessage.text = "Feeling of wellbeing, lower inhibitions."
             WarningMessage.textColor = UIColor.yellowColor()
-        } else if BAC < 0.1 {
-            WarningMessage.text = "Do not drive!"
+        } else if BAC < 0.09 {
+            WarningMessage.text = "Some imparement, reduced judgement."
+            WarningMessage.textColor = UIColor.yellowColor()
+        } else if BAC < 0.12 {
+            WarningMessage.text = "Loss of judgement, significant imparement!"
             WarningMessage.textColor = UIColor.orangeColor()
+        } else if BAC < 0.19 {
+            WarningMessage.text = "Dysphoria, confusion, possible nauseau."
+            WarningMessage.textColor = UIColor.orangeColor()
+        } else if BAC < 0.20 {
+            WarningMessage.text = "May need help standing, possible loss of memory, nauseau."
+            WarningMessage.textColor = UIColor.redColor()
+        } else if BAC < 0.25 {
+            WarningMessage.text = "Severe imparement!"
+            WarningMessage.textColor = UIColor.redColor()
+        } else if BAC < 0.3 {
+            WarningMessage.text = "Loss of conciousness!"
+            WarningMessage.textColor = UIColor.redColor()
+        } else if BAC < 0.4 {
+            WarningMessage.text = "Onset of come, possible death"
+            WarningMessage.textColor = UIColor.redColor()
         }
-        
     }
     
     func clockTimer() {
