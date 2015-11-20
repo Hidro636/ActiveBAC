@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  ActiveBAC
-//
-//  Created by liblabs-mac on 10/14/15.
-//  Copyright (c) 2015 team[0]. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -39,10 +31,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         getSettings()
-        //print(usersGender)
     }
     
     func calculateBAC(){
@@ -140,7 +129,6 @@ class ViewController: UIViewController {
     
     
     func clockTimer() {
-        
         counter1++
         var hours = counter1/3600
         var minutes = counter1/60 % 60
@@ -149,25 +137,17 @@ class ViewController: UIViewController {
     }
     
     func getSettings() {
-      
         let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
         let dict = NSDictionary(contentsOfFile: path!)
-        
         let userProfile = dict!.objectForKey("UserProfile") as! NSDictionary
-        
-        
         self.usersWeight = (userProfile.objectForKey("weight")?.doubleValue)!
         self.usersGender = (userProfile.objectForKey("gender") as! String?)!
         print(self.usersWeight)
         print(self.usersGender)
     }
     
-    
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
