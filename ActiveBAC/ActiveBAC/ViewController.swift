@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     
     func calculateBAC(){
         
-        counter = counter + 360.0
+        counter = counter + 1.0
         
         if usersGender == "male"{
         var firstPart: Double! = (totalDrinks * 3084/1000)
