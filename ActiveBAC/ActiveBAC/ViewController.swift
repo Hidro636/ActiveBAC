@@ -5,19 +5,24 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
 
     var time: NSTimer!
     var time1: NSTimer!
+    var textPromptTimer: NSTimer!
+    
     @IBOutlet var LapsedTime: UILabel!
     @IBOutlet var BACLevel: UILabel!
     @IBOutlet var WarningMessage: UILabel!
     @IBOutlet var allDrinks: UILabel!
+    var userBAC: Double!
     var totalDrinks: Double! = 0
     var counter: Double! = 0
     var counter1 = 0
+    var textPromptCounter = 0
     var usersWeight: Double!
     var gender: Double!
     var usersGender: String!
     var totalDrinks1 = 0
     var ioController = IOController()
     var emergencyNumber: String!
+    var sendMessage = true
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
         totalDrinks = totalDrinks + 1.0
@@ -32,6 +37,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         let settings = ioController.getSettings()
         self.usersWeight = settings.weight
@@ -57,6 +64,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         let secondPart: Double! = (usersWeight * const!)
         let thirdPart: Double! = (15/1000 * counter / 3600)
         let BAC: Double! = firstPart / secondPart - thirdPart
+        
+        userBAC = BAC
         BACLevel.text = String(format: "%.2f", BAC)
         
         if BAC <= 0.0005 {
@@ -90,6 +99,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             WarningMessage.text = "Onset of coma, possible death"
             WarningMessage.textColor = UIColor.redColor()
         }
+        
+        
         if BAC <= 0.0005{
             time.invalidate()
             time1.invalidate()
@@ -98,8 +109,32 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             counter1 = 0
         }
         if BAC >= 0.2 {
-            sendForHelp()
+            if sendMessage == true {
+                sendForHelp()
+                sendMessage = false
+                
+                textPromptTimer = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "checkEllapsedTime", userInfo: nil, repeats: true)
+            }
         }
+        
+        
+    }
+    
+    func checkEllapsedTime() {
+        
+        textPromptCounter++
+        
+        
+        if userBAC < 0.19 {
+            textPromptTimer.invalidate()
+            textPromptCounter = 0
+        }
+        
+        if textPromptCounter / 60 % 60 == 30 {
+            sendMessage = true
+        }
+        
+        
     }
     
     func clockTimer() {
@@ -120,6 +155,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             controller.recipients = [emergencyNumber]
             controller.messageComposeDelegate = self
             self.presentViewController(controller, animated: true, completion: nil)
+            
         }
         
     }
