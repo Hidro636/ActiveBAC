@@ -7,6 +7,7 @@ class ViewController: UIViewController {
     @IBOutlet var LapsedTime: UILabel!
     @IBOutlet var BACLevel: UILabel!
     @IBOutlet var WarningMessage: UILabel!
+    @IBOutlet var allDrinks: UILabel!
     var totalDrinks: Double! = 0
     var counter: Double! = 0
     var counter1 = 0
@@ -15,7 +16,7 @@ class ViewController: UIViewController {
     var usersGender: String!
     var totalDrinks1 = 0
     
-    @IBOutlet var allDrinks: UILabel!
+    
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
         totalDrinks = totalDrinks + 1.0
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
         var BAC: Double! = firstPart / secondPart - thirdPart
         BACLevel.text = String(format: "%.2f", BAC)
         
-        if BAC == 0 {
+        if BAC <= 0.0005 {
             WarningMessage.text = "You are not impaired, have a good night!"
             WarningMessage.textColor = UIColor.greenColor()
         } else if BAC < 0.03 {
@@ -75,14 +76,20 @@ class ViewController: UIViewController {
             WarningMessage.text = "Onset of coma, possible death"
             WarningMessage.textColor = UIColor.redColor()
         }
-    } else if usersGender == "female"{
+            if BAC <= 0.0005{
+                time.invalidate()
+                time1.invalidate()
+            }
+    }else if usersGender == "female"{
+            
+            
         var firstPart: Double! = (totalDrinks * 3084/1000)
         var secondPart: Double! = (usersWeight * 0.66)
         var thirdPart: Double! = (15/1000 * counter / 3600)
         var BAC: Double! = firstPart / secondPart - thirdPart
         BACLevel.text = String(format: "%.2f", BAC)
         
-        if BAC == 0 {
+        if BAC <= 0.0005 {
             WarningMessage.text = "You are not impaired, have a good night!"
             WarningMessage.textColor = UIColor.greenColor()
         } else if BAC < 0.03 {
@@ -113,6 +120,10 @@ class ViewController: UIViewController {
             WarningMessage.text = "Onset of come, possible death"
             WarningMessage.textColor = UIColor.redColor()
         }
+            if BAC <= 0.0005{
+                time.invalidate()
+                time1.invalidate()
+            }
         }
     }
     
