@@ -16,7 +16,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     var gender: Double!
     var usersGender: String!
     var totalDrinks1 = 0
-    var phoneNumber: UITextField!
+    var phoneNumber: String!
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
         totalDrinks = totalDrinks + 1.0
@@ -112,14 +112,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         if (MFMessageComposeViewController.canSendText()){
             let controller = MFMessageComposeViewController()
             controller.body = "I drank too much and need some help."
-            controller.recipients = [phoneNumber.text!]
+            controller.recipients = [phoneNumber]
             controller.messageComposeDelegate = self
             self.presentViewController(controller, animated: true, completion: nil)
         }
         
     }
     
-    func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult){
+    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult){
     self.dismissViewControllerAnimated(true, completion: nil)
     }
     override func viewWillDisappear(animated: Bool) {
