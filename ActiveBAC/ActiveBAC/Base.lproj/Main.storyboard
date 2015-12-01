@@ -237,7 +237,7 @@
                                 <animations/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <rect key="frame" x="225" y="103" width="122" height="30"/>

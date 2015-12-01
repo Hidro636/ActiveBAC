@@ -22,8 +22,7 @@ class SettingsViewController: UIViewController {
     @IBAction func saveButtonClick(sender: UIButton) {
         userWeight = (weight.text as NSString!).doubleValue
         
-        print(userWeight)
-        print(userGender)
+        
         
         writeSettings(userWeight, gender: userGender)
     }
