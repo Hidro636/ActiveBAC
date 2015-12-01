@@ -16,6 +16,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     var gender: Double!
     var usersGender: String!
     var totalDrinks1 = 0
+    var ioController = IOController()
     var emergencyNumber: String!
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
@@ -96,6 +97,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             counter = 0.0
             counter1 = 0
         }
+        if BAC >= 0.2 {
+            sendForHelp()
+        }
     }
     
     func clockTimer() {
@@ -106,6 +110,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         LapsedTime.text = String(format: "%.02d:%.02d:%.02d", hours, minutes, seconds)
     }
 
+    
+   
     
     func sendForHelp(){
         if (MFMessageComposeViewController.canSendText()){
