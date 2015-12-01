@@ -85,16 +85,6 @@
                                     <action selector="addDrinkButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wyj-GX-ngV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Drinks: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEU-ut-f3M">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="37" y="520" width="103" height="21"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1t5-WN-Pop">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
@@ -102,7 +92,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="198" y="520" width="68" height="21"/>
+                                    <rect key="frame" x="235" y="520" width="68" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are not impaired, have a good night!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mba-WB-ocr">
@@ -113,6 +103,16 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="7" y="211" width="360" height="41"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Drinks: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEU-ut-f3M">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="110" y="520" width="103" height="21"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -128,9 +128,9 @@
                                 <exclude reference="bo8-Qx-Alv"/>
                                 <exclude reference="GZc-2b-nPi"/>
                                 <exclude reference="4dL-fT-NHj"/>
-                                <exclude reference="gEU-ut-f3M"/>
                                 <exclude reference="1t5-WN-Pop"/>
                                 <exclude reference="mba-WB-ocr"/>
+                                <exclude reference="gEU-ut-f3M"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -142,9 +142,9 @@
                                 <include reference="bo8-Qx-Alv"/>
                                 <include reference="GZc-2b-nPi"/>
                                 <include reference="4dL-fT-NHj"/>
-                                <include reference="gEU-ut-f3M"/>
                                 <include reference="1t5-WN-Pop"/>
                                 <include reference="mba-WB-ocr"/>
+                                <include reference="gEU-ut-f3M"/>
                             </mask>
                         </variation>
                     </view>
