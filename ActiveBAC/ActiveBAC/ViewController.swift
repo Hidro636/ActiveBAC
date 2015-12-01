@@ -1,6 +1,7 @@
 import UIKit
+import MessageUI
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
 
     var time: NSTimer!
     var time1: NSTimer!
@@ -15,6 +16,7 @@ class ViewController: UIViewController {
     var gender: Double!
     var usersGender: String!
     var totalDrinks1 = 0
+    var phoneNumber: UITextField!
     
     
     
@@ -86,6 +88,9 @@ class ViewController: UIViewController {
         if BAC <= 0.0005{
             time.invalidate()
             time1.invalidate()
+            totalDrinks = 0.0
+            counter = 0.0
+            counter1 = 0
         }
         
     }
@@ -106,6 +111,24 @@ class ViewController: UIViewController {
         let userProfile = dict!.objectForKey("UserProfile") as! NSDictionary
         self.usersWeight = (userProfile.objectForKey("weight")?.doubleValue)!
         self.usersGender = (userProfile.objectForKey("gender") as! String?)!
+    }
+    
+    func sendForHelp(){
+        if (MFMessageComposeViewController.canSendText()){
+            let controller = MFMessageComposeViewController()
+            controller.body = "I drank too much and need some help."
+            controller.recipients = [phoneNumber.text!]
+            controller.messageComposeDelegate = self
+            self.presentViewController(controller, animated: true, completion: nil)
+        }
+        
+    }
+    
+    func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult){
+    self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
     }
     
     @IBAction func unwindFromSettings(segue:UIStoryboardSegue){

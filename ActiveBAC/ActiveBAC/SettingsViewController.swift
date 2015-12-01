@@ -3,6 +3,7 @@ import UIKit
 class SettingsViewController: UIViewController {
     var userGender: String?
     var userWeight: Double?
+    var phoneNumber: String?
     
     @IBOutlet var gender: UISwitch!
     @IBAction func genderSwitch(sender: AnyObject) {
@@ -24,7 +25,7 @@ class SettingsViewController: UIViewController {
         
         
         
-        writeSettings(userWeight, gender: userGender)
+        writeSettings(userWeight, gender: userGender, phoneNumber)
     }
     
     
@@ -43,12 +44,13 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    func writeSettings(weight: Double?, gender: NSString?) {
+    func writeSettings(weight: Double?, gender: NSString?, number: NSString?) {
         let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
         let dict = NSMutableDictionary(contentsOfFile: path!)
         //saving values
         dict!.objectForKey("UserProfile")!.setObject(weight!, forKey: "weight")
         dict!.objectForKey("UserProfile")!.setObject(gender!, forKey: "gender")
+        dict!.objectForKey("UserProfile")!.setObject(number!, forKey: "number")
         //writing to GameData.plist
         dict!.writeToFile(path!, atomically: false)
         //let resultDictionary = NSMutableDictionary(contentsOfFile: path!)
@@ -60,6 +62,7 @@ class SettingsViewController: UIViewController {
         let userProfile = dict!.objectForKey("UserProfile") as! NSDictionary
         self.userWeight = (userProfile.objectForKey("weight")?.doubleValue)!
         self.userGender = (userProfile.objectForKey("gender") as! String?)!
+        self.phoneNumber = (userProfile.objectForKey("number") as! String?)!
     }
     
     override func didReceiveMemoryWarning() {
