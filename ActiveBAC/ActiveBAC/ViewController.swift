@@ -35,15 +35,15 @@ class ViewController: UIViewController {
     }
     
     func calculateBAC(){
-        
+        getSettings()
         counter = counter + 1.0
         
         var const: Double?
         
         if usersGender! == "male" {
-            const = 0.66
-        } else {
             const = 0.73
+        } else if usersGender! == "female"{
+            const = 0.66
         }
         
         let firstPart: Double! = (totalDrinks * 3084/1000)
@@ -106,11 +106,9 @@ class ViewController: UIViewController {
         let userProfile = dict!.objectForKey("UserProfile") as! NSDictionary
         self.usersWeight = (userProfile.objectForKey("weight")?.doubleValue)!
         self.usersGender = (userProfile.objectForKey("gender") as! String?)!
-        
-        print(path)
-        
-        print(self.usersWeight)
-        print(self.usersGender)
+    }
+    
+    @IBAction func unwindFromSettings(segue:UIStoryboardSegue){
         
     }
     

@@ -255,7 +255,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="saveButtonClick:" destination="1yB-7y-cc6" eventType="touchUpInside" id="Pco-cm-WEX"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="HzJ-Li-KHQ"/>
+                                    <segue destination="vhx-Cs-ZZU" kind="unwind" unwindAction="unwindFromSettings:" id="iwF-Zz-LOL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -292,6 +292,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jes-1B-tbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vhx-Cs-ZZU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1363.5" y="700"/>
         </scene>
