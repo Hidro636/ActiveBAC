@@ -16,8 +16,6 @@ class ViewController: UIViewController {
     var usersGender: String!
     var totalDrinks1 = 0
     
-    
-    
     @IBAction func addDrinkButtonClick(sender: UIButton) {
         totalDrinks = totalDrinks + 1.0
         totalDrinks1 = totalDrinks1 + 1
@@ -71,7 +69,7 @@ class ViewController: UIViewController {
             WarningMessage.text = "Dysphoria, confusion, possible nauseau."
             WarningMessage.textColor = UIColor.orangeColor()
         } else if BAC < 0.20 {
-            WarningMessage.text = "May need help standing, possible loss of memory, nauseau."
+            WarningMessage.text = "Loss of memory, nauseau."
             WarningMessage.textColor = UIColor.redColor()
         } else if BAC < 0.25 {
             WarningMessage.text = "Severe imparement!"
@@ -89,8 +87,6 @@ class ViewController: UIViewController {
         }
         
     }
-    
-    
     
     func clockTimer() {
         counter1++
@@ -116,7 +112,3 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 }
-
-
-
-

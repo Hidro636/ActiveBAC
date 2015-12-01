@@ -85,16 +85,6 @@
                                     <action selector="addDrinkButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wyj-GX-ngV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are not impaired, have a good night!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mba-WB-ocr">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="211" width="360" height="41"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Drinks: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEU-ut-f3M">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
@@ -115,6 +105,16 @@
                                     <rect key="frame" x="198" y="520" width="68" height="21"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are not impaired, have a good night!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mba-WB-ocr">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="7" y="211" width="360" height="41"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,9 +128,9 @@
                                 <exclude reference="bo8-Qx-Alv"/>
                                 <exclude reference="GZc-2b-nPi"/>
                                 <exclude reference="4dL-fT-NHj"/>
-                                <exclude reference="mba-WB-ocr"/>
                                 <exclude reference="gEU-ut-f3M"/>
                                 <exclude reference="1t5-WN-Pop"/>
+                                <exclude reference="mba-WB-ocr"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -142,9 +142,9 @@
                                 <include reference="bo8-Qx-Alv"/>
                                 <include reference="GZc-2b-nPi"/>
                                 <include reference="4dL-fT-NHj"/>
-                                <include reference="mba-WB-ocr"/>
                                 <include reference="gEU-ut-f3M"/>
                                 <include reference="1t5-WN-Pop"/>
+                                <include reference="mba-WB-ocr"/>
                             </mask>
                         </variation>
                     </view>
