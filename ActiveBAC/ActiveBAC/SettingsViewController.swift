@@ -5,9 +5,10 @@ class SettingsViewController: UIViewController {
     var userWeight: Double?
     var phoneNumber: String?
     
+    @IBOutlet weak var emergencyNumberTextField: UITextField!
     @IBOutlet var gender: UISwitch!
     @IBAction func genderSwitch(sender: AnyObject) {
-        if gender.on{
+        if gender.on {
             print("left to right")
             userGender = "female"
             
@@ -22,6 +23,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func saveButtonClick(sender: UIButton) {
         userWeight = (weight.text as NSString!).doubleValue
+        emergencyNumber = emergencyNumberTextField.text
         
         
         
@@ -35,9 +37,13 @@ class SettingsViewController: UIViewController {
         userGender = "female"
         userWeight = 0
         
-        getSettings()
+        let settings = ioController.getSettings()
+        self.userWeight = settings.weight
+        self.userGender = settings.gender
+        self.emergencyNumber = settings.emergencyNumber
         
         weight.text = String(userWeight!)
+        emergencyNumberTextField.text = emergencyNumber
         
         if userGender! == "male" {
             gender.on = false

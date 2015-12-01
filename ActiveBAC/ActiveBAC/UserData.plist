@@ -4,6 +4,8 @@
 <dict>
 	<key>UserProfile</key>
 	<dict>
+		<key>emergencyNumber</key>
+		<string>5558675309</string>
 		<key>weight</key>
 		<integer>175</integer>
 		<key>gender</key>
