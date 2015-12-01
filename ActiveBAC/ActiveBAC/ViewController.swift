@@ -72,7 +72,7 @@ class ViewController: UIViewController {
             WarningMessage.text = "Loss of conciousness!"
             WarningMessage.textColor = UIColor.redColor()
         } else if BAC < 0.4 {
-            WarningMessage.text = "Onset of come, possible death"
+            WarningMessage.text = "Onset of coma, possible death"
             WarningMessage.textColor = UIColor.redColor()
         }
     } else if usersGender == "female"{
