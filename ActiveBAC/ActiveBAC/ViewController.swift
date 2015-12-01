@@ -85,7 +85,6 @@ class ViewController: UIViewController {
             time.invalidate()
             time1.invalidate()
         }
-        
     }
     
     func clockTimer() {
