@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -257,7 +257,7 @@
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="225" y="280" width="118" height="30"/>
                                 </variation>
@@ -322,6 +322,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="emergencyNumberTextField" destination="4Lf-Xc-QIw" id="Rwz-IK-9DW"/>
                         <outlet property="gender" destination="rVh-EO-oug" id="Ict-4E-7iC"/>
                         <outlet property="weight" destination="Gvu-40-DxM" id="9aV-8v-btx"/>
                     </connections>

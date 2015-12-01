@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var gender: Double!
     var usersGender: String!
     var totalDrinks1 = 0
+    var ioController = IOController()
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
         totalDrinks = totalDrinks + 1.0
@@ -29,11 +30,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getSettings()
+        
+        let settings = ioController.getSettings()
+        self.usersWeight = settings.weight
+        self.usersGender = settings.gender
     }
     
     func calculateBAC(){
-        getSettings()
+        let settings = ioController.getSettings()
+        self.usersWeight = settings.weight
+        self.usersGender = settings.gender
+        
         counter = counter + 1.0
         
         var const: Double?
@@ -94,14 +101,7 @@ class ViewController: UIViewController {
         let seconds = counter1 % 60
         LapsedTime.text = String(format: "%.02d:%.02d:%.02d", hours, minutes, seconds)
     }
-    
-    func getSettings() {
-        let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
-        let dict = NSDictionary(contentsOfFile: path!)
-        let userProfile = dict!.objectForKey("UserProfile") as! NSDictionary
-        self.usersWeight = (userProfile.objectForKey("weight")?.doubleValue)!
-        self.usersGender = (userProfile.objectForKey("gender") as! String?)!
-    }
+
     
     @IBAction func unwindFromSettings(segue:UIStoryboardSegue){
         
