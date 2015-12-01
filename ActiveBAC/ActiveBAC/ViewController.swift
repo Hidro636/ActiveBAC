@@ -18,8 +18,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     var totalDrinks1 = 0
     var phoneNumber: UITextField!
     
-    
-    
     @IBAction func addDrinkButtonClick(sender: UIButton) {
         totalDrinks = totalDrinks + 1.0
         totalDrinks1 = totalDrinks1 + 1
@@ -73,7 +71,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             WarningMessage.text = "Dysphoria, confusion, possible nauseau."
             WarningMessage.textColor = UIColor.orangeColor()
         } else if BAC < 0.20 {
-            WarningMessage.text = "May need help standing, possible loss of memory, nauseau."
+            WarningMessage.text = "Loss of memory, nauseau."
             WarningMessage.textColor = UIColor.redColor()
         } else if BAC < 0.25 {
             WarningMessage.text = "Severe imparement!"
@@ -92,10 +90,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             counter = 0.0
             counter1 = 0
         }
-        
     }
-    
-    
     
     func clockTimer() {
         counter1++
@@ -139,7 +134,3 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         super.didReceiveMemoryWarning()
     }
 }
-
-
-
-

@@ -85,16 +85,6 @@
                                     <action selector="addDrinkButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wyj-GX-ngV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are not impaired, have a good night!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mba-WB-ocr">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="211" width="360" height="41"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Drinks: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEU-ut-f3M">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
@@ -115,6 +105,16 @@
                                     <rect key="frame" x="198" y="520" width="68" height="21"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are not impaired, have a good night!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mba-WB-ocr">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="7" y="211" width="360" height="41"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,9 +128,9 @@
                                 <exclude reference="bo8-Qx-Alv"/>
                                 <exclude reference="GZc-2b-nPi"/>
                                 <exclude reference="4dL-fT-NHj"/>
-                                <exclude reference="mba-WB-ocr"/>
                                 <exclude reference="gEU-ut-f3M"/>
                                 <exclude reference="1t5-WN-Pop"/>
+                                <exclude reference="mba-WB-ocr"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -142,9 +142,9 @@
                                 <include reference="bo8-Qx-Alv"/>
                                 <include reference="GZc-2b-nPi"/>
                                 <include reference="4dL-fT-NHj"/>
-                                <include reference="mba-WB-ocr"/>
                                 <include reference="gEU-ut-f3M"/>
                                 <include reference="1t5-WN-Pop"/>
+                                <include reference="mba-WB-ocr"/>
                             </mask>
                         </variation>
                     </view>
@@ -240,9 +240,38 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <rect key="frame" x="225" y="103" width="122" height="30"/>
+                                    <rect key="frame" x="225" y="103" width="118" height="30"/>
                                 </variation>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Emergency " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDa-yq-oKM">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="45" y="269" width="172" height="27"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="666-555-4444" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Lf-Xc-QIw">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="225" y="280" width="118" height="30"/>
+                                </variation>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAM-5O-gpO">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="77" y="298" width="78" height="21"/>
+                                </variation>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5J0-sY-tAO">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
@@ -251,7 +280,7 @@
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="114" y="278" width="159" height="29"/>
+                                    <rect key="frame" x="121" y="379" width="159" height="29"/>
                                 </variation>
                                 <connections>
                                     <action selector="saveButtonClick:" destination="1yB-7y-cc6" eventType="touchUpInside" id="Pco-cm-WEX"/>
@@ -270,6 +299,9 @@
                                 <exclude reference="Zux-H9-vHh"/>
                                 <exclude reference="qUA-cZ-U48"/>
                                 <exclude reference="Gvu-40-DxM"/>
+                                <exclude reference="lDa-yq-oKM"/>
+                                <exclude reference="4Lf-Xc-QIw"/>
+                                <exclude reference="vAM-5O-gpO"/>
                                 <exclude reference="5J0-sY-tAO"/>
                             </mask>
                         </variation>
@@ -282,6 +314,9 @@
                                 <include reference="Zux-H9-vHh"/>
                                 <include reference="qUA-cZ-U48"/>
                                 <include reference="Gvu-40-DxM"/>
+                                <include reference="lDa-yq-oKM"/>
+                                <include reference="4Lf-Xc-QIw"/>
+                                <include reference="vAM-5O-gpO"/>
                                 <include reference="5J0-sY-tAO"/>
                             </mask>
                         </variation>
