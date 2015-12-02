@@ -15,7 +15,6 @@
 		F12D6CB01BCF65AF00F9D664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */; };
 		F12D6CB21BCF65AF00F9D664 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CB11BCF65AF00F9D664 /* ViewController.swift */; };
 		F12D6CB51BCF65AF00F9D664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CB31BCF65AF00F9D664 /* Main.storyboard */; };
-		F12D6CB71BCF65B000F9D664 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CB61BCF65B000F9D664 /* AppIcon.appiconset */; };
 		F12D6CBA1BCF65B000F9D664 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CB81BCF65B000F9D664 /* LaunchScreen.xib */; };
 		F12D6CC61BCF65B000F9D664 /* ActiveBACTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CC51BCF65B000F9D664 /* ActiveBACTests.swift */; };
 		F12D6CDD1BCF705700F9D664 /* settingsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CDC1BCF705700F9D664 /* settingsButton.png */; };
@@ -42,7 +41,6 @@
 		F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F12D6CB11BCF65AF00F9D664 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F12D6CB41BCF65AF00F9D664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F12D6CB61BCF65B000F9D664 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppIcon.appiconset; path = Images.xcassets/AppIcon.appiconset/drink2/ios/AppIcon.appiconset; sourceTree = "<group>"; };
 		F12D6CB91BCF65B000F9D664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F12D6CBF1BCF65B000F9D664 /* ActiveBACTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActiveBACTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12D6CC41BCF65B000F9D664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 				A33024FA1BFD22FE00EDFCE8 /* SettingsViewController.swift */,
 				F12D6CB81BCF65B000F9D664 /* LaunchScreen.xib */,
 				F12D6CB31BCF65AF00F9D664 /* Main.storyboard */,
-				F12D6CB61BCF65B000F9D664 /* AppIcon.appiconset */,
 				A371C2761BFE463F002EA8A5 /* UserData.plist */,
 				F12D6CAD1BCF65AF00F9D664 /* Supporting Files */,
 				E790AF4C1C0E3BE00048BC8C /* IOInteract.swift */,
@@ -225,7 +222,6 @@
 				F12D6CDD1BCF705700F9D664 /* settingsButton.png in Resources */,
 				F12D6CBA1BCF65B000F9D664 /* LaunchScreen.xib in Resources */,
 				A33024F91BFD1DB400EDFCE8 /* drink2.png in Resources */,
-				F12D6CB71BCF65B000F9D664 /* AppIcon.appiconset in Resources */,
 				A371C2771BFE463F002EA8A5 /* UserData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
