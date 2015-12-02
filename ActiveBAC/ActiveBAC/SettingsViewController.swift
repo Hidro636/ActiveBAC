@@ -26,9 +26,7 @@ class SettingsViewController: UIViewController {
         userWeight = (weight.text as NSString!).doubleValue
         emergencyNumber = emergencyNumberTextField.text
         
-        
         ioController.writeSettings(userWeight, gender: userGender, emergencyNumber: emergencyNumber)
-    
     
     func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +48,7 @@ class SettingsViewController: UIViewController {
     }
     }
     
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
 }

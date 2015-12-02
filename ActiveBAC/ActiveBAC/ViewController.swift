@@ -37,9 +37,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         let settings = ioController.getSettings()
         self.usersWeight = settings.weight
         self.usersGender = settings.gender
@@ -100,7 +97,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             WarningMessage.textColor = UIColor.redColor()
         }
         
-        
         if BAC <= 0.0005{
             time.invalidate()
             time1.invalidate()
@@ -112,18 +108,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             if sendMessage == true {
                 sendForHelp()
                 sendMessage = false
-                
                 textPromptTimer = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "checkEllapsedTime", userInfo: nil, repeats: true)
             }
         }
-        
-        
     }
     
     func checkEllapsedTime() {
         
         textPromptCounter++
-        
         
         if userBAC < 0.19 {
             textPromptTimer.invalidate()
@@ -133,8 +125,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         if textPromptCounter / 60 % 60 == 30 {
             sendMessage = true
         }
-        
-        
     }
     
     func clockTimer() {
@@ -144,9 +134,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         let seconds = counter1 % 60
         LapsedTime.text = String(format: "%.02d:%.02d:%.02d", hours, minutes, seconds)
     }
-
-    
-   
     
     func sendForHelp(){
         if (MFMessageComposeViewController.canSendText()){
@@ -155,14 +142,13 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
             controller.recipients = [emergencyNumber]
             controller.messageComposeDelegate = self
             self.presentViewController(controller, animated: true, completion: nil)
-            
         }
-        
     }
     
     func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult){
     self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
     }
