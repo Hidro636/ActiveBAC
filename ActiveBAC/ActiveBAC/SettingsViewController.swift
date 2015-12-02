@@ -26,11 +26,11 @@ class SettingsViewController: UIViewController {
         userWeight = (weight.text as NSString!).doubleValue
         emergencyNumber = emergencyNumberTextField.text
         
+        
         ioController.writeSettings(userWeight, gender: userGender, emergencyNumber: emergencyNumber)
-    }
     
     
-    override func viewDidLoad() {
+    func viewDidLoad() {
         super.viewDidLoad()
         
         userGender = "female"
@@ -47,6 +47,7 @@ class SettingsViewController: UIViewController {
         if userGender! == "male" {
             gender.on = false
         }
+    }
     }
     
     
