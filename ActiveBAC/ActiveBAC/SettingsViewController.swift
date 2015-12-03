@@ -1,50 +1,62 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    var userGender: String?
-    var userWeight: Double?
-    var emergencyNumber: String?
-    var ioController = IOController()
     
+    
+    //Outlets
+    @IBOutlet weak var helpMessageTextBox: UITextView!
     @IBOutlet weak var emergencyNumberTextField: UITextField!
+    @IBOutlet weak var weightTextBox: UITextField!
     @IBOutlet var gender: UISwitch!
-    @IBAction func genderSwitch(sender: AnyObject) {
-        if gender.on {
-            print("left to right")
-            userGender = "female"
-            
-        }
-        else {
-            print("right to left")
-            userGender = "male"
-            
-        }
+    @IBOutlet weak var includeLocationSwitch: UISwitch!
+    @IBOutlet weak var limitLabel: UILabel!
+    @IBOutlet weak var limitStepper: UIStepper!
+    
+    
+    //Actions
+    @IBAction func limitStepperChanged(sender: UIStepper) {
+        limitLabel.text = String(Int(sender.value))
+        
+        
     }
-    @IBOutlet var weight: UITextField!
+    
     
     @IBAction func saveButtonClick(sender: UIButton) {
-        userWeight = (weight.text as NSString!).doubleValue
-        emergencyNumber = emergencyNumberTextField.text
+        let userWeight = (weightTextBox.text as NSString!).doubleValue
+        var userGender: String?
         
-        ioController.writeSettings(userWeight, gender: userGender, emergencyNumber: emergencyNumber)
-
+        if(gender.on) {
+            userGender = "female"
+        } else {
+            userGender = "male"
+        }
+        
+        let emergencyNumber = emergencyNumberTextField.text
+        
+        let helpMessage = helpMessageTextBox.text
+        let includeLocation = includeLocationSwitch.on
+        
+        IOController.writeSettings(userWeight, gender: userGender, emergencyNumber: emergencyNumber, helpMessage: helpMessage, includeLocation: includeLocation, limit: Int(limitLabel.text!))
+        
     }
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        userGender = "female"
-        userWeight = 0
         
-        let settings = ioController.getSettings()
-        self.userWeight = settings.weight
-        self.userGender = settings.gender
-        self.emergencyNumber = settings.emergencyNumber
+        let settings = Settings(createDefault: false)
         
-        weight.text = String(settings.weight)
-        emergencyNumberTextField.text = emergencyNumber
+        weightTextBox.text = String(settings.weight!)
+        emergencyNumberTextField.text = settings.emergencyNumber
+        helpMessageTextBox.text = settings.helpMessage
+        includeLocationSwitch.on  = settings.includeLocation!
+        limitStepper.value = Double(settings.limit!)
+        limitLabel.text = String(settings.limit!)
         
-        if userGender! == "male" {
+        
+        if settings.gender == "male" {
             gender.on = false
+        } else {
+            gender.on = true
         }
     }
     
