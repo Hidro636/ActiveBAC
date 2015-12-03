@@ -12,6 +12,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     @IBOutlet var BACLevel: UILabel!
     @IBOutlet var WarningMessage: UILabel!
     @IBOutlet var allDrinks: UILabel!
+    @IBOutlet var limitProgressView: UIProgressView!
     
     //@IBOutlet var MKMapView!
     
@@ -29,7 +30,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     let locationManager = CLLocationManager()
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
-        if Int(totalDrinks) >= limit {
+        if Int(totalDrinks!) >= limit {
             showAlert("Over Limit", message: "You have exceeded the drink limit you defined in settings, be careful!")
             limitProgressView.progressTintColor = UIColor.redColor()
         }
@@ -57,6 +58,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         let settings = Settings(createDefault: false)
         self.usersWeight = settings.weight
         self.usersGender = settings.gender
+        self.limit = settings.limit
         
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
