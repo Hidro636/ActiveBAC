@@ -13,7 +13,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     @IBOutlet var BACLevel: UILabel!
     @IBOutlet var WarningMessage: UILabel!
     @IBOutlet var allDrinks: UILabel!
-    @IBOutlet weak var limitProgressView: UIProgressView!
+    @IBOutlet var limitProgressView: UIProgressView!
+    
+    //@IBOutlet var MKMapView!
     
     var userBAC: Double!
     var totalDrinks: Double! = 0
@@ -30,7 +32,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
-        if Int(totalDrinks) >= limit {
+        if Int(totalDrinks!) >= limit {
             showAlert("Over Limit", message: "You have exceeded the drink limit you defined in settings, be careful!")
             limitProgressView.progressTintColor = UIColor.redColor()
         }
@@ -133,6 +135,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
         if BAC >= 0.2 {
             if sendMessage == true {
+                locationManager(self.locationManager)
                 sendForHelp()
                 sendMessage = false
                 textPromptTimer = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "checkEllapsedTime", userInfo: nil, repeats: true)
@@ -161,6 +164,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         let seconds = counter1 % 60
         LapsedTime.text = String(format: "%.02d:%.02d:%.02d", hours, minutes, seconds)
     }
+    
+    func locationManager(manager: CLLocationManager /*, didUpdateLocations locations: [CLLocation]*/) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    }
+    
     
     func sendForHelp(){
         if (MFMessageComposeViewController.canSendText()){
