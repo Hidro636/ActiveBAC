@@ -37,7 +37,7 @@
 		A35723D21C0FB9020086386D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A371C2761BFE463F002EA8A5 /* UserData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
 		E790AF4A1C0E3ABB0048BC8C /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		E790AF4C1C0E3BE00048BC8C /* IOInteract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOInteract.swift; sourceTree = "<group>"; };
+		E790AF4C1C0E3BE00048BC8C /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		F12D6CAA1BCF65AF00F9D664 /* ActiveBAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActiveBAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12D6CAE1BCF65AF00F9D664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 				F12D6CB31BCF65AF00F9D664 /* Main.storyboard */,
 				A371C2761BFE463F002EA8A5 /* UserData.plist */,
 				F12D6CAD1BCF65AF00F9D664 /* Supporting Files */,
-				E790AF4C1C0E3BE00048BC8C /* IOInteract.swift */,
+				E790AF4C1C0E3BE00048BC8C /* AppModel.swift */,
 			);
 			path = ActiveBAC;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 			files = (
 				F12D6CB21BCF65AF00F9D664 /* ViewController.swift in Sources */,
 				F12D6CB01BCF65AF00F9D664 /* AppDelegate.swift in Sources */,
-				E790AF4D1C0E3BE00048BC8C /* IOInteract.swift in Sources */,
+				E790AF4D1C0E3BE00048BC8C /* AppModel.swift in Sources */,
 				A33024FB1BFD22FE00EDFCE8 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
