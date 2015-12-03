@@ -18,6 +18,10 @@
 		<integer>175</integer>
 		<key>gender</key>
 		<string>male</string>
+		<key>latitude</key>
+		<string></string>
+		<key>longitude</key>
+		<string></string>
 	</dict>
 </dict>
 </plist>

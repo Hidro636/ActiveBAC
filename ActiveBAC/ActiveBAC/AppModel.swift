@@ -21,6 +21,7 @@ class IOController {
         dict!.objectForKey("UserProfile")!.setObject(includeLocation!, forKey: "includeLocation")
         dict!.objectForKey("UserProfile")!.setObject(limit!, forKey: "limit")
         
+        
         dict!.writeToFile(path!, atomically: false)
         
     }
@@ -55,6 +56,7 @@ class Settings {
     var helpMessage: String?
     var includeLocation: Bool?
     var limit: Int?
+
     
     init(createDefault: Bool) {
         

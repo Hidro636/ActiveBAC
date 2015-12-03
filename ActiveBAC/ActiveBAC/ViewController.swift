@@ -1,7 +1,9 @@
 import UIKit
 import MessageUI
+import CoreLocation
+import Social
 
-class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
+class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate {
 
     var time: NSTimer!
     //var time1: NSTimer!
@@ -24,6 +26,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     var usersGender: String!
     var totalDrinks1 = 0
     var sendMessage = true
+    let locationManager = CLLocationManager()
+    
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
         if Int(totalDrinks) >= limit {
@@ -45,8 +49,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         
         self.limit = Settings(createDefault: false).limit
         limitProgressView.progress = Float(Double(totalDrinks) / Double(self.limit))
-
-        
     }
     
     override func viewDidLoad() {
@@ -58,6 +60,17 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         
         limitProgressView.progress = Float(Double(totalDrinks) / Double(self.limit))
         
+        //Asks for authorization from user
+        self.locationManager.requestAlwaysAuthorization()
+        
+        //used in the Foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
     }
     
     func calculateBAC(){
@@ -181,11 +194,21 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    
+    func findLocation (manager: CLLocationManager,didUpdateLocations locations: [CLLocation]){
+        let userLocation : CLLocationCoordinate2D  = (manager.location?.coordinate)!
+        print("locations = \(userLocation.latitude), \(userLocation.longitude)")
+    }
+    
     @IBAction func unwindFromSettings(segue:UIStoryboardSegue){
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
     }
 }
