@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A33024F91BFD1DB400EDFCE8 /* drink2.png in Resources */ = {isa = PBXBuildFile; fileRef = A33024F81BFD1DB400EDFCE8 /* drink2.png */; settings = {ASSET_TAGS = (); }; };
 		A33024FB1BFD22FE00EDFCE8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33024FA1BFD22FE00EDFCE8 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A35723D31C0FB9020086386D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A35723D21C0FB9020086386D /* CoreLocation.framework */; };
 		A371C2771BFE463F002EA8A5 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A371C2761BFE463F002EA8A5 /* UserData.plist */; settings = {ASSET_TAGS = (); }; };
 		E790AF4B1C0E3ABB0048BC8C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E790AF4A1C0E3ABB0048BC8C /* background.png */; settings = {ASSET_TAGS = (); }; };
 		E790AF4D1C0E3BE00048BC8C /* IOInteract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790AF4C1C0E3BE00048BC8C /* IOInteract.swift */; settings = {ASSET_TAGS = (); }; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		A33024F81BFD1DB400EDFCE8 /* drink2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drink2.png; sourceTree = "<group>"; };
 		A33024FA1BFD22FE00EDFCE8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A35723D21C0FB9020086386D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A371C2761BFE463F002EA8A5 /* UserData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
 		E790AF4A1C0E3ABB0048BC8C /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		E790AF4C1C0E3BE00048BC8C /* IOInteract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOInteract.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A35723D31C0FB9020086386D /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +72,7 @@
 		F12D6CA11BCF65AF00F9D664 = {
 			isa = PBXGroup;
 			children = (
+				A35723D21C0FB9020086386D /* CoreLocation.framework */,
 				F12D6CAC1BCF65AF00F9D664 /* ActiveBAC */,
 				F12D6CC21BCF65B000F9D664 /* ActiveBACTests */,
 				F12D6CAB1BCF65AF00F9D664 /* Products */,
