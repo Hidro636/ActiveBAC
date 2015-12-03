@@ -4,63 +4,74 @@ import MessageUI
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
 
     var time: NSTimer!
-    var time1: NSTimer!
+    //var time1: NSTimer!
     var textPromptTimer: NSTimer!
     
     @IBOutlet var LapsedTime: UILabel!
     @IBOutlet var BACLevel: UILabel!
     @IBOutlet var WarningMessage: UILabel!
     @IBOutlet var allDrinks: UILabel!
+    @IBOutlet weak var limitProgressView: UIProgressView!
+    
     var userBAC: Double!
     var totalDrinks: Double! = 0
     var counter: Double! = 0
     var counter1 = 0
     var textPromptCounter = 0
     var usersWeight: Double!
+    var limit: Int!
     var gender: Double!
     var usersGender: String!
     var totalDrinks1 = 0
-    var ioController = IOController()
-    var emergencyNumber: String!
     var sendMessage = true
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
+        if Int(totalDrinks) >= limit {
+            showAlert("Over Limit", message: "You have exceeded the drink limit you defined in settings, be careful!")
+            limitProgressView.progressTintColor = UIColor.redColor()
+        }
+        
         totalDrinks = totalDrinks + 1.0
         totalDrinks1 = totalDrinks1 + 1
         
+        
+        
+        
         if (totalDrinks == 1){
             time = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "calculateBAC", userInfo: nil, repeats: true)
-            time1 = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "clockTimer", userInfo: nil, repeats: true)
+            //time1 = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "clockTimer", userInfo: nil, repeats: true)
         }
         allDrinks.text = String(format:"%d", totalDrinks1)
+        
+        self.limit = Settings(createDefault: false).limit
+        limitProgressView.progress = Float(Double(totalDrinks) / Double(self.limit))
+
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let settings = ioController.getSettings()
+        let settings = Settings(createDefault: false)
         self.usersWeight = settings.weight
         self.usersGender = settings.gender
+        self.limit = settings.limit
+        
+        limitProgressView.progress = Float(Double(totalDrinks) / Double(self.limit))
+        
     }
     
     func calculateBAC(){
-        let settings = ioController.getSettings()
-        self.usersWeight = settings.weight
-        self.usersGender = settings.gender
+        
+        //Added
+        clockTimer()
+        //-----------
+        
         
         counter = counter + 1.0
         
-        var const: Double?
         
-        if usersGender! == "male" {
-            const = 0.73
-        } else if usersGender! == "female"{
-            const = 0.66
-        }
+        let BAC: Double! = ModelController.calculateBAC(totalDrinks, ellapsedSeconds: counter)
         
-        let firstPart: Double! = (totalDrinks * 3084/1000)
-        let secondPart: Double! = (usersWeight * const!)
-        let thirdPart: Double! = (15/1000 * counter / 3600)
-        let BAC: Double! = firstPart / secondPart - thirdPart
         
         userBAC = BAC
         BACLevel.text = String(format: "%.2f", BAC)
@@ -99,10 +110,13 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         
         if BAC <= 0.0005{
             time.invalidate()
-            time1.invalidate()
+            //time1.invalidate()
             totalDrinks = 0.0
             counter = 0.0
             counter1 = 0
+            
+            limitProgressView.progress = 0
+            limitProgressView.progressTintColor = UIColor.whiteColor()
         }
         if BAC >= 0.2 {
             if sendMessage == true {
@@ -137,9 +151,15 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
     func sendForHelp(){
         if (MFMessageComposeViewController.canSendText()){
+            
+            let settings = Settings(createDefault: false)
+            
             let controller = MFMessageComposeViewController()
-            controller.body = "I drank too much and need some help."
-            controller.recipients = [emergencyNumber]
+            controller.body = settings.helpMessage
+            controller.recipients = [settings.emergencyNumber!]
+            
+            //TODO: Add ability to attach location with text message
+            
             controller.messageComposeDelegate = self
             self.presentViewController(controller, animated: true, completion: nil)
         }
@@ -151,6 +171,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message:
+            message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     @IBAction func unwindFromSettings(segue:UIStoryboardSegue){

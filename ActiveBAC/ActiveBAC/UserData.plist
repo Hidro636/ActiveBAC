@@ -4,6 +4,14 @@
 <dict>
 	<key>UserProfile</key>
 	<dict>
+		<key>limit</key>
+		<integer>3</integer>
+		<key>firstRun</key>
+		<false/>
+		<key>includeLocation</key>
+		<true/>
+		<key>helpMessage</key>
+		<string>I drank too much and I need help</string>
 		<key>emergencyNumber</key>
 		<string>5558675309</string>
 		<key>weight</key>
