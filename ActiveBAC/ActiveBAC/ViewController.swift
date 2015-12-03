@@ -13,7 +13,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     @IBOutlet var WarningMessage: UILabel!
     @IBOutlet var allDrinks: UILabel!
     @IBOutlet var limitProgressView: UIProgressView!
-    
     //@IBOutlet var MKMapView!
     
     var userBAC: Double!
@@ -38,9 +37,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         totalDrinks = totalDrinks + 1.0
         totalDrinks1 = totalDrinks1 + 1
         
-        
-        
-        
         if (totalDrinks == 1){
             time = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "calculateBAC", userInfo: nil, repeats: true)
             //time1 = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "clockTimer", userInfo: nil, repeats: true)
@@ -49,8 +45,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
         self.limit = Settings(createDefault: false).limit
         limitProgressView.progress = Float(Double(totalDrinks) / Double(self.limit))
-
-        
     }
     
     override func viewDidLoad() {
@@ -79,17 +73,13 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     func calculateBAC(){
-        
         //Added
         clockTimer()
         //-----------
         
-        
         counter = counter + 1.0
         
-        
         let BAC: Double! = ModelController.calculateBAC(totalDrinks, ellapsedSeconds: counter)
-        
         
         userBAC = BAC
         BACLevel.text = String(format: "%.2f", BAC)
@@ -147,7 +137,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     func checkEllapsedTime() {
-        
         textPromptCounter++
         
         if userBAC < 0.19 {
@@ -172,7 +161,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
-    
     
     func sendForHelp(){
         if (MFMessageComposeViewController.canSendText()){
@@ -207,7 +195,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     @IBAction func unwindFromSettings(segue:UIStoryboardSegue){
-        
     }
     
     override func didReceiveMemoryWarning() {

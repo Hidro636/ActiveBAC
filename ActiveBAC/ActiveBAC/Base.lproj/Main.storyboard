@@ -203,7 +203,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="8" y="72" width="76" height="21"/>
+                                            <rect key="frame" x="8" y="74" width="76" height="21"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIY-bd-Mok">
@@ -213,7 +213,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="8" y="117" width="81" height="22"/>
+                                            <rect key="frame" x="8" y="118" width="81" height="22"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Limit:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vo1-oV-Pou">
@@ -223,7 +223,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="8" y="162" width="88" height="22"/>
+                                            <rect key="frame" x="8" y="164" width="88" height="22"/>
                                         </variation>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rVh-EO-oug">
@@ -328,19 +328,12 @@
                                             <rect key="frame" x="129" y="340" width="229" height="33"/>
                                         </variation>
                                     </textView>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a79-AI-fNN">
-                                        <rect key="frame" x="-25" y="-15" width="51" height="31"/>
-                                        <animations/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="250" y="392" width="51" height="31"/>
-                                        </variation>
-                                    </switch>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" maximumValue="99" translatesAutoresizingMaskIntoConstraints="NO" id="N2j-vy-hcG">
                                         <rect key="frame" x="-47" y="-14" width="94" height="29"/>
                                         <animations/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="239" y="158" width="94" height="29"/>
+                                            <rect key="frame" x="227" y="162" width="94" height="29"/>
                                         </variation>
                                         <connections>
                                             <action selector="limitStepperChanged:" destination="1yB-7y-cc6" eventType="valueChanged" id="5DW-WY-ofG"/>
@@ -353,9 +346,16 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="204" y="162" width="31" height="22"/>
+                                            <rect key="frame" x="201" y="164" width="31" height="22"/>
                                         </variation>
                                     </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a79-AI-fNN">
+                                        <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                        <animations/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="250" y="392" width="51" height="31"/>
+                                        </variation>
+                                    </switch>
                                 </subviews>
                                 <animations/>
                                 <variation key="default">
@@ -374,9 +374,9 @@
                                         <exclude reference="kuv-tB-gL8"/>
                                         <exclude reference="K5Y-23-oBw"/>
                                         <exclude reference="Z4v-j3-Pvi"/>
-                                        <exclude reference="a79-AI-fNN"/>
                                         <exclude reference="N2j-vy-hcG"/>
                                         <exclude reference="dh5-xR-o15"/>
+                                        <exclude reference="a79-AI-fNN"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -396,9 +396,9 @@
                                         <include reference="kuv-tB-gL8"/>
                                         <include reference="K5Y-23-oBw"/>
                                         <include reference="Z4v-j3-Pvi"/>
-                                        <include reference="a79-AI-fNN"/>
                                         <include reference="N2j-vy-hcG"/>
                                         <include reference="dh5-xR-o15"/>
+                                        <include reference="a79-AI-fNN"/>
                                     </mask>
                                 </variation>
                             </scrollView>
