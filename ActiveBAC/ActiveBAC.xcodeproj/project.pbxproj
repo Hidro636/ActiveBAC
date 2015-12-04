@@ -7,30 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A33024F91BFD1DB400EDFCE8 /* drink2.png in Resources */ = {isa = PBXBuildFile; fileRef = A33024F81BFD1DB400EDFCE8 /* drink2.png */; };
-		A33024FB1BFD22FE00EDFCE8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33024FA1BFD22FE00EDFCE8 /* SettingsViewController.swift */; };
+		A33024F91BFD1DB400EDFCE8 /* drink2.png in Resources */ = {isa = PBXBuildFile; fileRef = A33024F81BFD1DB400EDFCE8 /* drink2.png */; settings = {ASSET_TAGS = (); }; };
+		A33024FB1BFD22FE00EDFCE8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33024FA1BFD22FE00EDFCE8 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A35723D31C0FB9020086386D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A35723D21C0FB9020086386D /* CoreLocation.framework */; };
-		A371C2771BFE463F002EA8A5 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A371C2761BFE463F002EA8A5 /* UserData.plist */; };
-		A38AC39D1C10E679005B462F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A38AC39C1C10E679005B462F /* Images.xcassets */; };
-		E790AF4B1C0E3ABB0048BC8C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E790AF4A1C0E3ABB0048BC8C /* background.png */; };
-		E790AF4D1C0E3BE00048BC8C /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790AF4C1C0E3BE00048BC8C /* AppModel.swift */; };
+		A371C2771BFE463F002EA8A5 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A371C2761BFE463F002EA8A5 /* UserData.plist */; settings = {ASSET_TAGS = (); }; };
+		A38AC39D1C10E679005B462F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A38AC39C1C10E679005B462F /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		E790AF4B1C0E3ABB0048BC8C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E790AF4A1C0E3ABB0048BC8C /* background.png */; settings = {ASSET_TAGS = (); }; };
+		E790AF4D1C0E3BE00048BC8C /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790AF4C1C0E3BE00048BC8C /* AppModel.swift */; settings = {ASSET_TAGS = (); }; };
 		F12D6CB01BCF65AF00F9D664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */; };
 		F12D6CB21BCF65AF00F9D664 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CB11BCF65AF00F9D664 /* ViewController.swift */; };
 		F12D6CB51BCF65AF00F9D664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CB31BCF65AF00F9D664 /* Main.storyboard */; };
 		F12D6CBA1BCF65B000F9D664 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CB81BCF65B000F9D664 /* LaunchScreen.xib */; };
 		F12D6CC61BCF65B000F9D664 /* ActiveBACTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CC51BCF65B000F9D664 /* ActiveBACTests.swift */; };
 		F12D6CDD1BCF705700F9D664 /* settingsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CDC1BCF705700F9D664 /* settingsButton.png */; };
-		F17262371C1147FE0087CA20 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17262351C1147FE0087CA20 /* Interface.storyboard */; };
-		F17262391C1147FE0087CA20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17262381C1147FE0087CA20 /* Assets.xcassets */; };
-		F17262401C1147FE0087CA20 /* ActiveBACWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F172623F1C1147FE0087CA20 /* ActiveBACWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F17262471C1147FE0087CA20 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17262461C1147FE0087CA20 /* ExtensionDelegate.swift */; };
-		F17262491C1147FE0087CA20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17262481C1147FE0087CA20 /* Assets.xcassets */; };
-		F172624D1C1147FE0087CA20 /* ActiveBACWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F17262331C1147FE0087CA20 /* ActiveBACWatch.app */; };
-		F17262561C1148570087CA20 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790AF4C1C0E3BE00048BC8C /* AppModel.swift */; };
-		F17262571C1149C40087CA20 /* drink2.png in Resources */ = {isa = PBXBuildFile; fileRef = A33024F81BFD1DB400EDFCE8 /* drink2.png */; };
-		F17262581C1149CF0087CA20 /* drink2.png in Resources */ = {isa = PBXBuildFile; fileRef = A33024F81BFD1DB400EDFCE8 /* drink2.png */; };
-		F172625A1C114A7D0087CA20 /* WatchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17262591C114A7D0087CA20 /* WatchInterfaceController.swift */; };
-		F172625B1C1151140087CA20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,46 +30,7 @@
 			remoteGlobalIDString = F12D6CA91BCF65AF00F9D664;
 			remoteInfo = ActiveBAC;
 		};
-		F17262411C1147FE0087CA20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F12D6CA21BCF65AF00F9D664 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F172623E1C1147FE0087CA20;
-			remoteInfo = "ActiveBACWatch Extension";
-		};
-		F172624B1C1147FE0087CA20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F12D6CA21BCF65AF00F9D664 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F17262321C1147FE0087CA20;
-			remoteInfo = ActiveBACWatch;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		F17262531C1147FE0087CA20 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				F17262401C1147FE0087CA20 /* ActiveBACWatch Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F17262551C1147FE0087CA20 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				F172624D1C1147FE0087CA20 /* ActiveBACWatch.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A33024F81BFD1DB400EDFCE8 /* drink2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drink2.png; sourceTree = "<group>"; };
@@ -100,17 +50,6 @@
 		F12D6CC41BCF65B000F9D664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12D6CC51BCF65B000F9D664 /* ActiveBACTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveBACTests.swift; sourceTree = "<group>"; };
 		F12D6CDC1BCF705700F9D664 /* settingsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsButton.png; sourceTree = "<group>"; };
-		F17262331C1147FE0087CA20 /* ActiveBACWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActiveBACWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F17262361C1147FE0087CA20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		F17262381C1147FE0087CA20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F172623A1C1147FE0087CA20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F172623F1C1147FE0087CA20 /* ActiveBACWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ActiveBACWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F17262461C1147FE0087CA20 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		F17262481C1147FE0087CA20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F172624A1C1147FE0087CA20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F17262591C114A7D0087CA20 /* WatchInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchInterfaceController.swift; sourceTree = "<group>"; };
-		F172625C1C1152140087CA20 /* ActiveBACWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ActiveBACWatch Extension.entitlements"; sourceTree = "<group>"; };
-		F172625D1C1152890087CA20 /* ActiveBAC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ActiveBAC.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,13 +68,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F172623C1C1147FE0087CA20 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -145,8 +77,6 @@
 				A35723D21C0FB9020086386D /* CoreLocation.framework */,
 				F12D6CAC1BCF65AF00F9D664 /* ActiveBAC */,
 				F12D6CC21BCF65B000F9D664 /* ActiveBACTests */,
-				F17262341C1147FE0087CA20 /* ActiveBACWatch */,
-				F17262431C1147FE0087CA20 /* ActiveBACWatch Extension */,
 				F12D6CAB1BCF65AF00F9D664 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -156,8 +86,6 @@
 			children = (
 				F12D6CAA1BCF65AF00F9D664 /* ActiveBAC.app */,
 				F12D6CBF1BCF65B000F9D664 /* ActiveBACTests.xctest */,
-				F17262331C1147FE0087CA20 /* ActiveBACWatch.app */,
-				F172623F1C1147FE0087CA20 /* ActiveBACWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,7 +93,6 @@
 		F12D6CAC1BCF65AF00F9D664 /* ActiveBAC */ = {
 			isa = PBXGroup;
 			children = (
-				F172625D1C1152890087CA20 /* ActiveBAC.entitlements */,
 				F12D6CD11BCF699E00F9D664 /* media */,
 				F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */,
 				F12D6CB11BCF65AF00F9D664 /* ViewController.swift */,
@@ -215,28 +142,6 @@
 			name = media;
 			sourceTree = "<group>";
 		};
-		F17262341C1147FE0087CA20 /* ActiveBACWatch */ = {
-			isa = PBXGroup;
-			children = (
-				F17262351C1147FE0087CA20 /* Interface.storyboard */,
-				F17262381C1147FE0087CA20 /* Assets.xcassets */,
-				F172623A1C1147FE0087CA20 /* Info.plist */,
-			);
-			path = ActiveBACWatch;
-			sourceTree = "<group>";
-		};
-		F17262431C1147FE0087CA20 /* ActiveBACWatch Extension */ = {
-			isa = PBXGroup;
-			children = (
-				F172625C1C1152140087CA20 /* ActiveBACWatch Extension.entitlements */,
-				F17262461C1147FE0087CA20 /* ExtensionDelegate.swift */,
-				F17262481C1147FE0087CA20 /* Assets.xcassets */,
-				F172624A1C1147FE0087CA20 /* Info.plist */,
-				F17262591C114A7D0087CA20 /* WatchInterfaceController.swift */,
-			);
-			path = "ActiveBACWatch Extension";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,12 +152,10 @@
 				F12D6CA61BCF65AF00F9D664 /* Sources */,
 				F12D6CA71BCF65AF00F9D664 /* Frameworks */,
 				F12D6CA81BCF65AF00F9D664 /* Resources */,
-				F17262551C1147FE0087CA20 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F172624C1C1147FE0087CA20 /* PBXTargetDependency */,
 			);
 			name = ActiveBAC;
 			productName = ActiveBAC;
@@ -277,75 +180,23 @@
 			productReference = F12D6CBF1BCF65B000F9D664 /* ActiveBACTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F17262321C1147FE0087CA20 /* ActiveBACWatch */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F17262541C1147FE0087CA20 /* Build configuration list for PBXNativeTarget "ActiveBACWatch" */;
-			buildPhases = (
-				F17262311C1147FE0087CA20 /* Resources */,
-				F17262531C1147FE0087CA20 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F17262421C1147FE0087CA20 /* PBXTargetDependency */,
-			);
-			name = ActiveBACWatch;
-			productName = ActiveBACWatch;
-			productReference = F17262331C1147FE0087CA20 /* ActiveBACWatch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		F172623E1C1147FE0087CA20 /* ActiveBACWatch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F17262521C1147FE0087CA20 /* Build configuration list for PBXNativeTarget "ActiveBACWatch Extension" */;
-			buildPhases = (
-				F172623B1C1147FE0087CA20 /* Sources */,
-				F172623C1C1147FE0087CA20 /* Frameworks */,
-				F172623D1C1147FE0087CA20 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ActiveBACWatch Extension";
-			productName = "ActiveBACWatch Extension";
-			productReference = F172623F1C1147FE0087CA20 /* ActiveBACWatch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		F12D6CA21BCF65AF00F9D664 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "team[0]";
 				TargetAttributes = {
 					F12D6CA91BCF65AF00F9D664 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 85K6USM47L;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
+						DevelopmentTeam = 7C4J2P8QG5;
 					};
 					F12D6CBE1BCF65B000F9D664 = {
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = F12D6CA91BCF65AF00F9D664;
-					};
-					F17262321C1147FE0087CA20 = {
-						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 7C4J2P8QG5;
-					};
-					F172623E1C1147FE0087CA20 = {
-						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 85K6USM47L;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
 					};
 				};
 			};
@@ -364,8 +215,6 @@
 			targets = (
 				F12D6CA91BCF65AF00F9D664 /* ActiveBAC */,
 				F12D6CBE1BCF65B000F9D664 /* ActiveBACTests */,
-				F17262321C1147FE0087CA20 /* ActiveBACWatch */,
-				F172623E1C1147FE0087CA20 /* ActiveBACWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -392,25 +241,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F17262311C1147FE0087CA20 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F17262581C1149CF0087CA20 /* drink2.png in Resources */,
-				F17262391C1147FE0087CA20 /* Assets.xcassets in Resources */,
-				F17262371C1147FE0087CA20 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F172623D1C1147FE0087CA20 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F17262491C1147FE0087CA20 /* Assets.xcassets in Resources */,
-				F17262571C1149C40087CA20 /* drink2.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -433,17 +263,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F172623B1C1147FE0087CA20 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F172625B1C1151140087CA20 /* AppDelegate.swift in Sources */,
-				F17262471C1147FE0087CA20 /* ExtensionDelegate.swift in Sources */,
-				F172625A1C114A7D0087CA20 /* WatchInterfaceController.swift in Sources */,
-				F17262561C1148570087CA20 /* AppModel.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -451,16 +270,6 @@
 			isa = PBXTargetDependency;
 			target = F12D6CA91BCF65AF00F9D664 /* ActiveBAC */;
 			targetProxy = F12D6CC01BCF65B000F9D664 /* PBXContainerItemProxy */;
-		};
-		F17262421C1147FE0087CA20 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F172623E1C1147FE0087CA20 /* ActiveBACWatch Extension */;
-			targetProxy = F17262411C1147FE0087CA20 /* PBXContainerItemProxy */;
-		};
-		F172624C1C1147FE0087CA20 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F17262321C1147FE0087CA20 /* ActiveBACWatch */;
-			targetProxy = F172624B1C1147FE0087CA20 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -479,14 +288,6 @@
 				F12D6CB91BCF65B000F9D664 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		F17262351C1147FE0087CA20 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F17262361C1147FE0087CA20 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -579,7 +380,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ActiveBAC/ActiveBAC.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ActiveBAC/Info.plist;
@@ -593,7 +393,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ActiveBAC/ActiveBAC.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ActiveBAC/Info.plist;
@@ -637,82 +436,6 @@
 			};
 			name = Release;
 		};
-		F172624E1C1147FE0087CA20 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				ENABLE_TESTABILITY = YES;
-				IBSC_MODULE = ActiveBACWatch_Extension;
-				INFOPLIST_FILE = ActiveBACWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.csc.ActiveBAC.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		F172624F1C1147FE0087CA20 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				IBSC_MODULE = ActiveBACWatch_Extension;
-				INFOPLIST_FILE = ActiveBACWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.csc.ActiveBAC.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		F17262501C1147FE0087CA20 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "ActiveBACWatch Extension/ActiveBACWatch Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_TESTABILITY = YES;
-				INFOPLIST_FILE = "ActiveBACWatch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.csc.ActiveBAC.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		F17262511C1147FE0087CA20 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "ActiveBACWatch Extension/ActiveBACWatch Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				INFOPLIST_FILE = "ActiveBACWatch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.csc.ActiveBAC.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -742,22 +465,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		F17262521C1147FE0087CA20 /* Build configuration list for PBXNativeTarget "ActiveBACWatch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F17262501C1147FE0087CA20 /* Debug */,
-				F17262511C1147FE0087CA20 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		F17262541C1147FE0087CA20 /* Build configuration list for PBXNativeTarget "ActiveBACWatch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F172624E1C1147FE0087CA20 /* Debug */,
-				F172624F1C1147FE0087CA20 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
