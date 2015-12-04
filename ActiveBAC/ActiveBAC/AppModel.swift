@@ -11,7 +11,7 @@ import Foundation
 class IOController {
 
     //Write settings to the plist file
-    static func writeSettings(weight: Double?, gender: NSString?, emergencyNumber: NSString?, helpMessage: NSString?, includeLocation: Bool?, limit: Int?) {
+    static func writeSettings(weight: Double?, gender: NSString?, emergencyNumber: NSString?, helpMessage: NSString?, includeLocation: Bool?, limit: Int?, useLimit: Bool?) {
         let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
         let dict = NSMutableDictionary(contentsOfFile: path!)
         dict!.objectForKey("UserProfile")!.setObject(weight!, forKey: "weight")
@@ -20,6 +20,7 @@ class IOController {
         dict!.objectForKey("UserProfile")!.setObject(helpMessage!, forKey: "helpMessage")
         dict!.objectForKey("UserProfile")!.setObject(includeLocation!, forKey: "includeLocation")
         dict!.objectForKey("UserProfile")!.setObject(limit!, forKey: "limit")
+        dict!.objectForKey("UserProfile")!.setObject(useLimit!, forKey: "useLimit")
         
         
         dict!.writeToFile(path!, atomically: false)
@@ -37,12 +38,13 @@ class IOController {
     
     //Get settings from the plist file
     //NOTE: This should only be used when initializing the settings class, all other access to settings should be done via an instance of the settings class
-    static func getSettings() -> (weight: Double, gender: String, emergencyNumber: String, helpMessage: String, includeLocation: Bool, firstRun: Bool, limit: Int?){
+    static func getSettings() -> (weight: Double, gender: String, emergencyNumber: String, helpMessage: String, includeLocation: Bool, firstRun: Bool, limit: Int?, useLimit: Bool?){
         let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
         let dict = NSDictionary(contentsOfFile: path!)
         let userProfile = dict!.objectForKey("UserProfile") as! NSDictionary
         
-        return ((userProfile.objectForKey("weight")?.doubleValue)!, (userProfile.objectForKey("gender") as! String?)!, (userProfile.objectForKey("emergencyNumber") as! String?)!, (userProfile.objectForKey("helpMessage") as! String?)!, (userProfile.objectForKey("includeLocation") as! Bool?)!, (userProfile.objectForKey("firstRun") as! Bool?)!, (userProfile.objectForKey("limit")?.integerValue)!)
+        return ((userProfile.objectForKey("weight")?.doubleValue)!, (userProfile.objectForKey("gender") as! String?)!, (userProfile.objectForKey("emergencyNumber") as! String?)!, (userProfile.objectForKey("helpMessage") as! String?)!, (userProfile.objectForKey("includeLocation") as! Bool?)!, (userProfile.objectForKey("firstRun") as! Bool?)!, (userProfile.objectForKey("limit")?.integerValue)!,
+            (userProfile.objectForKey("useLimit") as! Bool?)!)
         
     }
 
@@ -56,6 +58,7 @@ class Settings {
     var helpMessage: String?
     var includeLocation: Bool?
     var limit: Int?
+    var useLimit: Bool?
 
     
     init(createDefault: Bool) {
@@ -67,6 +70,7 @@ class Settings {
             helpMessage = "I drank too much and I need help."
             includeLocation = true
             limit = 3
+            useLimit = true
         } else {
             let settings = IOController.getSettings()
             self.weight = settings.weight
@@ -75,6 +79,7 @@ class Settings {
             self.helpMessage = settings.helpMessage
             self.includeLocation = settings.includeLocation
             self.limit = settings.limit
+            self.useLimit = settings.useLimit
         }
     }
     
@@ -82,6 +87,9 @@ class Settings {
     
 }
 
+//This class allows for static data to be accessed from both the app view controllers and the watch interface
+//The functions can be called with ModelData.<function>
+//Ex. ModelData.incrementTotalDrinkgs()
 class ModelData {
     static var totalDrinks: Double! = 0.0
     

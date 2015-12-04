@@ -11,17 +11,31 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var includeLocationSwitch: UISwitch!
     @IBOutlet weak var limitLabel: UILabel!
     @IBOutlet weak var limitStepper: UIStepper!
-    @IBOutlet weak var limitStateSwitch: UISwitch!
+    @IBOutlet weak var useLimitSwitch: UISwitch!
+    @IBOutlet weak var limitDescriptionLable: UILabel!
     
     
     //Actions
+    
+    //Change the limit label text to the value of the stepper
     @IBAction func limitStepperChanged(sender: UIStepper) {
         limitLabel.text = String(Int(sender.value))
-        
-        
     }
     
+    //Enable and disable the limit control items when the "use limit" switch is changed
+    @IBAction func useLimitSwitchChanged(sender: UISwitch) {
+        if sender.on {
+            limitStepper.enabled = true
+            limitLabel.enabled = true
+            limitDescriptionLable.enabled = true
+        } else {
+            limitStepper.enabled = false
+            limitLabel.enabled = false
+            limitDescriptionLable.enabled = false
+        }
+    }
     
+    //Save and exit the view
     @IBAction func saveButtonClick(sender: UIButton) {
         let userWeight = (weightTextBox.text as NSString!).doubleValue
         var userGender: String?
@@ -36,10 +50,10 @@ class SettingsViewController: UIViewController {
         
         let helpMessage = helpMessageTextBox.text
         let includeLocation = includeLocationSwitch.on
-        //let limitState = limitStateSwitch.on
+        let useLimit = useLimitSwitch.on
         
-        IOController.writeSettings(userWeight, gender: userGender, emergencyNumber: emergencyNumber, helpMessage: helpMessage, includeLocation: includeLocation, limit: Int(limitLabel.text!))
-        //add limitState into IOController
+        //Write all settings to the plist
+        IOController.writeSettings(userWeight, gender: userGender, emergencyNumber: emergencyNumber, helpMessage: helpMessage, includeLocation: includeLocation, limit: Int(limitLabel.text!), useLimit: useLimit)
     }
     override func viewDidLoad() {
         
@@ -54,6 +68,14 @@ class SettingsViewController: UIViewController {
         limitStepper.value = Double(settings.limit!)
         limitLabel.text = String(settings.limit!)
         
+        useLimitSwitch.on = settings.useLimit!
+        
+        //Disable limit controls if the useLimit property is false
+        if !settings.useLimit! {
+            limitStepper.enabled = false
+            limitLabel.enabled = false
+            limitDescriptionLable.enabled = false
+        }
         
         
         if settings.gender == "male" {
@@ -61,6 +83,8 @@ class SettingsViewController: UIViewController {
         } else {
             gender.on = true
         }
+        
+        //Hide keyboard on tap
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
     }
@@ -69,6 +93,6 @@ class SettingsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     func dismissKeyboard(){
-    view.endEditing(true)
+        view.endEditing(true)
     }
 }

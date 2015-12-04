@@ -40,7 +40,6 @@
 		A38AC39C1C10E679005B462F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E790AF4C1C0E3BE00048BC8C /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		F10043441C11645100ABBC20 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		F10043461C11691B00ABBC20 /* saveButton */ = {isa = PBXFileReference; lastKnownFileType = file; path = saveButton; sourceTree = "<group>"; };
 		F12D6CAA1BCF65AF00F9D664 /* ActiveBAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActiveBAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12D6CAE1BCF65AF00F9D664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,7 +135,6 @@
 		F12D6CD11BCF699E00F9D664 /* media */ = {
 			isa = PBXGroup;
 			children = (
-				F10043461C11691B00ABBC20 /* saveButton */,
 				F10043441C11645100ABBC20 /* background.jpg */,
 				A33024F81BFD1DB400EDFCE8 /* drink2.png */,
 				F12D6CDC1BCF705700F9D664 /* settingsButton.png */,

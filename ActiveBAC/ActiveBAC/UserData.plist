@@ -6,7 +6,7 @@
 	<dict>
 		<key>limit</key>
 		<integer>3</integer>
-		<key>limitState</key>
+		<key>useLimit</key>
 		<true/>
 		<key>firstRun</key>
 		<false/>
