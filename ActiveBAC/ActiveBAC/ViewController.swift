@@ -4,7 +4,7 @@ import CoreLocation
 import Social
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate {
-
+    
     var time: NSTimer!
     //var time1: NSTimer!
     var textPromptTimer: NSTimer!
@@ -27,7 +27,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var usersGender: String!
     var totalDrinks1 = 0
     var sendMessage = true
-    let locationManager = CLLocationManager()
+    
+    var locationManager: CLLocationManager! = CLLocationManager()
+    var userLat: String!
+    var userLong: String!
     
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
@@ -58,17 +61,19 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
         limitProgressView.progress = Float(Double(totalDrinks) / Double(self.limit))
         
+        
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         //Asks for authorization from user
         self.locationManager.requestAlwaysAuthorization()
         
         //used in the Foreground
         self.locationManager.requestWhenInUseAuthorization()
         
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
-        }
+        locationManager.startUpdatingLocation()
+        
     }
     
     func calculateBAC(){
@@ -127,7 +132,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
         if BAC >= 0.2 {
             if sendMessage == true {
-                locationManager(self.locationManager)
                 sendForHelp()
                 sendMessage = false
                 textPromptTimer = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "checkEllapsedTime", userInfo: nil, repeats: true)
@@ -156,9 +160,15 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         LapsedTime.text = String(format: "%.02d:%.02d:%.02d", hours, minutes, seconds)
     }
     
-    func locationManager(manager: CLLocationManager /*, didUpdateLocations locations: [CLLocation]*/) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+    
+        let userLocation:CLLocation = locations[0]
+        userLong = String(userLocation.coordinate.longitude)
+        userLat = String(userLocation.coordinate.latitude)
+        
+        print("lat: " + userLat + ", long: " + userLong)
+        
     }
     
     func sendForHelp(){
@@ -178,7 +188,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult){
-    self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewWillDisappear(animated: Bool) {
