@@ -181,7 +181,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             controller.recipients = [settings.emergencyNumber!]
             
             if settings.includeLocation! {
-                controller.body = controller.body! + "\nLocation:  + http://maps.apple.com/?q=Help&ll=" + userLat + "," + userLong
+                //controller.body = controller.body! + "\nLocation:  + http://maps.apple.com/?q=Help&ll=" + userLat + "," + userLong
 
             }
             
