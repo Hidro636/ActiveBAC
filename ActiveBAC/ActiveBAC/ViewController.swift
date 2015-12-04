@@ -167,7 +167,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         userLong = String(userLocation.coordinate.longitude)
         userLat = String(userLocation.coordinate.latitude)
         
-        print("lat: " + userLat + ", long: " + userLong)
+        print("http://maps.apple.com/?q=Help&ll=" + userLat + "," + userLong)
         
     }
     
@@ -180,8 +180,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             controller.body = settings.helpMessage
             controller.recipients = [settings.emergencyNumber!]
             
-            controller.body = controller.body! + "\nLatitude: " + userLat
-            controller.body = controller.body! + "\nLongitude: " + userLong
+            if settings.includeLocation! {
+                controller.body = controller.body! + "\nLocation:  + http://maps.apple.com/?q=Help&ll=" + userLat + "," + userLong
+
+            }
             
             
             //TODO: Add ability to attach location with text message
