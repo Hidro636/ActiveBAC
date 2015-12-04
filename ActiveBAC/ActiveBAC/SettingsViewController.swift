@@ -2,7 +2,6 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-    
     //Outlets
     @IBOutlet weak var helpMessageTextBox: UITextView!
     @IBOutlet weak var emergencyNumberTextField: UITextField!
@@ -16,8 +15,6 @@ class SettingsViewController: UIViewController {
     //Actions
     @IBAction func limitStepperChanged(sender: UIStepper) {
         limitLabel.text = String(Int(sender.value))
-        
-        
     }
     
     

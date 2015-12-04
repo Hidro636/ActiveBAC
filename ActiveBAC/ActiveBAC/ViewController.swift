@@ -27,8 +27,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var usersGender: String!
     var totalDrinks1 = 0
     var sendMessage = true
-    let locationManager = CLLocationManager()
-    
+
+    var currentLat: String!
+    var currentLong: String!
+    var locationManager: CLLocationManager = CLLocationManager()
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
         if Int(totalDrinks!) >= limit {
@@ -64,11 +66,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         //used in the Foreground
         self.locationManager.requestWhenInUseAuthorization()
         
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
-        }
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
     }
     
     func calculateBAC(){
@@ -127,7 +127,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
         if BAC >= 0.2 {
             if sendMessage == true {
-                locationManager(self.locationManager)
                 sendForHelp()
                 sendMessage = false
                 textPromptTimer = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "checkEllapsedTime", userInfo: nil, repeats: true)
@@ -156,9 +155,15 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         LapsedTime.text = String(format: "%.02d:%.02d:%.02d", hours, minutes, seconds)
     }
     
-    func locationManager(manager: CLLocationManager /*, didUpdateLocations locations: [CLLocation]*/) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let latestLocation: AnyObject = locations[0]
+        currentLat = String(latestLocation.coordinate.latitude)
+        currentLong = String(latestLocation.coordinate.longitude)
+        print("Lat: " + currentLat + ", Long: " + currentLong)
+    }
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        
+        
     }
     
     func sendForHelp(){
