@@ -6,7 +6,6 @@ import Social
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate {
     
     var time: NSTimer!
-    //var time1: NSTimer!
     var textPromptTimer: NSTimer!
     
     @IBOutlet var LapsedTime: UILabel!
@@ -14,10 +13,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     @IBOutlet var WarningMessage: UILabel!
     @IBOutlet var allDrinks: UILabel!
     @IBOutlet var limitProgressView: UIProgressView!
-    //@IBOutlet var MKMapView!
     
     var userBAC: Double!
-    var totalDrinks: Double! = 0
     var counter: Double! = 0
     var counter1 = 0
     var textPromptCounter = 0
@@ -25,7 +22,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var limit: Int!
     var gender: Double!
     var usersGender: String!
-    var totalDrinks1 = 0
     var sendMessage = true
 
     var currentLat: String!
@@ -33,35 +29,54 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var locationManager: CLLocationManager = CLLocationManager()
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
-        if Int(totalDrinks!) >= limit {
-            showAlert("Over Limit", message: "You have exceeded the drink limit you defined in settings, be careful!")
-            limitProgressView.progressTintColor = UIColor.redColor()
+        
+        let settings = Settings(createDefault: false)
+        
+        //Check to see if the user is using a limit
+        if settings.useLimit! {
+            //Check to see if the current total drink count is greater than the set limit, and display a message if it is
+            if Int(totalDrinks()) >= limit {
+                showAlert("Over Limit", message: "You have exceeded the drink limit you defined in settings, be careful!")
+                limitProgressView.progressTintColor = UIColor.redColor()
+            }
         }
         
-        totalDrinks = totalDrinks + 1.0
-        totalDrinks1 = totalDrinks1 + 1
+        //Increment the total drink count
+        ModelData.incrementTotalDrinks()
         
-        if (totalDrinks == 1){
+        
+        //Start the timer when the user first adds a drink
+        if (totalDrinks() == 1){
             time = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "calculateBAC", userInfo: nil, repeats: true)
-            //time1 = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "clockTimer", userInfo: nil, repeats: true)
         }
-        allDrinks.text = String(format:"%d", totalDrinks1)
         
-        self.limit = Settings(createDefault: false).limit
-        limitProgressView.progress = Float(Double(totalDrinks) / Double(self.limit))
+        //Display total drinks on a label
+        allDrinks.text = String(Int(totalDrinks()))
+        
+        //Check to see if the user is using a limit
+        if settings.useLimit! {
+            
+            //Set the progress of the limit progress bar
+            self.limit = settings.limit
+            limitProgressView.progress = Float(Double(totalDrinks()) / Double(self.limit))
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Load settings
         let settings = Settings(createDefault: false)
         self.usersWeight = settings.weight
         self.usersGender = settings.gender
         self.limit = settings.limit
         
-        limitProgressView.progress = Float(Double(totalDrinks) / Double(self.limit))
+        //set the limit of the limit progress bar IF the user has set a limit
+        if settings.useLimit! {
+            limitProgressView.progress = Float(Double(totalDrinks()) / Double(self.limit))
+        }
         
-        
-        
+        //Initialize location manager for use in emergency texts
         locationManager = CLLocationManager()
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -77,17 +92,24 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     func calculateBAC(){
-        //Added
-        clockTimer()
-        //-----------
         
+        //Increment the clock
+        clockTimer()
+        
+        //Increment counter
         counter = counter + 1.0
         
-        let BAC: Double! = ModelController.calculateBAC(totalDrinks, ellapsedSeconds: counter)
+        //Calculate user BAC
+        let BAC: Double! = ModelController.calculateBAC(totalDrinks(), ellapsedSeconds: counter)
         
+        //set local property to user BAC
         userBAC = BAC
+        
+        //Display user BAC on a label
         BACLevel.text = String(format: "%.2f", BAC)
         
+        
+        //Change message to reflect current user BAC
         if BAC <= 0.0005 {
             WarningMessage.text = "You are not impaired, have a good night!"
             WarningMessage.textColor = UIColor.greenColor()
@@ -120,25 +142,29 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             WarningMessage.textColor = UIColor.redColor()
         }
         
+        //Check to see if the user BAC is below an insignificant level, and reset counters/timers if it is
         if BAC <= 0.0005{
             time.invalidate()
             //time1.invalidate()
-            totalDrinks = 0.0
+            ModelData.resetTotalDrinks()
             counter = 0.0
             counter1 = 0
             
             limitProgressView.progress = 0
             limitProgressView.progressTintColor = UIColor.whiteColor()
         }
+        
+        //Check to see if the user's BAC is dangerously high, and ask to send an emergency text if it is
         if BAC >= 0.2 {
             if sendMessage == true {
-                sendForHelp()
-                sendMessage = false
+                showMessageAlert("Send For Help?", message: "Would you like us to send your location to your emergency contact?")
+                self.sendMessage = false
                 textPromptTimer = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "checkEllapsedTime", userInfo: nil, repeats: true)
             }
         }
     }
     
+    //Check time for emergency text message reminder
     func checkEllapsedTime() {
         textPromptCounter++
         
@@ -152,6 +178,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
     }
     
+    //Increment timer counters and display ellapsed time on a label
     func clockTimer() {
         counter1++
         let hours = counter1/3600
@@ -160,6 +187,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         LapsedTime.text = String(format: "%.02d:%.02d:%.02d", hours, minutes, seconds)
     }
     
+    //Function is automatically called by locationManager, gets the user location and stores it in local properties
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let latestLocation: AnyObject = locations[0]
         currentLat = String(latestLocation.coordinate.latitude)
@@ -171,6 +199,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
     }
     
+    //Function that generates an emergency text message and attaches a location if the user has specified so
     func sendForHelp(){
         if (MFMessageComposeViewController.canSendText()){
             
@@ -180,18 +209,17 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             controller.body = settings.helpMessage
             controller.recipients = [settings.emergencyNumber!]
             
+            //If using location, specifiy latitude and longitude as a map link
             if settings.includeLocation! {
                 //controller.body = controller.body! + "\nLocation:  + http://maps.apple.com/?q=Help&ll=" + userLat + "," + userLong
 
             }
             
-            
-            //TODO: Add ability to attach location with text message
-            
             controller.messageComposeDelegate = self
             self.presentViewController(controller, animated: true, completion: nil)
         }
     }
+    
     
     func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult){
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -201,6 +229,20 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         self.navigationController?.navigationBarHidden = false
     }
     
+    //Confirm that the user wants to send an emergency text message
+    func showMessageAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message:
+            message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: {(action: UIAlertAction!) in
+            self.sendForHelp()
+            
+            alertController.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    //Display a simple alert to the user
     func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message:
             message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -209,9 +251,15 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    //shorthand function for retrieving the total drink count
+    func totalDrinks() -> Double {
+        return ModelData.getTotalDrinks()
+    }
     
     
     @IBAction func unwindFromSettings(segue:UIStoryboardSegue){
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
