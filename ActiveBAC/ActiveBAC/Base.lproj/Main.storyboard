@@ -197,7 +197,7 @@
                                     <rect key="frame" x="-1080" y="-420" width="2560" height="1440"/>
                                 </variation>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HL-8Q-9Ph">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HL-8Q-9Ph" propertyAccessControl="none">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVn-fk-3uU">
@@ -287,21 +287,6 @@
                                             <rect key="frame" x="215" y="291" width="118" height="30"/>
                                         </variation>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5J0-sY-tAO">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Save Changes">
-                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="103" y="537" width="159" height="29"/>
-                                        </variation>
-                                        <connections>
-                                            <action selector="saveButtonClick:" destination="1yB-7y-cc6" eventType="touchUpInside" id="Pco-cm-WEX"/>
-                                            <segue destination="vhx-Cs-ZZU" kind="unwind" unwindAction="unwindFromSettings:" id="iwF-Zz-LOL"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency Contact: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAM-5O-gpO">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <animations/>
@@ -370,6 +355,19 @@
                                             <rect key="frame" x="250" y="392" width="51" height="31"/>
                                         </variation>
                                     </switch>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5J0-sY-tAO">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" image="saveButton" backgroundImage="saveButton"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="113" y="519" width="175" height="50"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="saveButtonClick:" destination="1yB-7y-cc6" eventType="touchUpInside" id="Pco-cm-WEX"/>
+                                            <segue destination="vhx-Cs-ZZU" kind="unwind" unwindAction="unwindFromSettings:" id="iwF-Zz-LOL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <variation key="default">
@@ -383,7 +381,6 @@
                                         <exclude reference="qUA-cZ-U48"/>
                                         <exclude reference="Gvu-40-DxM"/>
                                         <exclude reference="4Lf-Xc-QIw"/>
-                                        <exclude reference="5J0-sY-tAO"/>
                                         <exclude reference="vAM-5O-gpO"/>
                                         <exclude reference="kuv-tB-gL8"/>
                                         <exclude reference="K5Y-23-oBw"/>
@@ -391,6 +388,7 @@
                                         <exclude reference="N2j-vy-hcG"/>
                                         <exclude reference="dh5-xR-o15"/>
                                         <exclude reference="a79-AI-fNN"/>
+                                        <exclude reference="5J0-sY-tAO"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -405,7 +403,6 @@
                                         <include reference="qUA-cZ-U48"/>
                                         <include reference="Gvu-40-DxM"/>
                                         <include reference="4Lf-Xc-QIw"/>
-                                        <include reference="5J0-sY-tAO"/>
                                         <include reference="vAM-5O-gpO"/>
                                         <include reference="kuv-tB-gL8"/>
                                         <include reference="K5Y-23-oBw"/>
@@ -413,6 +410,7 @@
                                         <include reference="N2j-vy-hcG"/>
                                         <include reference="dh5-xR-o15"/>
                                         <include reference="a79-AI-fNN"/>
+                                        <include reference="5J0-sY-tAO"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -451,6 +449,7 @@
     <resources>
         <image name="background.jpg" width="2560" height="1440"/>
         <image name="drink2.png" width="200" height="196"/>
+        <image name="saveButton" width="175" height="50"/>
         <image name="settingsButton.png" width="128" height="128"/>
     </resources>
 </document>
