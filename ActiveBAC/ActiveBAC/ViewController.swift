@@ -25,7 +25,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var limit: Int!
     var gender: Double!
     var usersGender: String!
-    var totalDrinks1 = 0
+    //var totalDrinks1 = 0
     var sendMessage = true
     
     var locationManager: CLLocationManager! = CLLocationManager()
@@ -44,7 +44,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             time = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "calculateBAC", userInfo: nil, repeats: true)
             //time1 = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "clockTimer", userInfo: nil, repeats: true)
         }
-        allDrinks.text = String(format:"%d", totalDrinks1)
+        allDrinks.text = String(Int(totalDrinks()))
+        print(totalDrinks())
         
         self.limit = Settings(createDefault: false).limit
         limitProgressView.progress = Float(Double(totalDrinks()) / Double(self.limit))
