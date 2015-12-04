@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--Title-->
@@ -356,6 +356,39 @@
                                             <rect key="frame" x="250" y="392" width="51" height="31"/>
                                         </variation>
                                     </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn My Limit Off:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1P-dN-OYc">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="8" y="215" width="176" height="24"/>
+                                        </variation>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J9E-cS-blI">
+                                        <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="248" y="211" width="51" height="31"/>
+                                        </variation>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYr-oU-eRX">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="220" y="215" width="42" height="24"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcc-7X-VMZ">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="305" y="215" width="42" height="24"/>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <animations/>
                                 <variation key="default">
@@ -377,6 +410,10 @@
                                         <exclude reference="N2j-vy-hcG"/>
                                         <exclude reference="dh5-xR-o15"/>
                                         <exclude reference="a79-AI-fNN"/>
+                                        <exclude reference="n1P-dN-OYc"/>
+                                        <exclude reference="J9E-cS-blI"/>
+                                        <exclude reference="BYr-oU-eRX"/>
+                                        <exclude reference="Mcc-7X-VMZ"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -399,6 +436,10 @@
                                         <include reference="N2j-vy-hcG"/>
                                         <include reference="dh5-xR-o15"/>
                                         <include reference="a79-AI-fNN"/>
+                                        <include reference="n1P-dN-OYc"/>
+                                        <include reference="J9E-cS-blI"/>
+                                        <include reference="BYr-oU-eRX"/>
+                                        <include reference="Mcc-7X-VMZ"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -422,6 +463,8 @@
                         <outlet property="helpMessageTextBox" destination="Z4v-j3-Pvi" id="mci-gy-s6w"/>
                         <outlet property="includeLocationSwitch" destination="a79-AI-fNN" id="4he-eL-ZEb"/>
                         <outlet property="limitLabel" destination="dh5-xR-o15" id="alA-31-hmd"/>
+                        <outlet property="limitState" destination="J9E-cS-blI" id="LFI-fr-afl"/>
+                        <outlet property="limitStateSwitch" destination="J9E-cS-blI" id="fQh-p5-Edy"/>
                         <outlet property="limitStepper" destination="N2j-vy-hcG" id="gzZ-6l-sgY"/>
                         <outlet property="weightTextBox" destination="Gvu-40-DxM" id="l6l-uN-YGY"/>
                     </connections>

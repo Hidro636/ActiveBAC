@@ -49,7 +49,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         allDrinks.text = String(format:"%d", totalDrinks1)
         
         self.limit = Settings(createDefault: false).limit
-        limitProgressView.progress = Float(Double(totalDrinks) / Double(self.limit))
+       // if settings.limitState! = true {
+       //     limitProgressView.progress = Float(Double(totalDrinks) / Double(self.limit))
+       // }
     }
     
     override func viewDidLoad() {
@@ -132,8 +134,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
         if BAC >= 0.2 {
             if sendMessage == true {
-                sendForHelp()
-                sendMessage = false
+                showMessageAlert("Send For Help?", message: "Would you like us to send your location to your emergency contact?")
                 textPromptTimer = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "checkEllapsedTime", userInfo: nil, repeats: true)
             }
         }
@@ -199,6 +200,18 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
+    }
+    
+    func showMessageAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message:
+            message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: {(action: UIAlertAction!) in
+            self.sendForHelp()
+            self.sendMessage = false
+            alertController.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     func showAlert(title: String, message: String) {

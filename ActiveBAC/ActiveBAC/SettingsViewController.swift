@@ -11,6 +11,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var includeLocationSwitch: UISwitch!
     @IBOutlet weak var limitLabel: UILabel!
     @IBOutlet weak var limitStepper: UIStepper!
+    //@IBOutlet weak var limitStateSwitch: UISwitch!
     
     
     //Actions
@@ -35,6 +36,7 @@ class SettingsViewController: UIViewController {
         
         let helpMessage = helpMessageTextBox.text
         let includeLocation = includeLocationSwitch.on
+        //let limitState = limitStateSwitch.on
         
         IOController.writeSettings(userWeight, gender: userGender, emergencyNumber: emergencyNumber, helpMessage: helpMessage, includeLocation: includeLocation, limit: Int(limitLabel.text!))
         
@@ -51,6 +53,7 @@ class SettingsViewController: UIViewController {
         includeLocationSwitch.on  = settings.includeLocation!
         limitStepper.value = Double(settings.limit!)
         limitLabel.text = String(settings.limit!)
+        
         
         
         if settings.gender == "male" {
