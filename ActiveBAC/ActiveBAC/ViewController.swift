@@ -4,7 +4,7 @@ import CoreLocation
 import Social
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate {
-
+    
     var time: NSTimer!
     //var time1: NSTimer!
     var textPromptTimer: NSTimer!
@@ -60,6 +60,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
         limitProgressView.progress = Float(Double(totalDrinks) / Double(self.limit))
         
+        
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         //Asks for authorization from user
         self.locationManager.requestAlwaysAuthorization()
         
@@ -175,6 +180,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             controller.body = settings.helpMessage
             controller.recipients = [settings.emergencyNumber!]
             
+            if settings.includeLocation! {
+                controller.body = controller.body! + "\nLocation:  + http://maps.apple.com/?q=Help&ll=" + userLat + "," + userLong
+
+            }
+            
+            
             //TODO: Add ability to attach location with text message
             
             controller.messageComposeDelegate = self
@@ -183,7 +194,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult){
-    self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -199,19 +210,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     
-    func findLocation (manager: CLLocationManager,didUpdateLocations locations: [CLLocation]){
-        let userLocation : CLLocationCoordinate2D  = (manager.location?.coordinate)!
-        print("locations = \(userLocation.latitude), \(userLocation.longitude)")
-    }
     
     @IBAction func unwindFromSettings(segue:UIStoryboardSegue){
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
-        view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
     }
 }

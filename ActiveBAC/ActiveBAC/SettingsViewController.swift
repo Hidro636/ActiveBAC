@@ -55,13 +55,14 @@ class SettingsViewController: UIViewController {
         } else {
             gender.on = true
         }
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
-        view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
+    func dismissKeyboard(){
+    view.endEditing(true)
     }
 }
