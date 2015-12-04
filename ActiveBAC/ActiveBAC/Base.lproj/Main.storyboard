@@ -16,11 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dmB-7n-1PH">
+                                <rect key="frame" x="0.0" y="-1440" width="2560" height="1440"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-1070" y="-432" width="2560" height="1440"/>
+                                </variation>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BAC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqt-LB-c2h">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.88220091540000001" green="0.88220091540000001" blue="0.88220091540000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="73" y="169" width="67" height="30"/>
@@ -30,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.88220091540404033" green="0.88220091540404033" blue="0.88220091540404033" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="14" y="102" width="126" height="30"/>
@@ -99,7 +105,7 @@
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.32689716295454574" green="0.8514244002525253" blue="0.3297092942505474" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="7" y="211" width="360" height="41"/>
@@ -129,6 +135,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="dmB-7n-1PH"/>
                                 <exclude reference="xqt-LB-c2h"/>
                                 <exclude reference="CyM-kw-DBJ"/>
                                 <exclude reference="QVD-v7-2wI"/>
@@ -144,6 +151,7 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="dmB-7n-1PH"/>
                                 <include reference="xqt-LB-c2h"/>
                                 <include reference="CyM-kw-DBJ"/>
                                 <include reference="QVD-v7-2wI"/>
@@ -183,6 +191,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0e9-ap-Gj7">
+                                <rect key="frame" x="0.0" y="-1440" width="2560" height="1440"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-1080" y="-420" width="2560" height="1440"/>
+                                </variation>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HL-8Q-9Ph">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
@@ -448,11 +462,13 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="0e9-ap-Gj7"/>
                                 <exclude reference="3HL-8Q-9Ph"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="0e9-ap-Gj7"/>
                                 <include reference="3HL-8Q-9Ph"/>
                             </mask>
                         </variation>
@@ -476,6 +492,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background.jpg" width="2560" height="1440"/>
         <image name="drink2.png" width="200" height="196"/>
         <image name="settingsButton.png" width="128" height="128"/>
     </resources>
