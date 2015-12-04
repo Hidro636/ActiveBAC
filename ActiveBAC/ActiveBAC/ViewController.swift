@@ -47,9 +47,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         allDrinks.text = String(format:"%d", totalDrinks1)
         
         self.limit = Settings(createDefault: false).limit
-       // if settings.limitState! = true {
-       //     limitProgressView.progress = Float(Double(totalDrinks) / Double(self.limit))
-       // }
+        limitProgressView.progress = Float(Double(totalDrinks()) / Double(self.limit))
     }
     
     override func viewDidLoad() {

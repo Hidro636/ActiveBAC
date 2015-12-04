@@ -479,8 +479,7 @@
                         <outlet property="helpMessageTextBox" destination="Z4v-j3-Pvi" id="mci-gy-s6w"/>
                         <outlet property="includeLocationSwitch" destination="a79-AI-fNN" id="4he-eL-ZEb"/>
                         <outlet property="limitLabel" destination="dh5-xR-o15" id="alA-31-hmd"/>
-                        <outlet property="limitState" destination="J9E-cS-blI" id="LFI-fr-afl"/>
-                        <outlet property="limitStateSwitch" destination="J9E-cS-blI" id="fQh-p5-Edy"/>
+                        <outlet property="limitStateSwitch" destination="J9E-cS-blI" id="lej-qQ-xRR"/>
                         <outlet property="limitStepper" destination="N2j-vy-hcG" id="gzZ-6l-sgY"/>
                         <outlet property="weightTextBox" destination="Gvu-40-DxM" id="l6l-uN-YGY"/>
                     </connections>

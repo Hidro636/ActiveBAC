@@ -11,7 +11,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var includeLocationSwitch: UISwitch!
     @IBOutlet weak var limitLabel: UILabel!
     @IBOutlet weak var limitStepper: UIStepper!
-    //@IBOutlet weak var limitStateSwitch: UISwitch!
+    @IBOutlet weak var limitStateSwitch: UISwitch!
     
     
     //Actions
@@ -39,7 +39,7 @@ class SettingsViewController: UIViewController {
         //let limitState = limitStateSwitch.on
         
         IOController.writeSettings(userWeight, gender: userGender, emergencyNumber: emergencyNumber, helpMessage: helpMessage, includeLocation: includeLocation, limit: Int(limitLabel.text!))
-        
+        //add limitState into IOController
     }
     override func viewDidLoad() {
         
