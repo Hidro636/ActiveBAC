@@ -82,6 +82,22 @@ class Settings {
     
 }
 
+class ModelData {
+    static var totalDrinks: Double! = 0.0
+    
+    static func getTotalDrinks() -> Double {
+        return totalDrinks
+    }
+    
+    static func incrementTotalDrinks() {
+        totalDrinks = totalDrinks + 1
+    }
+    
+    static func resetTotalDrinks() {
+        totalDrinks = 0
+    }
+}
+
 class ModelController {
     
     static func calculateBAC(totalDrinks: Double, ellapsedSeconds: Double) -> Double {

@@ -17,7 +17,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     //@IBOutlet var MKMapView!
     
     var userBAC: Double!
-    var totalDrinks: Double! = 0
+    //var totalDrinks: Double! = 0
     var counter: Double! = 0
     var counter1 = 0
     var textPromptCounter = 0
@@ -34,22 +34,20 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
-        if Int(totalDrinks!) >= limit {
+        if Int(totalDrinks()) >= limit {
             showAlert("Over Limit", message: "You have exceeded the drink limit you defined in settings, be careful!")
             limitProgressView.progressTintColor = UIColor.redColor()
         }
         
-        totalDrinks = totalDrinks + 1.0
-        totalDrinks1 = totalDrinks1 + 1
-        
-        if (totalDrinks == 1){
+        ModelData.incrementTotalDrinks()
+        if (totalDrinks() == 1){
             time = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "calculateBAC", userInfo: nil, repeats: true)
             //time1 = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "clockTimer", userInfo: nil, repeats: true)
         }
         allDrinks.text = String(format:"%d", totalDrinks1)
         
         self.limit = Settings(createDefault: false).limit
-        limitProgressView.progress = Float(Double(totalDrinks) / Double(self.limit))
+        limitProgressView.progress = Float(Double(totalDrinks()) / Double(self.limit))
     }
     
     override func viewDidLoad() {
@@ -59,7 +57,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         self.usersGender = settings.gender
         self.limit = settings.limit
         
-        limitProgressView.progress = Float(Double(totalDrinks) / Double(self.limit))
+        limitProgressView.progress = Float(Double(totalDrinks()) / Double(self.limit))
         
         
         
@@ -83,7 +81,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
         counter = counter + 1.0
         
-        let BAC: Double! = ModelController.calculateBAC(totalDrinks, ellapsedSeconds: counter)
+        let BAC: Double! = ModelController.calculateBAC(totalDrinks(), ellapsedSeconds: counter)
         
         userBAC = BAC
         BACLevel.text = String(format: "%.2f", BAC)
@@ -123,7 +121,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         if BAC <= 0.0005{
             time.invalidate()
             //time1.invalidate()
-            totalDrinks = 0.0
+            ModelData.resetTotalDrinks()
             counter = 0.0
             counter1 = 0
             
@@ -162,7 +160,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-    
+        
         let userLocation:CLLocation = locations[0]
         userLong = String(userLocation.coordinate.longitude)
         userLat = String(userLocation.coordinate.latitude)
@@ -182,7 +180,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             
             if settings.includeLocation! {
                 controller.body = controller.body! + "\nLocation:  + http://maps.apple.com/?q=Help&ll=" + userLat + "," + userLong
-
+                
             }
             
             
@@ -209,6 +207,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    func totalDrinks() -> Double {
+        return ModelData.getTotalDrinks()
+    }
     
     
     @IBAction func unwindFromSettings(segue:UIStoryboardSegue){
