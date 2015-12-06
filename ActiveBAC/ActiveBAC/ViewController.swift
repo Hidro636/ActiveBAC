@@ -97,7 +97,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         clockTimer()
         
         //Increment counter
-        counter = counter + 1.0
+        counter = counter + 100.0
         
         //Calculate user BAC
         let BAC: Double! = ModelController.calculateBAC(totalDrinks(), ellapsedSeconds: counter)
