@@ -20,9 +20,8 @@ class IOController {
         dict!.objectForKey("UserProfile")!.setObject(helpMessage!, forKey: "helpMessage")
         dict!.objectForKey("UserProfile")!.setObject(includeLocation!, forKey: "includeLocation")
         dict!.objectForKey("UserProfile")!.setObject(limit!, forKey: "limit")
-        
-        
         dict!.writeToFile(path!, atomically: false)
+        print (path!)
         
     }
     

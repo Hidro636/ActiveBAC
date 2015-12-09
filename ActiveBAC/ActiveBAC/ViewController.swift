@@ -127,7 +127,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
         if BAC >= 0.2 {
             if sendMessage == true {
-                locationManager(self.locationManager)
+               // locationManager(self.locationManager)
                 sendForHelp()
                 sendMessage = false
                 textPromptTimer = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "checkEllapsedTime", userInfo: nil, repeats: true)
@@ -156,10 +156,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         LapsedTime.text = String(format: "%.02d:%.02d:%.02d", hours, minutes, seconds)
     }
     
-    func locationManager(manager: CLLocationManager /*, didUpdateLocations locations: [CLLocation]*/) {
+   /* func locationManager(manager: CLLocationManager /*, didUpdateLocations locations: [CLLocation]*/) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
+*/
     
     func sendForHelp(){
         if (MFMessageComposeViewController.canSendText()){
