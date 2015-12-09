@@ -6,6 +6,8 @@
 	<dict>
 		<key>limit</key>
 		<integer>3</integer>
+		<key>useLimit</key>
+		<true/>
 		<key>firstRun</key>
 		<false/>
 		<key>includeLocation</key>
