@@ -18,6 +18,13 @@
 		B05F82DD1C1973A800CBC156 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05F82DC1C1973A700CBC156 /* AVFoundation.framework */; };
 		B05F82E01C19762900CBC156 /* silence.wav in Resources */ = {isa = PBXBuildFile; fileRef = B05F82DF1C19762900CBC156 /* silence.wav */; };
 		E790AF4D1C0E3BE00048BC8C /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790AF4C1C0E3BE00048BC8C /* AppModel.swift */; };
+		E7DC95181C1A2ADE0046EE34 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7DC95161C1A2ADE0046EE34 /* Interface.storyboard */; };
+		E7DC951A1C1A2ADE0046EE34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7DC95191C1A2ADE0046EE34 /* Assets.xcassets */; };
+		E7DC95211C1A2ADE0046EE34 /* ActiveBACWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E7DC95201C1A2ADE0046EE34 /* ActiveBACWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E7DC95281C1A2ADE0046EE34 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DC95271C1A2ADE0046EE34 /* ExtensionDelegate.swift */; };
+		E7DC952A1C1A2ADE0046EE34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7DC95291C1A2ADE0046EE34 /* Assets.xcassets */; };
+		E7DC952E1C1A2ADE0046EE34 /* ActiveBACWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E7DC95141C1A2ADE0046EE34 /* ActiveBACWatch.app */; };
+		E7DC95381C1A2B9F0046EE34 /* WatchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DC95371C1A2B9F0046EE34 /* WatchInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		F10043451C11645100ABBC20 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F10043441C11645100ABBC20 /* background.jpg */; };
 		F12D6CB01BCF65AF00F9D664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */; };
 		F12D6CB21BCF65AF00F9D664 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CB11BCF65AF00F9D664 /* ViewController.swift */; };
@@ -28,6 +35,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E7DC95221C1A2ADE0046EE34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F12D6CA21BCF65AF00F9D664 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7DC951F1C1A2ADE0046EE34;
+			remoteInfo = "ActiveBACWatch Extension";
+		};
+		E7DC952C1C1A2ADE0046EE34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F12D6CA21BCF65AF00F9D664 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7DC95131C1A2ADE0046EE34;
+			remoteInfo = ActiveBACWatch;
+		};
 		F12D6CC01BCF65B000F9D664 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F12D6CA21BCF65AF00F9D664 /* Project object */;
@@ -36,6 +57,31 @@
 			remoteInfo = ActiveBAC;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E7DC95341C1A2ADE0046EE34 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E7DC95211C1A2ADE0046EE34 /* ActiveBACWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7DC95361C1A2ADE0046EE34 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				E7DC952E1C1A2ADE0046EE34 /* ActiveBACWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A33024F81BFD1DB400EDFCE8 /* drink2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drink2.png; sourceTree = "<group>"; };
@@ -49,6 +95,15 @@
 		B05F82DC1C1973A700CBC156 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B05F82DF1C19762900CBC156 /* silence.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = silence.wav; path = ../../../../Downloads/silence.wav; sourceTree = "<group>"; };
 		E790AF4C1C0E3BE00048BC8C /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		E7DC95141C1A2ADE0046EE34 /* ActiveBACWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActiveBACWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7DC95171C1A2ADE0046EE34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		E7DC95191C1A2ADE0046EE34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E7DC951B1C1A2ADE0046EE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7DC95201C1A2ADE0046EE34 /* ActiveBACWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ActiveBACWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7DC95271C1A2ADE0046EE34 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		E7DC95291C1A2ADE0046EE34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E7DC952B1C1A2ADE0046EE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7DC95371C1A2B9F0046EE34 /* WatchInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchInterfaceController.swift; sourceTree = "<group>"; };
 		F10043441C11645100ABBC20 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		F12D6CAA1BCF65AF00F9D664 /* ActiveBAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActiveBAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12D6CAE1BCF65AF00F9D664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +118,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E7DC951D1C1A2ADE0046EE34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F12D6CA71BCF65AF00F9D664 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,6 +146,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7DC95151C1A2ADE0046EE34 /* ActiveBACWatch */ = {
+			isa = PBXGroup;
+			children = (
+				E7DC95161C1A2ADE0046EE34 /* Interface.storyboard */,
+				E7DC95191C1A2ADE0046EE34 /* Assets.xcassets */,
+				E7DC951B1C1A2ADE0046EE34 /* Info.plist */,
+			);
+			path = ActiveBACWatch;
+			sourceTree = "<group>";
+		};
+		E7DC95241C1A2ADE0046EE34 /* ActiveBACWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E7DC95271C1A2ADE0046EE34 /* ExtensionDelegate.swift */,
+				E7DC95291C1A2ADE0046EE34 /* Assets.xcassets */,
+				E7DC952B1C1A2ADE0046EE34 /* Info.plist */,
+				E7DC95371C1A2B9F0046EE34 /* WatchInterfaceController.swift */,
+			);
+			path = "ActiveBACWatch Extension";
+			sourceTree = "<group>";
+		};
 		F12D6CA11BCF65AF00F9D664 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +176,8 @@
 				A35723D21C0FB9020086386D /* CoreLocation.framework */,
 				F12D6CAC1BCF65AF00F9D664 /* ActiveBAC */,
 				F12D6CC21BCF65B000F9D664 /* ActiveBACTests */,
+				E7DC95151C1A2ADE0046EE34 /* ActiveBACWatch */,
+				E7DC95241C1A2ADE0046EE34 /* ActiveBACWatch Extension */,
 				F12D6CAB1BCF65AF00F9D664 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,6 +187,8 @@
 			children = (
 				F12D6CAA1BCF65AF00F9D664 /* ActiveBAC.app */,
 				F12D6CBF1BCF65B000F9D664 /* ActiveBACTests.xctest */,
+				E7DC95141C1A2ADE0046EE34 /* ActiveBACWatch.app */,
+				E7DC95201C1A2ADE0046EE34 /* ActiveBACWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +250,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E7DC95131C1A2ADE0046EE34 /* ActiveBACWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7DC95351C1A2ADE0046EE34 /* Build configuration list for PBXNativeTarget "ActiveBACWatch" */;
+			buildPhases = (
+				E7DC95121C1A2ADE0046EE34 /* Resources */,
+				E7DC95341C1A2ADE0046EE34 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7DC95231C1A2ADE0046EE34 /* PBXTargetDependency */,
+			);
+			name = ActiveBACWatch;
+			productName = ActiveBACWatch;
+			productReference = E7DC95141C1A2ADE0046EE34 /* ActiveBACWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		E7DC951F1C1A2ADE0046EE34 /* ActiveBACWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7DC95331C1A2ADE0046EE34 /* Build configuration list for PBXNativeTarget "ActiveBACWatch Extension" */;
+			buildPhases = (
+				E7DC951C1C1A2ADE0046EE34 /* Sources */,
+				E7DC951D1C1A2ADE0046EE34 /* Frameworks */,
+				E7DC951E1C1A2ADE0046EE34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ActiveBACWatch Extension";
+			productName = "ActiveBACWatch Extension";
+			productReference = E7DC95201C1A2ADE0046EE34 /* ActiveBACWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		F12D6CA91BCF65AF00F9D664 /* ActiveBAC */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F12D6CC91BCF65B000F9D664 /* Build configuration list for PBXNativeTarget "ActiveBAC" */;
@@ -170,10 +291,12 @@
 				F12D6CA61BCF65AF00F9D664 /* Sources */,
 				F12D6CA71BCF65AF00F9D664 /* Frameworks */,
 				F12D6CA81BCF65AF00F9D664 /* Resources */,
+				E7DC95361C1A2ADE0046EE34 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E7DC952D1C1A2ADE0046EE34 /* PBXTargetDependency */,
 			);
 			name = ActiveBAC;
 			productName = ActiveBAC;
@@ -208,6 +331,13 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "team[0]";
 				TargetAttributes = {
+					E7DC95131C1A2ADE0046EE34 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 7C4J2P8QG5;
+					};
+					E7DC951F1C1A2ADE0046EE34 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
 					F12D6CA91BCF65AF00F9D664 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 7C4J2P8QG5;
@@ -238,11 +368,30 @@
 			targets = (
 				F12D6CA91BCF65AF00F9D664 /* ActiveBAC */,
 				F12D6CBE1BCF65B000F9D664 /* ActiveBACTests */,
+				E7DC95131C1A2ADE0046EE34 /* ActiveBACWatch */,
+				E7DC951F1C1A2ADE0046EE34 /* ActiveBACWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E7DC95121C1A2ADE0046EE34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7DC951A1C1A2ADE0046EE34 /* Assets.xcassets in Resources */,
+				E7DC95181C1A2ADE0046EE34 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7DC951E1C1A2ADE0046EE34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7DC952A1C1A2ADE0046EE34 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F12D6CA81BCF65AF00F9D664 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,6 +417,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E7DC951C1C1A2ADE0046EE34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7DC95281C1A2ADE0046EE34 /* ExtensionDelegate.swift in Sources */,
+				E7DC95381C1A2B9F0046EE34 /* WatchInterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F12D6CA61BCF65AF00F9D664 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -291,6 +449,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E7DC95231C1A2ADE0046EE34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7DC951F1C1A2ADE0046EE34 /* ActiveBACWatch Extension */;
+			targetProxy = E7DC95221C1A2ADE0046EE34 /* PBXContainerItemProxy */;
+		};
+		E7DC952D1C1A2ADE0046EE34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7DC95131C1A2ADE0046EE34 /* ActiveBACWatch */;
+			targetProxy = E7DC952C1C1A2ADE0046EE34 /* PBXContainerItemProxy */;
+		};
 		F12D6CC11BCF65B000F9D664 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F12D6CA91BCF65AF00F9D664 /* ActiveBAC */;
@@ -299,6 +467,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E7DC95161C1A2ADE0046EE34 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7DC95171C1A2ADE0046EE34 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		F12D6CB31BCF65AF00F9D664 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -318,6 +494,74 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E7DC952F1C1A2ADE0046EE34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = ActiveBACWatch_Extension;
+				INFOPLIST_FILE = ActiveBACWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.csc.ActiveBAC.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		E7DC95301C1A2ADE0046EE34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = ActiveBACWatch_Extension;
+				INFOPLIST_FILE = ActiveBACWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.csc.ActiveBAC.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		E7DC95311C1A2ADE0046EE34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "ActiveBACWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.csc.ActiveBAC.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		E7DC95321C1A2ADE0046EE34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "ActiveBACWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.csc.ActiveBAC.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 		F12D6CC71BCF65B000F9D664 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -413,6 +657,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ActiveBAC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.calpoly.csc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,6 +676,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ActiveBAC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.calpoly.csc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -477,6 +723,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E7DC95331C1A2ADE0046EE34 /* Build configuration list for PBXNativeTarget "ActiveBACWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7DC95311C1A2ADE0046EE34 /* Debug */,
+				E7DC95321C1A2ADE0046EE34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E7DC95351C1A2ADE0046EE34 /* Build configuration list for PBXNativeTarget "ActiveBACWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7DC952F1C1A2ADE0046EE34 /* Debug */,
+				E7DC95301C1A2ADE0046EE34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F12D6CA51BCF65AF00F9D664 /* Build configuration list for PBXProject "ActiveBAC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
