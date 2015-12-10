@@ -166,7 +166,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         //Check to see if the user's BAC is dangerously high, and ask to send an emergency text if it is
         if BAC >= 0.2 {
             if sendMessage == true {
-        
+                
                 showMessageAlert("Send For Help?", message: "Would you like us to send your location to your emergency contact?")
                 
                 self.sendMessage = false
@@ -250,7 +250,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             alertController.dismissViewControllerAnimated(true, completion: nil)
         }))
         alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alertController, animated: true, completion: nil)
+        if self.presentedViewController != nil{
+            self.dismissViewControllerAnimated(false, completion: nil)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }else{
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     //Display a simple alert to the user
@@ -259,7 +264,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             message, preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        if self.presentedViewController != nil{
+            self.dismissViewControllerAnimated(false, completion: nil)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }else{
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     //shorthand function for retrieving the total drink count
