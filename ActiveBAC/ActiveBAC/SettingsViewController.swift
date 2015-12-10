@@ -1,4 +1,5 @@
 import UIKit
+import Parse
 
 class SettingsViewController: UIViewController {
     
@@ -46,17 +47,21 @@ class SettingsViewController: UIViewController {
         }
         
         let emergencyNumber = emergencyNumberTextField.text
-        
         let helpMessage = helpMessageTextBox.text
         let includeLocation = includeLocationSwitch.on
         let useLimit = useLimitSwitch.on
         
+        
+        
+        
         //Write all settings to the plist
-        IOController.writeSettings(userWeight, gender: userGender, emergencyNumber: emergencyNumber, helpMessage: helpMessage, includeLocation: includeLocation, limit: Int(limitLabel.text!), useLimit: useLimit)
+        IOController.writeSettings(userWeight, gender: userGender!, emergencyNumber: emergencyNumber, helpMessage: helpMessage, includeLocation: includeLocation, limit: Int(limitLabel.text!), useLimit: useLimit)
+        
     }
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         
         let settings = Settings(createDefault: false)
         
@@ -66,26 +71,26 @@ class SettingsViewController: UIViewController {
         includeLocationSwitch.on  = settings.includeLocation!
         limitStepper.value = Double(settings.limit!)
         limitLabel.text = String(settings.limit!)
-        
         useLimitSwitch.on = settings.useLimit!
-        
-        //Disable limit controls if the useLimit property is false
-        if !settings.useLimit! {
-            limitStepper.enabled = false
-            limitLabel.enabled = false
-            limitDescriptionLable.enabled = false
-        }
-        
         
         if settings.gender == "male" {
             gender.on = false
         } else {
             gender.on = true
         }
+
         
-        //Hide keyboard on tap
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
+        //Disable limit controls if the useLimit property is false
+        if !settings.useLimit! {
+            limitStepper.enabled = false
+            limitLabel.enabled = false
+            limitDescriptionLable.enabled = false
+            
+            
+            //Hide keyboard on tap
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+            view.addGestureRecognizer(tap)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -94,4 +99,5 @@ class SettingsViewController: UIViewController {
     func dismissKeyboard(){
         view.endEditing(true)
     }
+    
 }

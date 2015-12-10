@@ -2,6 +2,7 @@ import UIKit
 import MessageUI
 import CoreLocation
 import Social
+import Parse
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate {
     
@@ -72,9 +73,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         self.limit = settings.limit
         
         //set the limit of the limit progress bar IF the user has set a limit
-        if settings.useLimit! {
+       /* if settings.useLimit!{
+        
             limitProgressView.progress = Float(Double(totalDrinks()) / Double(self.limit))
         }
+*/
         
         //Initialize location manager for use in emergency texts
         locationManager = CLLocationManager()
