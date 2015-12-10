@@ -15,12 +15,6 @@ class IOController {
 
     //Write settings to the plist file
     static func writeSettings(weight: Double?, gender: String!, emergencyNumber: String!, helpMessage: String!, includeLocation: Bool?, limit: Int?, useLimit: Bool?) {
-       
-        
-        let path = NSBundle.mainBundle().pathForResource("silence.wav", ofType: nil)!
-        let url = NSURL(fileURLWithPath: path)
-        
-        
         
             let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(weight, forKey: "weight")
@@ -30,27 +24,6 @@ class IOController {
         defaults.setObject(includeLocation, forKey: "includeLocation")
         defaults.setObject(limit, forKey: "limit")
         defaults.setObject(useLimit, forKey: "useLimit")
-        
-        
-        
-//        let settings = PFObject(className: "settings")
-//        settings.objectId = "mainSettings"
-//        settings["weight"] = weight!
-//        settings["gender"] = gender
-//        settings["emergencyNumber"] = emergencyNumber!
-//        settings["helpMessage"] = helpMessage!
-//        settings["includeLocation"] = includeLocation!
-//        settings["limit"] = limit!
-//        settings["useLimit"] = useLimit!
-//        do {
-//            //try settings.pin()
-//            try PFObject.unpinAllObjects()
-//            try settings.pin()
-//        }
-//        catch {
-//            print("An error occurred while saving the user settings in the local datastore")
-//        }
-        
         
     }
     

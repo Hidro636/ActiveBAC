@@ -49,13 +49,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
         
         //Start the timer when the user first adds a drink
-       // backgroundThread(0.0){
             if (self.totalDrinks() == 1){
                 UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler(nil)
             self.time = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "calculateBAC", userInfo: nil, repeats: true)
                 NSRunLoop.currentRunLoop().addTimer(self.time, forMode: NSRunLoopCommonModes)
-            //self.timeSound = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:"playSound", userInfo: nil, repeats: true )
-        //}
             }
     
         //Display total drinks on a label

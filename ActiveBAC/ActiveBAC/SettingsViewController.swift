@@ -89,19 +89,12 @@ class SettingsViewController: UIViewController {
             limitStepper.enabled = false
             limitLabel.enabled = false
             limitDescriptionLable.enabled = false
-            
-            
-            //Hide keyboard on tap
-            let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-            view.addGestureRecognizer(tap)
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    func dismissKeyboard(){
-        view.endEditing(true)
-    }
+    
     
 }
