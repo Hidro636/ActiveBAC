@@ -9,14 +9,12 @@
 import Foundation
 import Parse
 import CoreData
+import AVFoundation
 
 class IOController {
 
     //Write settings to the plist file
     static func writeSettings(weight: Double?, gender: String!, emergencyNumber: String!, helpMessage: String!, includeLocation: Bool?, limit: Int?, useLimit: Bool?) {
-       
-        
-        
         
             let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(weight, forKey: "weight")
@@ -26,27 +24,6 @@ class IOController {
         defaults.setObject(includeLocation, forKey: "includeLocation")
         defaults.setObject(limit, forKey: "limit")
         defaults.setObject(useLimit, forKey: "useLimit")
-        
-        
-        
-//        let settings = PFObject(className: "settings")
-//        settings.objectId = "mainSettings"
-//        settings["weight"] = weight!
-//        settings["gender"] = gender
-//        settings["emergencyNumber"] = emergencyNumber!
-//        settings["helpMessage"] = helpMessage!
-//        settings["includeLocation"] = includeLocation!
-//        settings["limit"] = limit!
-//        settings["useLimit"] = useLimit!
-//        do {
-//            //try settings.pin()
-//            try PFObject.unpinAllObjects()
-//            try settings.pin()
-//        }
-//        catch {
-//            print("An error occurred while saving the user settings in the local datastore")
-//        }
-        
         
     }
     
@@ -134,6 +111,35 @@ class ModelData {
 }
 
 class ModelController {
+    
+    static func playSound(){
+        var silentSound: AVAudioPlayer!
+        
+        let path = NSBundle.mainBundle().pathForResource("silence.wav", ofType: nil)!
+        print(path)
+        let url = NSURL(fileURLWithPath: path)
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            print("AVAudioSession Category Playback OK")
+            do {
+                try AVAudioSession.sharedInstance().setActive(true)
+                print("AVAudioSession is Active")
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+        do{
+            let sound = try AVAudioPlayer(contentsOfURL: url)
+            silentSound = sound
+            sound.play()
+        } catch {
+            //fuck you swift you suck
+        }
+        silentSound.numberOfLoops = -1
+    }
     
     static func calculateBAC(totalDrinks: Double, ellapsedSeconds: Double) -> Double {
         
