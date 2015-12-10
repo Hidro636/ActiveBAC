@@ -254,7 +254,7 @@
 				TargetAttributes = {
 					F12D6CA91BCF65AF00F9D664 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 7C4J2P8QG5;
+						DevelopmentTeam = 9D6Z6CV3WX;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -457,6 +457,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ActiveBAC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.calpoly.csc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -475,6 +476,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ActiveBAC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.calpoly.csc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
