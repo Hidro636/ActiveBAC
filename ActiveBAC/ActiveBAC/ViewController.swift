@@ -2,6 +2,7 @@ import UIKit
 import MessageUI
 import CoreLocation
 import Social
+import Parse
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate {
     
@@ -27,6 +28,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var locationManager: CLLocationManager! = CLLocationManager()
     var userLat: String!
     var userLong: String!
+    
+    
     
     //Called when the add drink button is clicked
     @IBAction func addDrinkButtonClick(sender: UIButton) {
@@ -73,9 +76,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         self.limit = settings.limit
         
         //set the limit of the limit progress bar IF the user has set a limit
-        if settings.useLimit! {
+       /* if settings.useLimit!{
+        
             limitProgressView.progress = Float(Double(totalDrinks()) / Double(self.limit))
         }
+*/
         
         //Initialize location manager for use in emergency texts
         locationManager = CLLocationManager()
@@ -157,9 +162,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         //Check to see if the user's BAC is dangerously high, and ask to send an emergency text if it is
         if BAC >= 0.2 {
             if sendMessage == true {
-               // locationManager(self.locationManager)
-                sendForHelp()
-                sendMessage = false
+                showMessageAlert("Send For Help?", message: "Would you like us to send your location to your emergency contact?")
+                self.sendMessage = false
                 textPromptTimer = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "checkEllapsedTime", userInfo: nil, repeats: true)
             }
         }
@@ -188,11 +192,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         LapsedTime.text = String(format: "%.02d:%.02d:%.02d", hours, minutes, seconds)
     }
     
-   /* func locationManager(manager: CLLocationManager /*, didUpdateLocations locations: [CLLocation]*/) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    //Function is automatically called by locationManager, gets the user location and stores it in local properties
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let userLocation:CLLocation = locations[0]
+        userLong = String(userLocation.coordinate.longitude)
+        userLat = String(userLocation.coordinate.latitude)
+        
     }
-*/
     
     //Function that generates an emergency text message and attaches a location if the user has specified so
     func sendForHelp(){
@@ -213,6 +220,13 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             controller.messageComposeDelegate = self
             self.presentViewController(controller, animated: true, completion: nil)
         }
+    }
+    
+    func parseQuery(){
+        var query = PFQuery(className:"UserData")
+        query.fromLocalDatastore()
+        query.findObjectsInBackground()
+        print (query)
     }
     
     

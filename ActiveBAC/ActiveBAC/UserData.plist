@@ -5,7 +5,7 @@
 	<key>UserProfile</key>
 	<dict>
 		<key>limit</key>
-		<integer>3</integer>
+		<integer>15</integer>
 		<key>useLimit</key>
 		<true/>
 		<key>firstRun</key>

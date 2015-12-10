@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import Parse
 
 class IOController {
 
     //Write settings to the plist file
-    static func writeSettings(weight: Double?, gender: NSString?, emergencyNumber: NSString?, helpMessage: NSString?, includeLocation: Bool?, limit: Int?, useLimit: Bool?) {
+    static func writeSettings() {
+       /* 
         let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
+        
         let dict = NSMutableDictionary(contentsOfFile: path!)
         dict!.objectForKey("UserProfile")!.setObject(weight!, forKey: "weight")
         dict!.objectForKey("UserProfile")!.setObject(gender!, forKey: "gender")
@@ -21,7 +24,22 @@ class IOController {
         dict!.objectForKey("UserProfile")!.setObject(includeLocation!, forKey: "includeLocation")
         dict!.objectForKey("UserProfile")!.setObject(limit!, forKey: "limit")
         dict!.writeToFile(path!, atomically: false)
-        print (path!)
+        NSLog(path!)
+*/
+       /* let userData = PFObject(className: "UserData")
+        userData["limit"] = limitLabel.text
+       
+        userData["helpMessage"] = helpMessageTextBox.text
+        userData["emergencyNumber"] = emergencyNumberTextBox.text
+        userData["weight"] = weightTextBox.text
+        userData["gender"] = gender.text
+        userData.pinInBackground()
+        userData.saveInBackground()
+        //userData["latitude"] =
+        //userData["longitude"] =
+        // userData["useLimit"] = settings.useLimit
+       // userData["includeLocation"] = settings.includeLocation
+*/
         
     }
     
@@ -36,16 +54,35 @@ class IOController {
     
     //Get settings from the plist file
     //NOTE: This should only be used when initializing the settings class, all other access to settings should be done via an instance of the settings class
-    static func getSettings() -> (weight: Double, gender: String, emergencyNumber: String, helpMessage: String, includeLocation: Bool, firstRun: Bool, limit: Int?, useLimit: Bool?){
-        let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
+    static func getSettings() -> (){
+        
+       /* let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
         let dict = NSDictionary(contentsOfFile: path!)
         let userProfile = dict!.objectForKey("UserProfile") as! NSDictionary
         
         return ((userProfile.objectForKey("weight")?.doubleValue)!, (userProfile.objectForKey("gender") as! String?)!, (userProfile.objectForKey("emergencyNumber") as! String?)!, (userProfile.objectForKey("helpMessage") as! String?)!, (userProfile.objectForKey("includeLocation") as! Bool?)!, (userProfile.objectForKey("firstRun") as! Bool?)!, (userProfile.objectForKey("limit")?.integerValue)!,
             (userProfile.objectForKey("useLimit") as! Bool?)!)
-        
+*/
+        let query = PFQuery(className: "UserData")
+        query.fromLocalDatastore().orderByDescending("updatedAt")
+        query.getFirstObjectInBackgroundWithBlock{
+            (data: PFObject? , error: NSError?) -> Void in
+            if error == nil {
+               // print("successfully found \(data.count) users")
+                print(data)
+                
+         //       if let data2 = data {
+           //         for object in data2{
+             //           print(object["weight"])
+                  //  }
+                //}
+            }else{
+                print("fuckSwift")
+            }
+        }
     }
-
+    
+    
 }
 
 
@@ -70,7 +107,7 @@ class Settings {
             limit = 3
             useLimit = true
         } else {
-            let settings = IOController.getSettings()
+            /*let settings = IOController.getSettings()
             self.weight = settings.weight
             self.gender = settings.gender
             self.emergencyNumber = settings.emergencyNumber
@@ -78,6 +115,7 @@ class Settings {
             self.includeLocation = settings.includeLocation
             self.limit = settings.limit
             self.useLimit = settings.useLimit
+*/
         }
     }
     
@@ -127,5 +165,5 @@ class ModelController {
         return BAC
         
     }
-
+    
 }
