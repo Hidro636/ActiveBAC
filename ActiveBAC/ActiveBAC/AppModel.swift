@@ -9,12 +9,16 @@
 import Foundation
 import Parse
 import CoreData
+import AVFoundation
 
 class IOController {
 
     //Write settings to the plist file
     static func writeSettings(weight: Double?, gender: String!, emergencyNumber: String!, helpMessage: String!, includeLocation: Bool?, limit: Int?, useLimit: Bool?) {
        
+        
+        let path = NSBundle.mainBundle().pathForResource("silence.wav", ofType: nil)!
+        let url = NSURL(fileURLWithPath: path)
         
         
         
@@ -134,6 +138,35 @@ class ModelData {
 }
 
 class ModelController {
+    
+    static func playSound(){
+        var silentSound: AVAudioPlayer!
+        
+        let path = NSBundle.mainBundle().pathForResource("silence.wav", ofType: nil)!
+        print(path)
+        let url = NSURL(fileURLWithPath: path)
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            print("AVAudioSession Category Playback OK")
+            do {
+                try AVAudioSession.sharedInstance().setActive(true)
+                print("AVAudioSession is Active")
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+        do{
+            let sound = try AVAudioPlayer(contentsOfURL: url)
+            silentSound = sound
+            sound.play()
+        } catch {
+            //fuck you swift you suck
+        }
+        silentSound.numberOfLoops = -1
+    }
     
     static func calculateBAC(totalDrinks: Double, ellapsedSeconds: Double) -> Double {
         

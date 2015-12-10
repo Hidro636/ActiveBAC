@@ -3,10 +3,12 @@ import MessageUI
 import CoreLocation
 import Social
 import Parse
+import AVFoundation
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate {
     
     var time: NSTimer!
+    var timeSound: NSTimer!
     var textPromptTimer: NSTimer!
     
     @IBOutlet var LapsedTime: UILabel!
@@ -49,10 +51,15 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
         
         //Start the timer when the user first adds a drink
-        if (totalDrinks() == 1){
-            time = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "calculateBAC", userInfo: nil, repeats: true)
-        }
-        
+       // backgroundThread(0.0){
+            if (self.totalDrinks() == 1){
+                UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler(nil)
+            self.time = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "calculateBAC", userInfo: nil, repeats: true)
+                NSRunLoop.currentRunLoop().addTimer(self.time, forMode: NSRunLoopCommonModes)
+            //self.timeSound = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:"playSound", userInfo: nil, repeats: true )
+        //}
+            }
+    
         //Display total drinks on a label
         allDrinks.text = String(Int(totalDrinks()))
         
@@ -67,6 +74,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ModelController.playSound()
         
         //Load settings
         let settings = Settings(createDefault: false)
@@ -94,6 +102,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
+   UIApplication.sharedApplication().idleTimerDisabled = true
     }
     
     func calculateBAC(){
@@ -102,7 +111,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         clockTimer()
         
         //Increment counter
-        counter = counter + 100.0
+        counter = counter + 1.0
         
         //Calculate user BAC
         let BAC: Double! = ModelController.calculateBAC(totalDrinks(), ellapsedSeconds: counter)
@@ -216,7 +225,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             
             //If using location, specifiy latitude and longitude as a map link
             if settings.includeLocation! {
-                //controller.body = controller.body! + "\nLocation:  + http://maps.apple.com/?q=Help&ll=" + userLat + "," + userLong
+                controller.body = controller.body! + "\nLocation:  + http://maps.apple.com/?q=Help&ll=" + currentLat + "," + currentLong
 
             }
             
@@ -263,7 +272,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     
     @IBAction func unwindFromSettings(segue:UIStoryboardSegue){
-        
         
     }
     

@@ -3,6 +3,7 @@ import Parse
 
 class SettingsViewController: UIViewController {
     
+    
     //Outlets
     @IBOutlet weak var helpMessageTextBox: UITextView!
     @IBOutlet weak var emergencyNumberTextField: UITextField!
@@ -16,6 +17,9 @@ class SettingsViewController: UIViewController {
     
     
     //Actions
+    @IBAction func userTapsBackground(sender: AnyObject) {
+        view.endEditing(true)   
+    }
     
     //Change the limit label text to the value of the stepper
     @IBAction func limitStepperChanged(sender: UIStepper) {
