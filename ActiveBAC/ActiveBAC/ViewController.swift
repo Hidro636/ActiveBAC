@@ -32,7 +32,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     @IBAction func addDrinkButtonClick(sender: UIButton) {
         
         let settings = Settings(createDefault: false)
-        
+        if settings.useLimit! {
+            print("gayyy")
+        }
         //Check to see if the user is using a limit
         if settings.useLimit! {
             //Check to see if the current total drink count is greater than the set limit, and display a message if it is

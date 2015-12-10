@@ -8,6 +8,7 @@
 
 import Foundation
 import Parse
+import CoreData
 
 class IOController {
 
@@ -15,71 +16,58 @@ class IOController {
     static func writeSettings(weight: Double?, gender: String!, emergencyNumber: String!, helpMessage: String!, includeLocation: Bool?, limit: Int?, useLimit: Bool?) {
        
         
-        let settings = PFObject(className: "settings")
-        settings.objectId = "mainSettings"
-        settings["weight"] = weight!
-        settings["gender"] = gender
-        settings["emergencyNumber"] = emergencyNumber!
-        settings["helpMessage"] = helpMessage!
-        settings["includeLocation"] = includeLocation!
-        settings["limit"] = limit!
-        settings["useLimit"] = useLimit!
-        do {
-            //try settings.pin()
-            try PFObject.unpinAllObjects()
-            try settings.pin()
-        }
-        catch {
-            print("An error occurred while saving the user settings in the local datastore")
-        }
+        
+        
+            let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(weight, forKey: "weight")
+        defaults.setObject(gender, forKey: "gender")
+        defaults.setObject(emergencyNumber, forKey: "emergencyNumber")
+        defaults.setObject(helpMessage, forKey: "helpMessage")
+        defaults.setObject(includeLocation, forKey: "includeLocation")
+        defaults.setObject(limit, forKey: "limit")
+        defaults.setObject(useLimit, forKey: "useLimit")
+        
+        
+        
+//        let settings = PFObject(className: "settings")
+//        settings.objectId = "mainSettings"
+//        settings["weight"] = weight!
+//        settings["gender"] = gender
+//        settings["emergencyNumber"] = emergencyNumber!
+//        settings["helpMessage"] = helpMessage!
+//        settings["includeLocation"] = includeLocation!
+//        settings["limit"] = limit!
+//        settings["useLimit"] = useLimit!
+//        do {
+//            //try settings.pin()
+//            try PFObject.unpinAllObjects()
+//            try settings.pin()
+//        }
+//        catch {
+//            print("An error occurred while saving the user settings in the local datastore")
+//        }
         
         
     }
     
-    //Set the first run property in the plist file
-//    static func setFirstRun(firstRun: Bool) {
-//        let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
-//        let dict = NSMutableDictionary(contentsOfFile: path!)
-//        dict!.objectForKey("UserProfile")!.setObject(firstRun, forKey: "firstRun")
-//        dict!.writeToFile(path!, atomically: false)
-//    }
     
     
     //Get settings from the plist file
     //NOTE: This should only be used when initializing the settings class, all other access to settings should be done via an instance of the settings class
-    static func getSettings() -> (Settings){
+    static func getSettings() -> (weight: Double, gender: String?, emergencyNumber: String?, helpMessage:String?, includeLocation: Bool, limit: Int, useLimit: Bool, firstRun: Bool){
+       
+            let defaults = NSUserDefaults.standardUserDefaults()
         
-       /* let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
-        let dict = NSDictionary(contentsOfFile: path!)
-        let userProfile = dict!.objectForKey("UserProfile") as! NSDictionary
+        let weight = defaults.doubleForKey("weight")
+        let gender = defaults.stringForKey("gender")
+        let emergencyNumber = defaults.stringForKey("emergencyNumber")
+        let helpMessage = defaults.stringForKey("helpMessage")
+        let includeLocation = defaults.boolForKey("includeLocation")
+        let limit = defaults.integerForKey("limit")
+        let useLimit = defaults.boolForKey("useLimit")
+        let firstRun = defaults.boolForKey("firstRun")
         
-        return ((userProfile.objectForKey("weight")?.doubleValue)!, (userProfile.objectForKey("gender") as! String?)!, (userProfile.objectForKey("emergencyNumber") as! String?)!, (userProfile.objectForKey("helpMessage") as! String?)!, (userProfile.objectForKey("includeLocation") as! Bool?)!, (userProfile.objectForKey("firstRun") as! Bool?)!, (userProfile.objectForKey("limit")?.integerValue)!,
-            (userProfile.objectForKey("useLimit") as! Bool?)!)
-*/
-        let query = PFQuery(className: "settings")
-        query.fromLocalDatastore()
-        
-        var settings: PFObject?
-        
-        do {
-            try settings = query.getObjectWithId("mainSettings")
-        } catch {
-            print("An error occurred getting settings from the local datastore")
-        }
-        
-        let settingsObject = Settings(createDefault: true)
-        
-        if let settings = settings {
-            settingsObject.weight = settings["weight"].doubleValue
-            settingsObject.gender = String(settings["gender"])
-            settingsObject.emergencyNumber = String(settings["emergencyNumber"])
-            settingsObject.helpMessage = String(settings["helpMessage"])
-            settingsObject.includeLocation = settings["includeLocation"].boolValue
-            settingsObject.limit = settings["limit"].integerValue
-            settingsObject.useLimit = settings["useLimit"].boolValue
-        }
-           //print("gender: " + String(settingsObject.gender))
-        return settingsObject
+        return (weight, gender, emergencyNumber, helpMessage, includeLocation, limit, useLimit, firstRun)
     }
     
 }
@@ -93,6 +81,7 @@ class Settings {
     var includeLocation: Bool?
     var limit: Int?
     var useLimit: Bool?
+    var firstRun: Bool?
 
     init() {
         

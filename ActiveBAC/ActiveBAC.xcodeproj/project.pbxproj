@@ -12,6 +12,7 @@
 		A35723D31C0FB9020086386D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A35723D21C0FB9020086386D /* CoreLocation.framework */; };
 		A371C2771BFE463F002EA8A5 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A371C2761BFE463F002EA8A5 /* UserData.plist */; };
 		A38AC39D1C10E679005B462F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A38AC39C1C10E679005B462F /* Images.xcassets */; };
+		A3E3BBD81C195BE400072594 /* ActiveBAC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3E3BBD61C195BE400072594 /* ActiveBAC.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		B05F82C81C19021400CBC156 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05F82C61C19021400CBC156 /* Bolts.framework */; };
 		B05F82C91C19021400CBC156 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05F82C71C19021400CBC156 /* Parse.framework */; };
 		B05F82CB1C19025700CBC156 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05F82CA1C19025700CBC156 /* AudioToolbox.framework */; };
@@ -51,6 +52,7 @@
 		A35723D21C0FB9020086386D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A371C2761BFE463F002EA8A5 /* UserData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
 		A38AC39C1C10E679005B462F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A3E3BBD71C195BE400072594 /* ActiveBAC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ActiveBAC.xcdatamodel; sourceTree = "<group>"; };
 		B05F82C61C19021400CBC156 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		B05F82C71C19021400CBC156 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		B05F82CA1C19025700CBC156 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -145,6 +147,7 @@
 		F12D6CAC1BCF65AF00F9D664 /* ActiveBAC */ = {
 			isa = PBXGroup;
 			children = (
+				A3E3BBD61C195BE400072594 /* ActiveBAC.xcdatamodeld */,
 				F12D6CD11BCF699E00F9D664 /* media */,
 				F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */,
 				F12D6CB11BCF65AF00F9D664 /* ViewController.swift */,
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3E3BBD81C195BE400072594 /* ActiveBAC.xcdatamodeld in Sources */,
 				F12D6CB21BCF65AF00F9D664 /* ViewController.swift in Sources */,
 				F12D6CB01BCF65AF00F9D664 /* AppDelegate.swift in Sources */,
 				E790AF4D1C0E3BE00048BC8C /* AppModel.swift in Sources */,
@@ -532,6 +536,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A3E3BBD61C195BE400072594 /* ActiveBAC.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A3E3BBD71C195BE400072594 /* ActiveBAC.xcdatamodel */,
+			);
+			currentVersion = A3E3BBD71C195BE400072594 /* ActiveBAC.xcdatamodel */;
+			path = ActiveBAC.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F12D6CA21BCF65AF00F9D664 /* Project object */;
 }
