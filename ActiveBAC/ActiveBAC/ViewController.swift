@@ -24,7 +24,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var gender: Double!
     var usersGender: String!
     var sendMessage = true
-
     var currentLat: String!
     var currentLong: String!
     var locationManager: CLLocationManager = CLLocationManager()
@@ -33,7 +32,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
         let settings = Settings(createDefault: false)
         if settings.useLimit! {
-            print("gayyy")
         }
         //Check to see if the user is using a limit
         if settings.useLimit! {
@@ -216,7 +214,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             
             //If using location, specifiy latitude and longitude as a map link
             if settings.includeLocation! {
-                //controller.body = controller.body! + "\nLocation:  + http://maps.apple.com/?q=Help&ll=" + userLat + "," + userLong
+                controller.body = controller.body! + "\nLocation:  + http://maps.apple.com/?q=Help&ll=" + currentLat + "," + currentLong
 
             }
             
