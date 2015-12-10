@@ -47,63 +47,51 @@ class SettingsViewController: UIViewController {
             userGender = "male"
         }
         
-      /*  let emergencyNumber = emergencyNumberTextField.text
-        
+        let emergencyNumber = emergencyNumberTextField.text
         let helpMessage = helpMessageTextBox.text
         let includeLocation = includeLocationSwitch.on
         let useLimit = useLimitSwitch.on
-*/
         
         
-        let userData = PFObject(className: "UserData")
-        userData.unpinInBackgroundWithName("UserData")
-       // let settings = IOController.getSettings()
         
-        userData["limit"] = limitLabel.text
-        userData["helpMessage"] = helpMessageTextBox.text
-        userData["emergencyNumber"] = emergencyNumberTextField.text
-        userData["weight"] = weightTextBox.text
-        userData["gender"] = userGender
-        //userData["includeLocation"] = settings.includeLocation
-        userData.pinInBackground()
-        userData.saveInBackground()
         
         //Write all settings to the plist
-        //IOController.writeSettings(userWeight, gender: userGender, emergencyNumber: emergencyNumber, helpMessage: helpMessage, includeLocation: includeLocation, limit: Int(limitLabel.text!), useLimit: useLimit)
+        IOController.writeSettings(userWeight, gender: userGender!, emergencyNumber: emergencyNumber, helpMessage: helpMessage, includeLocation: includeLocation, limit: Int(limitLabel.text!), useLimit: useLimit)
+        
     }
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
-        IOController.getSettings()
         
-        //let settings = Settings(createDefault: false)
         
-        //weightTextBox.text = String(userData)
-        //emergencyNumberTextField.text = settings.emergencyNumber
-        //helpMessageTextBox.text = settings.helpMessage
-        //includeLocationSwitch.on  = settings.includeLocation!
-        //limitStepper.value = Double(settings.limit!)
-        //limitLabel.text = String(settings.limit!)
+        let settings = Settings(createDefault: false)
         
-       /* useLimitSwitch.on = settings.useLimit!
-        
-        //Disable limit controls if the useLimit property is false
-        if !settings.useLimit! {
-            limitStepper.enabled = false
-            limitLabel.enabled = false
-            limitDescriptionLable.enabled = false
+        weightTextBox.text = String(settings.weight!)
+        emergencyNumberTextField.text = settings.emergencyNumber
+        helpMessageTextBox.text = settings.helpMessage
+        includeLocationSwitch.on  = settings.includeLocation!
+        limitStepper.value = Double(settings.limit!)
+        limitLabel.text = String(settings.limit!)
+        useLimitSwitch.on = settings.useLimit!
         
         if settings.gender == "male" {
             gender.on = false
         } else {
             gender.on = true
         }
-*/
+
         
-        //Hide keyboard on tap
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
+        //Disable limit controls if the useLimit property is false
+        if !settings.useLimit! {
+            limitStepper.enabled = false
+            limitLabel.enabled = false
+            limitDescriptionLable.enabled = false
+            
+            
+            //Hide keyboard on tap
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+            view.addGestureRecognizer(tap)
+        }
     }
     
     override func didReceiveMemoryWarning() {

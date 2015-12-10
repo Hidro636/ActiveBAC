@@ -222,13 +222,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
     }
     
-    func parseQuery(){
-        var query = PFQuery(className:"UserData")
-        query.fromLocalDatastore()
-        query.findObjectsInBackground()
-        print (query)
-    }
-    
     
     func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult){
         self.dismissViewControllerAnimated(true, completion: nil)

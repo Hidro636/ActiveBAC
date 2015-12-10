@@ -12,49 +12,42 @@ import Parse
 class IOController {
 
     //Write settings to the plist file
-    static func writeSettings() {
-       /* 
-        let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
-        
-        let dict = NSMutableDictionary(contentsOfFile: path!)
-        dict!.objectForKey("UserProfile")!.setObject(weight!, forKey: "weight")
-        dict!.objectForKey("UserProfile")!.setObject(gender!, forKey: "gender")
-        dict!.objectForKey("UserProfile")!.setObject(emergencyNumber!, forKey: "emergencyNumber")
-        dict!.objectForKey("UserProfile")!.setObject(helpMessage!, forKey: "helpMessage")
-        dict!.objectForKey("UserProfile")!.setObject(includeLocation!, forKey: "includeLocation")
-        dict!.objectForKey("UserProfile")!.setObject(limit!, forKey: "limit")
-        dict!.writeToFile(path!, atomically: false)
-        NSLog(path!)
-*/
-       /* let userData = PFObject(className: "UserData")
-        userData["limit"] = limitLabel.text
+    static func writeSettings(weight: Double?, gender: String!, emergencyNumber: String!, helpMessage: String!, includeLocation: Bool?, limit: Int?, useLimit: Bool?) {
        
-        userData["helpMessage"] = helpMessageTextBox.text
-        userData["emergencyNumber"] = emergencyNumberTextBox.text
-        userData["weight"] = weightTextBox.text
-        userData["gender"] = gender.text
-        userData.pinInBackground()
-        userData.saveInBackground()
-        //userData["latitude"] =
-        //userData["longitude"] =
-        // userData["useLimit"] = settings.useLimit
-       // userData["includeLocation"] = settings.includeLocation
-*/
+        
+        let settings = PFObject(className: "settings")
+        settings.objectId = "mainSettings"
+        settings["weight"] = weight!
+        settings["gender"] = gender
+        settings["emergencyNumber"] = emergencyNumber!
+        settings["helpMessage"] = helpMessage!
+        settings["includeLocation"] = includeLocation!
+        settings["limit"] = limit!
+        settings["useLimit"] = useLimit!
+        do {
+            //try settings.pin()
+            try PFObject.unpinAllObjects()
+            try settings.pin()
+        }
+        catch {
+            print("An error occurred while saving the user settings in the local datastore")
+        }
+        
         
     }
     
     //Set the first run property in the plist file
-    static func setFirstRun(firstRun: Bool) {
-        let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
-        let dict = NSMutableDictionary(contentsOfFile: path!)
-        dict!.objectForKey("UserProfile")!.setObject(firstRun, forKey: "firstRun")
-        dict!.writeToFile(path!, atomically: false)
-    }
+//    static func setFirstRun(firstRun: Bool) {
+//        let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
+//        let dict = NSMutableDictionary(contentsOfFile: path!)
+//        dict!.objectForKey("UserProfile")!.setObject(firstRun, forKey: "firstRun")
+//        dict!.writeToFile(path!, atomically: false)
+//    }
     
     
     //Get settings from the plist file
     //NOTE: This should only be used when initializing the settings class, all other access to settings should be done via an instance of the settings class
-    static func getSettings() -> (){
+    static func getSettings() -> (Settings){
         
        /* let path = NSBundle.mainBundle().pathForResource("UserData", ofType: "plist")
         let dict = NSDictionary(contentsOfFile: path!)
@@ -63,25 +56,31 @@ class IOController {
         return ((userProfile.objectForKey("weight")?.doubleValue)!, (userProfile.objectForKey("gender") as! String?)!, (userProfile.objectForKey("emergencyNumber") as! String?)!, (userProfile.objectForKey("helpMessage") as! String?)!, (userProfile.objectForKey("includeLocation") as! Bool?)!, (userProfile.objectForKey("firstRun") as! Bool?)!, (userProfile.objectForKey("limit")?.integerValue)!,
             (userProfile.objectForKey("useLimit") as! Bool?)!)
 */
-        let query = PFQuery(className: "UserData")
-        query.fromLocalDatastore().orderByDescending("updatedAt")
-        query.getFirstObjectInBackgroundWithBlock{
-            (data: PFObject? , error: NSError?) -> Void in
-            if error == nil {
-               // print("successfully found \(data.count) users")
-                print(data)
-                
-         //       if let data2 = data {
-           //         for object in data2{
-             //           print(object["weight"])
-                  //  }
-                //}
-            }else{
-                print("fuckSwift")
-            }
+        let query = PFQuery(className: "settings")
+        query.fromLocalDatastore()
+        
+        var settings: PFObject?
+        
+        do {
+            try settings = query.getObjectWithId("mainSettings")
+        } catch {
+            print("An error occurred getting settings from the local datastore")
         }
+        
+        let settingsObject = Settings(createDefault: true)
+        
+        if let settings = settings {
+            settingsObject.weight = settings["weight"].doubleValue
+            settingsObject.gender = String(settings["gender"])
+            settingsObject.emergencyNumber = String(settings["emergencyNumber"])
+            settingsObject.helpMessage = String(settings["helpMessage"])
+            settingsObject.includeLocation = settings["includeLocation"].boolValue
+            settingsObject.limit = settings["limit"].integerValue
+            settingsObject.useLimit = settings["useLimit"].boolValue
+        }
+           //print("gender: " + String(settingsObject.gender))
+        return settingsObject
     }
-    
     
 }
 
@@ -95,6 +94,9 @@ class Settings {
     var limit: Int?
     var useLimit: Bool?
 
+    init() {
+        
+    }
     
     init(createDefault: Bool) {
         
@@ -107,7 +109,7 @@ class Settings {
             limit = 3
             useLimit = true
         } else {
-            /*let settings = IOController.getSettings()
+            let settings = IOController.getSettings()
             self.weight = settings.weight
             self.gender = settings.gender
             self.emergencyNumber = settings.emergencyNumber
@@ -115,7 +117,7 @@ class Settings {
             self.includeLocation = settings.includeLocation
             self.limit = settings.limit
             self.useLimit = settings.useLimit
-*/
+
         }
     }
     
