@@ -2,7 +2,6 @@ import UIKit
 import MessageUI
 import CoreLocation
 import Social
-import Parse
 import AVFoundation
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate {
@@ -37,6 +36,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
         //Check to see if the user is using a limit
         if settings.useLimit! {
+            
             //Check to see if the current total drink count is greater than the set limit, and display a message if it is
             if Int(totalDrinks()) >= limit {
                 showAlert("Over Limit", message: "You have exceeded the drink limit you defined in settings, be careful!")
@@ -166,7 +166,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         //Check to see if the user's BAC is dangerously high, and ask to send an emergency text if it is
         if BAC >= 0.2 {
             if sendMessage == true {
+        
                 showMessageAlert("Send For Help?", message: "Would you like us to send your location to your emergency contact?")
+                
                 self.sendMessage = false
                 textPromptTimer = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "checkEllapsedTime", userInfo: nil, repeats: true)
             }
