@@ -56,9 +56,12 @@ class SettingsViewController: UIViewController {
         
         
         
+        IOController.setFirstRun(true)
         
         //Write all settings to the plist
         IOController.writeSettings(userWeight, gender: userGender!, emergencyNumber: emergencyNumber, helpMessage: helpMessage, includeLocation: includeLocation, limit: Int(limitLabel.text!), useLimit: useLimit)
+        
+        
         
     }
     override func viewDidLoad() {

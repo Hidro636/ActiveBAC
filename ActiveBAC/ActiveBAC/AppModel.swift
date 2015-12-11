@@ -46,6 +46,11 @@ class IOController {
         return (weight, gender, emergencyNumber, helpMessage, includeLocation, limit, useLimit, firstRun)
     }
     
+    static func setFirstRun(value: Bool?) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(value, forKey: "firstRun")
+    }
+    
 }
 
 
@@ -151,6 +156,11 @@ class ModelController {
             const = 0.73
         } else if settings.gender == "female"{
             const = 0.66
+        }
+        
+        //Handle weight == 0
+        if(settings.weight! == 0) {
+            settings.weight = 160
         }
         
         let firstPart: Double! = (totalDrinks * 3084/1000)
