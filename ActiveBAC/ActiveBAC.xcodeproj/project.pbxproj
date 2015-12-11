@@ -14,7 +14,9 @@
 		A38AC39D1C10E679005B462F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A38AC39C1C10E679005B462F /* Images.xcassets */; };
 		A3C9EE6D1C1AC9AA00B1066F /* drink2.png in Resources */ = {isa = PBXBuildFile; fileRef = A33024F81BFD1DB400EDFCE8 /* drink2.png */; settings = {ASSET_TAGS = (); }; };
 		A3C9EE6E1C1AC9AA00B1066F /* drink2.png in Resources */ = {isa = PBXBuildFile; fileRef = A33024F81BFD1DB400EDFCE8 /* drink2.png */; settings = {ASSET_TAGS = (); }; };
-		A3E3BBD81C195BE400072594 /* ActiveBAC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3E3BBD61C195BE400072594 /* ActiveBAC.xcdatamodeld */; };
+		A3C9EE761C1AD70800B1066F /* silence.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3C9EE751C1AD70800B1066F /* silence.wav */; settings = {ASSET_TAGS = (); }; };
+		A3C9EE771C1AD70800B1066F /* silence.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3C9EE751C1AD70800B1066F /* silence.wav */; settings = {ASSET_TAGS = (); }; };
+		A3C9EE781C1AD70800B1066F /* silence.wav in Resources */ = {isa = PBXBuildFile; fileRef = A3C9EE751C1AD70800B1066F /* silence.wav */; settings = {ASSET_TAGS = (); }; };
 		B05F82CB1C19025700CBC156 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05F82CA1C19025700CBC156 /* AudioToolbox.framework */; };
 		B05F82CF1C19026A00CBC156 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05F82CE1C19026A00CBC156 /* CoreGraphics.framework */; };
 		B05F82DD1C1973A800CBC156 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05F82DC1C1973A700CBC156 /* AVFoundation.framework */; };
@@ -27,11 +29,7 @@
 		E7DC952E1C1A2ADE0046EE34 /* ActiveBACWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E7DC95141C1A2ADE0046EE34 /* ActiveBACWatch.app */; };
 		E7DC95381C1A2B9F0046EE34 /* WatchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DC95371C1A2B9F0046EE34 /* WatchInterfaceController.swift */; };
 		F10043451C11645100ABBC20 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F10043441C11645100ABBC20 /* background.jpg */; };
-		F11128481C1AB83F0023A2EF /* silence.wav in Resources */ = {isa = PBXBuildFile; fileRef = F11128471C1AB83F0023A2EF /* silence.wav */; };
-		F11128491C1AC1FD0023A2EF /* drink2.png in Resources */ = {isa = PBXBuildFile; fileRef = A33024F81BFD1DB400EDFCE8 /* drink2.png */; };
-		F111284A1C1AC1FD0023A2EF /* drink2.png in Resources */ = {isa = PBXBuildFile; fileRef = A33024F81BFD1DB400EDFCE8 /* drink2.png */; };
 		F111284B1C1ACB8D0023A2EF /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F10043441C11645100ABBC20 /* background.jpg */; };
-		F111284C1C1ACB8D0023A2EF /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F10043441C11645100ABBC20 /* background.jpg */; };
 		F12D6CB01BCF65AF00F9D664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */; };
 		F12D6CB21BCF65AF00F9D664 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D6CB11BCF65AF00F9D664 /* ViewController.swift */; };
 		F12D6CB51BCF65AF00F9D664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12D6CB31BCF65AF00F9D664 /* Main.storyboard */; };
@@ -95,6 +93,7 @@
 		A35723D21C0FB9020086386D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A371C2761BFE463F002EA8A5 /* UserData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
 		A38AC39C1C10E679005B462F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A3C9EE751C1AD70800B1066F /* silence.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = silence.wav; sourceTree = "<group>"; };
 		B05F82CA1C19025700CBC156 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B05F82CE1C19026A00CBC156 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B05F82DC1C1973A700CBC156 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -109,7 +108,6 @@
 		E7DC952B1C1A2ADE0046EE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7DC95371C1A2B9F0046EE34 /* WatchInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchInterfaceController.swift; sourceTree = "<group>"; };
 		F10043441C11645100ABBC20 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		F11128471C1AB83F0023A2EF /* silence.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = silence.wav; sourceTree = "<group>"; };
 		F12D6CAA1BCF65AF00F9D664 /* ActiveBAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActiveBAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12D6CAE1BCF65AF00F9D664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12D6CAF1BCF65AF00F9D664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -243,7 +241,7 @@
 		F12D6CD11BCF699E00F9D664 /* media */ = {
 			isa = PBXGroup;
 			children = (
-				F11128471C1AB83F0023A2EF /* silence.wav */,
+				A3C9EE751C1AD70800B1066F /* silence.wav */,
 				F10043441C11645100ABBC20 /* background.jpg */,
 				A33024F81BFD1DB400EDFCE8 /* drink2.png */,
 				F12D6CDC1BCF705700F9D664 /* settingsButton.png */,
@@ -385,6 +383,7 @@
 			files = (
 				A3C9EE6D1C1AC9AA00B1066F /* drink2.png in Resources */,
 				E7DC951A1C1A2ADE0046EE34 /* Assets.xcassets in Resources */,
+				A3C9EE771C1AD70800B1066F /* silence.wav in Resources */,
 				E7DC95181C1A2ADE0046EE34 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +394,7 @@
 			files = (
 				F111284B1C1ACB8D0023A2EF /* background.jpg in Resources */,
 				E7DC952A1C1A2ADE0046EE34 /* Assets.xcassets in Resources */,
+				A3C9EE781C1AD70800B1066F /* silence.wav in Resources */,
 				A3C9EE6E1C1AC9AA00B1066F /* drink2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,9 +403,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F11128481C1AB83F0023A2EF /* silence.wav in Resources */,
 				F12D6CB51BCF65AF00F9D664 /* Main.storyboard in Resources */,
 				A38AC39D1C10E679005B462F /* Images.xcassets in Resources */,
+				A3C9EE761C1AD70800B1066F /* silence.wav in Resources */,
 				F12D6CDD1BCF705700F9D664 /* settingsButton.png in Resources */,
 				F10043451C11645100ABBC20 /* background.jpg in Resources */,
 				F12D6CBA1BCF65B000F9D664 /* LaunchScreen.xib in Resources */,
@@ -703,6 +703,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ActiveBACTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.team0calpoly.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -719,6 +720,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ActiveBACTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.team0calpoly.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

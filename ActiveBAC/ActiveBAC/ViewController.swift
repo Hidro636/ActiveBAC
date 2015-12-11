@@ -117,6 +117,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         UIApplication.sharedApplication().idleTimerDisabled = true
         
         
+        if !IOController.getSettings().firstRun {
+            IOController.setFirstRun(true)
+            
+            IOController.writeSettings(160, gender: "male", emergencyNumber: "", helpMessage: "", includeLocation: true, limit: 0, useLimit: false)
+        }
+        
         //Show the settings menu if it is the user's first time opening the app
         
     }

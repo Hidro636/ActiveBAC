@@ -174,7 +174,6 @@
                         <outlet property="WarningMessage" destination="mba-WB-ocr" id="GnX-Eg-l38"/>
                         <outlet property="allDrinks" destination="1t5-WN-Pop" id="Ih3-jC-aN7"/>
                         <outlet property="limitProgressView" destination="uoT-q4-ZA4" id="S2l-OM-Ire"/>
-                        <outlet property="settingsButton" destination="GZc-2b-nPi" id="Vy9-Cc-qmz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
