@@ -15,7 +15,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     @IBOutlet var WarningMessage: UILabel!
     @IBOutlet var allDrinks: UILabel!
     @IBOutlet var limitProgressView: UIProgressView!
-    
+
     var userBAC: Double!
     var counter: Double! = 0
     var counter1 = 0

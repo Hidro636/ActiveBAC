@@ -12,6 +12,8 @@
 		A35723D31C0FB9020086386D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A35723D21C0FB9020086386D /* CoreLocation.framework */; };
 		A371C2771BFE463F002EA8A5 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A371C2761BFE463F002EA8A5 /* UserData.plist */; };
 		A38AC39D1C10E679005B462F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A38AC39C1C10E679005B462F /* Images.xcassets */; };
+		A3C9EE6D1C1AC9AA00B1066F /* drink2.png in Resources */ = {isa = PBXBuildFile; fileRef = A33024F81BFD1DB400EDFCE8 /* drink2.png */; settings = {ASSET_TAGS = (); }; };
+		A3C9EE6E1C1AC9AA00B1066F /* drink2.png in Resources */ = {isa = PBXBuildFile; fileRef = A33024F81BFD1DB400EDFCE8 /* drink2.png */; settings = {ASSET_TAGS = (); }; };
 		A3E3BBD81C195BE400072594 /* ActiveBAC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3E3BBD61C195BE400072594 /* ActiveBAC.xcdatamodeld */; };
 		B05F82CB1C19025700CBC156 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05F82CA1C19025700CBC156 /* AudioToolbox.framework */; };
 		B05F82CF1C19026A00CBC156 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05F82CE1C19026A00CBC156 /* CoreGraphics.framework */; };
@@ -379,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3C9EE6D1C1AC9AA00B1066F /* drink2.png in Resources */,
 				E7DC951A1C1A2ADE0046EE34 /* Assets.xcassets in Resources */,
 				E7DC95181C1A2ADE0046EE34 /* Interface.storyboard in Resources */,
 			);
@@ -389,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7DC952A1C1A2ADE0046EE34 /* Assets.xcassets in Resources */,
+				A3C9EE6E1C1AC9AA00B1066F /* drink2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +734,7 @@
 				E7DC95321C1A2ADE0046EE34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7DC95351C1A2ADE0046EE34 /* Build configuration list for PBXNativeTarget "ActiveBACWatch" */ = {
 			isa = XCConfigurationList;
@@ -738,6 +743,7 @@
 				E7DC95301C1A2ADE0046EE34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F12D6CA51BCF65AF00F9D664 /* Build configuration list for PBXProject "ActiveBAC" */ = {
 			isa = XCConfigurationList;

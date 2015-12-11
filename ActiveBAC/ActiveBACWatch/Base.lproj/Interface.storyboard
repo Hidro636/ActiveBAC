@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="14F1505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wmy-on-i7E">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wmy-on-i7E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
@@ -10,7 +10,7 @@
             <objects>
                 <controller hidesWhenLoading="NO" id="wmy-on-i7E">
                     <items>
-                        <button width="1" alignment="left" backgroundImage="drink2.png" id="0a5-8O-0Pd"/>
+                        <button width="96" height="92.5" alignment="center" verticalAlignment="bottom" backgroundImage="drink2.png" id="0a5-8O-0Pd"/>
                     </items>
                 </controller>
             </objects>
