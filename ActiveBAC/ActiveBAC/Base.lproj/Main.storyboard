@@ -7,7 +7,7 @@
         <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ActiveBAC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="mainController" storyboardIdentifier="mainController" id="BYZ-38-t0r" customClass="ViewController" customModule="ActiveBAC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -174,16 +174,17 @@
                         <outlet property="WarningMessage" destination="mba-WB-ocr" id="GnX-Eg-l38"/>
                         <outlet property="allDrinks" destination="1t5-WN-Pop" id="Ih3-jC-aN7"/>
                         <outlet property="limitProgressView" destination="uoT-q4-ZA4" id="S2l-OM-Ire"/>
+                        <outlet property="settingsButton" destination="GZc-2b-nPi" id="Vy9-Cc-qmz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="595.5" y="700"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="v3y-kn-NC9">
             <objects>
-                <viewController id="1yB-7y-cc6" customClass="SettingsViewController" customModule="ActiveBAC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="settingsView" storyboardIdentifier="settingsView" title="Settings" id="1yB-7y-cc6" customClass="SettingsViewController" customModule="ActiveBAC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4gQ-Rz-3gp"/>
                         <viewControllerLayoutGuide type="bottom" id="QT8-1v-USI"/>

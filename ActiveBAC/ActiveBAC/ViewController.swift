@@ -3,8 +3,12 @@ import MessageUI
 import CoreLocation
 import Social
 import AVFoundation
+import WatchKit
+import WatchConnectivity
 
-class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate, WCSessionDelegate {
+    
+    
     
     var time: NSTimer!
     var timeSound: NSTimer!
@@ -30,7 +34,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var locationManager: CLLocationManager = CLLocationManager()
     
     @IBAction func addDrinkButtonClick(sender: UIButton) {
-        
+        addDrink()
+    }
+    
+    func addDrink() {
         let settings = Settings(createDefault: false)
         if settings.useLimit! {
         }
@@ -49,12 +56,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
         
         //Start the timer when the user first adds a drink
-            if (self.totalDrinks() == 1){
-                UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler(nil)
+        if (self.totalDrinks() == 1){
+            UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler(nil)
             self.time = NSTimer.scheduledTimerWithTimeInterval (1, target: self, selector: "calculateBAC", userInfo: nil, repeats: true)
-                NSRunLoop.currentRunLoop().addTimer(self.time, forMode: NSRunLoopCommonModes)
-            }
-    
+            NSRunLoop.currentRunLoop().addTimer(self.time, forMode: NSRunLoopCommonModes)
+        }
+        
         //Display total drinks on a label
         allDrinks.text = String(Int(totalDrinks()))
         
@@ -65,10 +72,20 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             self.limit = settings.limit
             limitProgressView.progress = Float(Double(totalDrinks()) / Double(self.limit))
         }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Swift
+        if (WCSession.isSupported()) {
+            let session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+            print("Activated watch session")
+        }
+        
         ModelController.playSound()
         
         //Load settings
@@ -78,11 +95,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         self.limit = settings.limit
         
         //set the limit of the limit progress bar IF the user has set a limit
-       /* if settings.useLimit!{
+        /* if settings.useLimit!{
         
-            limitProgressView.progress = Float(Double(totalDrinks()) / Double(self.limit))
+        limitProgressView.progress = Float(Double(totalDrinks()) / Double(self.limit))
         }
-*/
+        */
         
         //Initialize location manager for use in emergency texts
         locationManager = CLLocationManager()
@@ -97,8 +114,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
-   UIApplication.sharedApplication().idleTimerDisabled = true
+        UIApplication.sharedApplication().idleTimerDisabled = true
+        
+        
+        //Show the settings menu if it is the user's first time opening the app
+        
     }
+    
+    
     
     func calculateBAC(){
         
@@ -200,7 +223,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     //Function is automatically called by locationManager, gets the user location and stores it in local properties
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let latestLocation: AnyObject = locations[0]
+        let latestLocation: CLLocation = locations[0]
         currentLat = String(latestLocation.coordinate.latitude)
         currentLong = String(latestLocation.coordinate.longitude)
         print("Lat: " + currentLat + ", Long: " + currentLong)
@@ -223,7 +246,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             //If using location, specifiy latitude and longitude as a map link
             if settings.includeLocation! {
                 controller.body = controller.body! + "\nLocation:  + http://maps.apple.com/?q=Help&ll=" + currentLat + "," + currentLong
-
+                
             }
             
             controller.messageComposeDelegate = self
@@ -277,6 +300,23 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         return ModelData.getTotalDrinks()
     }
     
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
+        
+        let qualityOfServiceClass = QOS_CLASS_BACKGROUND
+        let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
+        dispatch_async(backgroundQueue, {
+            self.addDrink()
+            self.allDrinks.text = String(self.totalDrinks())
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                print("Added drink from watch")
+                let infoDictionary = ["message" : self.userBAC as AnyObject]
+                session.sendMessage(infoDictionary, replyHandler: nil, errorHandler: nil)
+            })
+        })
+        
+        
+    }
     
     @IBAction func unwindFromSettings(segue:UIStoryboardSegue){
         

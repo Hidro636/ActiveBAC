@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ActiveBACWatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>E7DC95131C1A2ADE0046EE34</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>F12D6CA91BCF65AF00F9D664</key>
 		<dict>
 			<key>primary</key>
